@@ -3,9 +3,13 @@
 
 /* Create some Bowfolio CSS variables. */
 :root {
-  --bowfolio-navbar-bg: #376551;
-  --bowfolio-navbar-bg-rgb: 55, 101, 81;
-  --bowfolio-navbar-text: white;
+  --primary-color: #8AC78D;
+  --primary-color-rgb: 138, 199, 141;
+  --secondary-color: #366550;
+  --secondary-color-rgb: 54, 101, 80;
+  --bowfolio-navbar-bg: var(--primary-color);
+  --bowfolio-navbar-bg-rgb: 138, 199, 141;
+  --bowfolio-navbar-text: var(--secondary-color);
   --bowfolio-navbar-highlight-text: var(--bs-gray-500);
 }
 /* Change bootstrap variable values.

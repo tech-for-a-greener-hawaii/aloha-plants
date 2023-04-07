@@ -18,7 +18,7 @@ import { pageStyle } from './pageStyles';
 import { ComponentIDs, PageIDs } from '../utilities/ids';
 
 /* Create a schema to specify the structure of the data to appear in the form. */
-const makeSchema = (allInterests, allProjects) => new SimpleSchema({
+const makeSchema = (allInterests, allProjects, allPlants) => new SimpleSchema({
   email: { type: String, label: 'Email', optional: true },
   firstName: { type: String, label: 'First', optional: true },
   lastName: { type: String, label: 'Last', optional: true },
@@ -29,6 +29,8 @@ const makeSchema = (allInterests, allProjects) => new SimpleSchema({
   'interests.$': { type: String, allowedValues: allInterests },
   projects: { type: Array, label: 'Projects', optional: true },
   'projects.$': { type: String, allowedValues: allProjects },
+  // plants: { type: Array, label: 'Interests', optional: true },
+  // 'plants.$': { type: String, allowedValues: allPlants },
 });
 
 /* Renders the Home Page: what appears after the user logs in. */
@@ -60,6 +62,7 @@ const Home = () => {
   // Create the form schema for uniforms. Need to determine all interests and projects for muliselect list.
   const allInterests = _.pluck(Interests.collection.find().fetch(), 'name');
   const allProjects = _.pluck(Projects.collection.find().fetch(), 'name');
+  // const allPlants = _.pluck(Plants.collection.find().fetch(), 'name');
   const formSchema = makeSchema(allInterests, allProjects);
   const bridge = new SimpleSchema2Bridge(formSchema);
   // Now create the model with all the user information.
@@ -85,8 +88,9 @@ const Home = () => {
                 <Col xs={6}><TextField name="picture" showInlineError placeholder="URL to picture" /></Col>
               </Row>
               <Row>
-                <Col xs={6}><SelectField name="interests" showInlineError multiple /></Col>
-                <Col xs={6}><SelectField name="projects" showInlineError multiple /></Col>
+                <Col xs={4}><SelectField name="interests" showInlineError multiple /></Col>
+                <Col xs={4}><SelectField name="projects" showInlineError multiple /></Col>
+                {/*<Col xs={4}><SelectField name="plants" showInlineError multiple /></Col>*/}
               </Row>
               <SubmitField id={ComponentIDs.homeFormSubmit} value="Update" />
             </Card.Body>
