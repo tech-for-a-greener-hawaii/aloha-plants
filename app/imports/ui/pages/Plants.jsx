@@ -13,7 +13,7 @@ import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
-function getProjectData(name) {
+function getPlantData(name) {
   const data = Plants.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
@@ -22,25 +22,25 @@ function getProjectData(name) {
 }
 
 /* Component for layout out a Project Card. */
-const MakeCard = ({ project }) => (
+const MakeCard = ({ plant }) => (
   <Col>
     <Card className="h-100">
       <Card.Body>
-        <Card.Img src={project.picture} width={50} />
-        <Card.Title style={{ marginTop: '0px' }}>{project.name}</Card.Title>
-        <Card.Subtitle>
-          <span className="date">{project.title}</span>
-        </Card.Subtitle>
+        <Card.Img src={plant.picture} width={50} />
+        <Card.Title style={{ marginTop: '0px' }}>{plant.name}</Card.Title>
+        {/*<Card.Subtitle>*/}
+        {/*  <span className="date">{plant.title}</span>*/}
+        {/*</Card.Subtitle>*/}
         <Card.Text>
-          {project.description}
+          {plant.description}
         </Card.Text>
       </Card.Body>
       <Card.Body>
-        {project.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}
+        {plant.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}
       </Card.Body>
-      <Card.Body>
-        {project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}
-      </Card.Body>
+      {/*<Card.Body>*/}
+      {/*  {plant.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}*/}
+      {/*</Card.Body>*/}
     </Card>
   </Col>
 );
@@ -49,15 +49,15 @@ MakeCard.propTypes = {
   project: PropTypes.shape({
     description: PropTypes.string,
     name: PropTypes.string,
-    participants: PropTypes.arrayOf(PropTypes.string),
+    scientificName: PropTypes.string,
+    growingConditions: PropTypes.string,
     picture: PropTypes.string,
-    title: PropTypes.string,
     interests: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
 
 /* Renders the Project Collection as a set of Cards. */
-const ProjectsPage = () => {
+const PlantsPage = () => {
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(ProfilesProjects.userPublicationName);
@@ -68,15 +68,15 @@ const ProjectsPage = () => {
       ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready(),
     };
   }, []);
-  const projects = _.pluck(Projects.collection.find().fetch(), 'name');
-  const projectData = projects.map(project => getProjectData(project));
+  const plants = _.pluck(Plants.collection.find().fetch(), 'name');
+  const plantData = plants.map(project => getPlantData(project));
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
       <Row xs={1} md={2} lg={4} className="g-2">
-        {projectData.map((project, index) => <MakeCard key={index} project={project} />)}
+        {plantData.map((plant, index) => <MakeCard key={index} plant={plant} />)}
       </Row>
     </Container>
   ) : <LoadingSpinner />;
 };
 
-export default ProjectsPage;
+export default PlantsPage;

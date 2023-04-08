@@ -33,7 +33,7 @@ const updateProfileMethod = 'Profiles.update';
 
 /**
  * The server-side Profiles.update Meteor Method is called by the client-side Home page after pushing the update button.
- * Its purpose is to update the Profiles, ProfilesInterests, and ProfilesProjects collections to reflect the
+ * Its purpose is to update the Profiles, ProfilesInterests, and ProjectsPlants collections to reflect the
  * updated situation specified by the user.
  */
 Meteor.methods({
@@ -48,7 +48,7 @@ Meteor.methods({
 
 const addProjectMethod = 'Projects.add';
 
-/** Creates a new project in the Projects collection, and also updates ProfilesProjects and ProjectsInterests. */
+/** Creates a new project in the Projects collection, and also updates ProjectsPlants and ProjectsInterests. */
 Meteor.methods({
   'Projects.add'({ name, description, picture, interests, participants, homepage }) {
     Projects.collection.insert({ name, description, picture, homepage });

@@ -11,7 +11,9 @@ import { Interests } from '../../api/interests/Interests';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
+import { ProfilesPlants } from '../../api/profiles/ProfilesPlants';
 import { Projects } from '../../api/projects/Projects';
+import { Plants } from '../../api/plants/Plants';
 import { updateProfileMethod } from '../../startup/both/Methods';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
@@ -29,8 +31,8 @@ const makeSchema = (allInterests, allProjects, allPlants) => new SimpleSchema({
   'interests.$': { type: String, allowedValues: allInterests },
   projects: { type: Array, label: 'Projects', optional: true },
   'projects.$': { type: String, allowedValues: allProjects },
-  // plants: { type: Array, label: 'Interests', optional: true },
-  // 'plants.$': { type: String, allowedValues: allPlants },
+  plants: { type: Array, label: 'Plants', optional: true },
+  'plants.$': { type: String, allowedValues: allPlants },
 });
 
 /* Renders the Home Page: what appears after the user logs in. */
@@ -62,14 +64,15 @@ const Home = () => {
   // Create the form schema for uniforms. Need to determine all interests and projects for muliselect list.
   const allInterests = _.pluck(Interests.collection.find().fetch(), 'name');
   const allProjects = _.pluck(Projects.collection.find().fetch(), 'name');
-  // const allPlants = _.pluck(Plants.collection.find().fetch(), 'name');
-  const formSchema = makeSchema(allInterests, allProjects);
+  const allPlants = _.pluck(Plants.collection.find().fetch(), 'name');
+  const formSchema = makeSchema(allInterests, allProjects, allPlants);
   const bridge = new SimpleSchema2Bridge(formSchema);
   // Now create the model with all the user information.
   const projects = _.pluck(ProfilesProjects.collection.find({ profile: email }).fetch(), 'project');
   const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
+  const plants = _.pluck(ProfilesPlants.collection.find({ profile: email }).fetch(), 'interest');
   const profile = Profiles.collection.findOne({ email });
-  const model = _.extend({}, profile, { interests, projects });
+  const model = _.extend({}, profile, { interests, projects, plants });
   return ready ? (
     <Container id={PageIDs.homePage} className="justify-content-center" style={pageStyle}>
       <Col>
@@ -90,7 +93,7 @@ const Home = () => {
               <Row>
                 <Col xs={4}><SelectField name="interests" showInlineError multiple /></Col>
                 <Col xs={4}><SelectField name="projects" showInlineError multiple /></Col>
-                {/*<Col xs={4}><SelectField name="plants" showInlineError multiple /></Col>*/}
+                <Col xs={4}><SelectField name="plants" showInlineError multiple /></Col>
               </Row>
               <SubmitField id={ComponentIDs.homeFormSubmit} value="Update" />
             </Card.Body>
