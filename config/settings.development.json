@@ -141,6 +141,17 @@
         "Flower"
       ],
       "picture": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.fineartamerica.com%2Fimages-medium-large%2Fhawaiian-mao-hau-hele-1937-joe-diaz.jpg&f=1&nofb=1&ipt=8f9830d68360d7ccf18f01224e2b8f588b5207927d9f11f0ca2e582c3d444c65&ipo=images"
+    },
+    {
+      "name": "Another Plant",
+      "scientificName": "hibiscus brackenrigie",
+      "description": "Very cool plant",
+      "growingConditions": "...",
+      "interests": [
+        "Endemic",
+        "Flower"
+      ],
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/5/50/California_Arena_Point_fern.jpg"
     }
   ],
   "loadAssetsFile":  false
