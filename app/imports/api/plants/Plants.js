@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /** Encapsulates state and variable values for this collection. */
-class ProjectsCollection {
+class PlantsCollection {
   constructor() {
     // The name of this collection.
     this.name = 'PlantsCollection';
@@ -13,6 +13,7 @@ class ProjectsCollection {
       name: { type: String, index: true, unique: true },
       scientificName: { type: String, optional: true },
       description: { type: String, optional: true },
+      growingConditions: { type: String, optional: true },
       picture: { type: String, optional: true },
     });
     // Ensure collection documents obey schema.
@@ -23,4 +24,4 @@ class ProjectsCollection {
   }
 }
 
-export const Plants = new ProjectsCollection();
+export const Plants = new PlantsCollection();

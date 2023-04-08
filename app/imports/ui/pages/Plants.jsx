@@ -13,7 +13,7 @@ import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
-function getplantData(name) {
+function getPlantData(name) {
   const data = Plants.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
@@ -49,9 +49,9 @@ MakeCard.propTypes = {
   project: PropTypes.shape({
     description: PropTypes.string,
     name: PropTypes.string,
-    experts: PropTypes.arrayOf(PropTypes.string),
+    scientificName: PropTypes.string,
+    growingConditions: PropTypes.string,
     picture: PropTypes.string,
-    title: PropTypes.string,
     interests: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
@@ -69,7 +69,7 @@ const PlantsPage = () => {
     };
   }, []);
   const plants = _.pluck(Plants.collection.find().fetch(), 'name');
-  const plantData = plants.map(project => getProjectData(project));
+  const plantData = plants.map(project => getPlantData(project));
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
       <Row xs={1} md={2} lg={4} className="g-2">

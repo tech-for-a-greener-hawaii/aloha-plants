@@ -11,6 +11,7 @@ import { Interests } from '../../api/interests/Interests';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
+import { ProfilesPlants } from '../../api/profiles/ProfilesPlants';
 import { Projects } from '../../api/projects/Projects';
 import { Plants } from '../../api/plants/Plants';
 import { updateProfileMethod } from '../../startup/both/Methods';
@@ -30,7 +31,7 @@ const makeSchema = (allInterests, allProjects, allPlants) => new SimpleSchema({
   'interests.$': { type: String, allowedValues: allInterests },
   projects: { type: Array, label: 'Projects', optional: true },
   'projects.$': { type: String, allowedValues: allProjects },
-  plants: { type: Array, label: 'Interests', optional: true },
+  plants: { type: Array, label: 'Plants', optional: true },
   'plants.$': { type: String, allowedValues: allPlants },
 });
 
@@ -71,7 +72,7 @@ const Home = () => {
   const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
   const plants = _.pluck(ProfilesPlants.collection.find({ profile: email }).fetch(), 'interest');
   const profile = Profiles.collection.findOne({ email });
-  const model = _.extend({}, profile, { interests, projects });
+  const model = _.extend({}, profile, { interests, projects, plants });
   return ready ? (
     <Container id={PageIDs.homePage} className="justify-content-center" style={pageStyle}>
       <Col>

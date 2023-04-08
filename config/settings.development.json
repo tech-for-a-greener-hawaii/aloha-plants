@@ -133,9 +133,9 @@
   "defaultPlants": [
     {
       "name": "maʻo hau hele",
+      "scientificName": "hibiscus brackenrigie",
       "description": "Cool plant",
-      "distribution": "mesic and dry",
-      "sun": "full sun",
+      "growingConditions": "...",
       "interests": [
         "Endemic",
         "Flower"
