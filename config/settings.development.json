@@ -130,5 +130,31 @@
       "picture": "https://www.hawaii.edu/its/wp-content/uploads/sites/2/2019/01/LAVAlogo-300x192-300x192.png"
     }
   ],
+
+  "defaultPlants": [
+    {
+      "name": "maʻo hau hele",
+      "scientificName": "hibiscus brackenrigie",
+      "description": "Cool plant",
+      "growingConditions": "...",
+      "interests": [
+        "Endemic",
+        "Flower"
+      ],
+      "picture": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.fineartamerica.com%2Fimages-medium-large%2Fhawaiian-mao-hau-hele-1937-joe-diaz.jpg&f=1&nofb=1&ipt=8f9830d68360d7ccf18f01224e2b8f588b5207927d9f11f0ca2e582c3d444c65&ipo=images"
+    },
+    {
+      "name": "Plant 1",
+      "scientificName": "science name",
+      "description": "Very cool plant",
+      "growingConditions": "...",
+      "interests": [
+        "water",
+        "dirt"
+      ],
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/c/c4/White_buddleia_closeup.jpg"
+    }
+  ],
+
   "loadAssetsFile":  false
 }

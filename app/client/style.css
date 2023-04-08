@@ -4,8 +4,8 @@
 /* Create some Bowfolio CSS variables. */
 :root {
   --bowfolio-navbar-bg: #376551;
-  --bowfolio-navbar-bg-rgb: 55, 101, 81;
-  --bowfolio-navbar-text: white;
+  --bowfolio-navbar-bg-rgb: 152, 197, 148;
+  --bowfolio-navbar-text: 66, 100, 82;
   --bowfolio-navbar-highlight-text: var(--bs-gray-500);
 }
 /* Change bootstrap variable values.
@@ -43,8 +43,8 @@ body {
   padding-top: 20px;
 }
 
-.landing-white-background {
-  background-color: var(--bowfolio-navbar-text);
+.landing-lightGreen-background {
+  background-color: rgb(152, 197, 148);
   color: var(--bowfolio-navbar-bg);
   padding-top: 20px;
 }
