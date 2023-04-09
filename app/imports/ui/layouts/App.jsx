@@ -10,13 +10,13 @@ import SignOut from '../pages/SignOut';
 import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
-import Profiles from '../pages/Profiles';
 import Projects from '../pages/Projects';
 import Plants from '../pages/Plants';
 import Interests from '../pages/Interests';
 import Home from '../pages/Home';
 import Filter from '../pages/Filter';
 import AddProject from '../pages/AddProject';
+import Forums from '../pages/Forums';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -29,7 +29,7 @@ const App = () => (
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
         <Route path="/interests" element={<Interests />} />
-        <Route path="/profiles" element={<Profiles />} />
+        <Route path="/forums" element={<Forums />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/plants" element={<Plants />} />
         <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
