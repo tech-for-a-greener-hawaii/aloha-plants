@@ -71,11 +71,13 @@ const ProjectsPage = () => {
   const projects = _.pluck(Projects.collection.find().fetch(), 'name');
   const projectData = projects.map(project => getProjectData(project));
   return ready ? (
-    <Container id={PageIDs.projectsPage} style={pageStyle}>
-      <Row xs={1} md={2} lg={4} className="g-2">
-        {projectData.map((project, index) => <MakeCard key={index} project={project} />)}
-      </Row>
-    </Container>
+    <div>
+      <h1 className="text-center"><strong>Forums Page (to be changed to show forums)</strong></h1>
+      <Container id={PageIDs.projectsPage} style={pageStyle}>
+        <Row xs={1} md={2} lg={4} className="g-2">{projectData.map((project, index) => <MakeCard key={index} project={project} />)}
+        </Row>
+      </Container>
+    </div>
   ) : <LoadingSpinner />;
 };
 
