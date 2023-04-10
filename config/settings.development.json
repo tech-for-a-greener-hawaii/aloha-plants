@@ -156,22 +156,24 @@
   ],
   "defaultForums": [
     {
-      "name": "Forum 1",
-      "topic": "Soil Conditions",
-      "leadComment": "Growing too often makes the soil bad. Has anyone else discovered this? How can we cope with this?",
-      "interests": [
-        "soil",
-        "sustainability"
-      ]
+      "title": "Soil Quality",
+      "topic": "Keeping Soil Quality High",
+      "leadComment": "Discussion about how to keep up good soil quality over time"
     },
     {
-      "name": "Forum 2",
-      "topic": "Natural Water Control",
-      "leadComment": "I want my plants to be watered a little bit everyday, not on 1 day a week/month when it happens to rain a lot. I have a mockup of a rain collection system, but has anyone else thought of a solution to this?",
-      "interests": [
-        "water",
-        "sustainability"
-      ]
+      "title": "Rainwater",
+      "topic": "Collecting Rain Water",
+      "leadComment": "Discussion about different ideas/systems to collect and redistribute natural rain water"
+    },
+    {
+      "title": "Forum 3",
+      "topic": "Topic 3",
+      "leadComment": "Discussion 3"
+    },
+    {
+      "title": "Forum 4",
+      "topic": "Topic 4",
+      "leadComment": "Discussion 4"
     }
   ],
   "loadAssetsFile":  false

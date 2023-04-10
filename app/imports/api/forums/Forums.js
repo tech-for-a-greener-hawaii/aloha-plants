@@ -10,10 +10,9 @@ class ForumsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: { type: String, index: true, unique: true },
+      title: { type: String, index: true, unique: true },
       topic: { type: String, optional: true },
       leadComment: { type: String, optional: true },
-      interests: { type: String, optional: true },
     });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);

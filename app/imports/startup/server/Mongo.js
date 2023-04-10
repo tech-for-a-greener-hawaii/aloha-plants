@@ -7,6 +7,7 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
+import { Forums } from '../../api/forums/Forums';
 
 /* eslint-disable no-console */
 
@@ -47,9 +48,22 @@ function addProject({ name, homepage, description, interests, picture }) {
   interests.map(interest => addInterest(interest));
 }
 
+/** Define a new forum. Error if project already exists.  */
+const addForum = (forum) => {
+  console.log(`Adding ${forum.title}`);
+  Forums.collection.insert(forum);
+};
+
+if (Forums.collection.find().count() === 0) {
+  if (Meteor.settings.defaultForums) {
+    console.log('Creating default forums');
+    Meteor.settings.defaultForums.forEach(forum => addForum(forum));
+  }
+}
+
 /** Initialize DB if it appears to be empty (i.e. no users defined.) */
 if (Meteor.users.find().count() === 0) {
-  if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles) {
+  if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles && Meteor.settings.defaultForums) {
     console.log('Creating the default profiles');
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
@@ -73,4 +87,5 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   const jsonData = JSON.parse(Assets.getText(assetsFileName));
   jsonData.profiles.map(profile => addProfile(profile));
   jsonData.projects.map(project => addProject(project));
+  jsonData.forums.map(forum => addForum(forum));
 }
