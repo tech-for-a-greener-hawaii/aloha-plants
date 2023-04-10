@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { Accounts } from 'meteor/accounts-base';
+import { Meteor } from 'meteor/meteor';
 import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { addProfileMethod } from '../../startup/both/Methods';
+// import swal from 'sweetalert';
 import { ComponentIDs, PageIDs } from '../utilities/ids';
+// import { Profiles } from '../../api/profiles/Profiles';
 
 /*
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -23,6 +27,21 @@ const SignUp = () => {
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
     const { email, password } = doc;
+    // email: { type: String, index: true, unique: true },
+    // firstName: { type: String, optional: true },
+    // lastName: { type: String, optional: true },
+    // bio: { type: String, optional: true },
+    // title: { type: String, optional: true },
+    // picture: { type: String, optional: true },
+    Meteor.call(addProfileMethod, { email: email, firstName: '', lastName: '', bio: '', title: '', picture: '' }, (err) => {
+      if (err) {
+        setError(err.reason);
+      } else {
+        setError('');
+        // setRedirectToRef(true);
+      }
+    });
+    // Profiles.collection.insert({ email: email, firstName: '', lastName: '', bio: '', title: '', picture: '' });
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         setError(err.reason);
