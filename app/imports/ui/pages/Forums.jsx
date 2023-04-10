@@ -49,11 +49,14 @@ const ForumsPage = () => {
   const forums = _.pluck(Forums.collection.find().fetch(), 'title');
   const forumData = forums.map(forum => getForumData(forum));
   return ready ? (
-    <Container id={PageIDs.forumsPage} style={pageStyle}>
-      <Row>
-        {forumData.map((forum, index) => <MakeCard key={index} forum={forum} />)}
-      </Row>
-    </Container>
+    <div>
+      <h1 className="text-center py-4"><strong>Forums</strong></h1>
+      <Container id={PageIDs.forumsPage} style={pageStyle}>
+        <Row>
+          {forumData.map((forum, index) => <MakeCard key={index} forum={forum} />)}
+        </Row>
+      </Container>
+    </div>
   ) : <LoadingSpinner />;
 };
 
