@@ -4,7 +4,7 @@ import { Badge, Container, Card, Row, Col } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
-import { Profiles } from '../../api/profiles/Profiles';
+// import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesPlants } from '../../api/profiles/ProfilesPlants';
 import { Plants } from '../../api/plants/Plants';
 import { PlantsInterests } from '../../api/plants/PlantsInterests';
@@ -26,11 +26,12 @@ const MakeCard = ({ plant }) => (
   <Col>
     <Card className="h-100">
       <Card.Body>
+        <h1>Hello</h1>
         <Card.Img src={plant.picture} width={50} />
         <Card.Title style={{ marginTop: '0px' }}>{plant.name}</Card.Title>
-        {/* <Card.Subtitle> */}
-        {/* <span className="date">{plant.title}</span> */}
-        {/* </Card.Subtitle> */}
+         {/*<Card.Subtitle> */}
+         {/*<span className="date">{plant.title}</span> */}
+         {/*</Card.Subtitle> */}
         <Card.Text>
           {plant.description}
         </Card.Text>
@@ -61,6 +62,7 @@ const PlantsPage = () => {
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub = Meteor.subscribe(Plants.userPublicationName);
+    console.log(sub.ready())
     return {
       ready: sub.ready(),
     };

@@ -11,10 +11,9 @@ class PlantsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: { type: String, index: true, unique: true },
-      scientificName: { type: String, optional: true },
+      scientificName: { type: String, index: true, unique: true },
       description: { type: String, optional: true },
       growingConditions: { type: String, optional: true },
-      picture: { type: String, optional: true },
     });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);

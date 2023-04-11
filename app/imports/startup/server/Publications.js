@@ -5,6 +5,8 @@ import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { Projects } from '../../api/projects/Projects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
+import { Plants } from '../../api/plants/Plants';
+import { PlantsInterests} from '../../api/plants/PlantsInterests';
 import { Forums } from '../../api/forums/Forums';
 
 /** Define a publication to publish all interests. */
@@ -21,6 +23,12 @@ Meteor.publish(ProfilesProjects.userPublicationName, () => ProfilesProjects.coll
 
 /** Define a publication to publish all projects. */
 Meteor.publish(Projects.userPublicationName, () => Projects.collection.find());
+
+/** Define a publication to publish all plants */
+Meteor.publish(Plants.userPublicationName, () => Plants.collection.find());
+//
+// /** Define a publication to publish this collection. */
+// Meteor.publish(PlantsInterests.userPublicationName, () => PlantsInterests.collection.find());
 
 /** Define a publication to publish all forums. */
 Meteor.publish(Forums.userPublicationName, () => Forums.collection.find());
