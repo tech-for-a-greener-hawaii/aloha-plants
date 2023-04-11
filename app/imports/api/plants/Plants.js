@@ -10,8 +10,8 @@ class PlantsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: { type: String, index: true, unique: true },
-      scientificName: { type: String, index: true, unique: true },
+      name: { type: String, unique: true},
+      scientificName: { type: String, optional: true },
       description: { type: String, optional: true },
       growingConditions: { type: String, optional: true },
     });
