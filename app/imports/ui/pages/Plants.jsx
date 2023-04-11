@@ -5,20 +5,19 @@ import { useTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '../../api/profiles/Profiles';
-import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
-import { Projects } from '../../api/projects/Projects';
-import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
+import { ProfilesPlants } from '../../api/profiles/ProfilesPlants';
+import { Plants } from '../../api/plants/Plants';
+import { PlantsInterests } from '../../api/plants/PlantsInterests';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
-import { Plants } from '../../api/plants/Plants';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getPlantData(name) {
   const data = Plants.collection.findOne({ name });
-  const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
-  const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
-  const profilePictures = profiles.map(profile => Profiles.collection.findOne({ email: profile })?.picture);
+  const interests = _.pluck(PlantsInterests.collection.find({ project: name }).fetch(), 'interest');
+  const profiles = _.pluck(ProfilesPlants.collection.find({ project: name }).fetch(), 'profile');
+  const profilePictures = profiles.map(profile => Plants.collection.findOne({ email: profile })?.picture);
   return _.extend({}, data, { interests, participants: profilePictures });
 }
 
@@ -37,7 +36,7 @@ const MakeCard = ({ plant }) => (
         </Card.Text>
       </Card.Body>
       <Card.Body>
-        {plant.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}
+        {/*{plant.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}*/}
       </Card.Body>
       {/* <Card.Body> */}
       {/*  {plant.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)} */}
@@ -61,18 +60,17 @@ MakeCard.propTypes = {
 const PlantsPage = () => {
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
-    const sub1 = Meteor.subscribe(ProfilesProjects.userPublicationName);
-    const sub2 = Meteor.subscribe(Projects.userPublicationName);
-    const sub3 = Meteor.subscribe(ProjectsInterests.userPublicationName);
-    const sub4 = Meteor.subscribe(Profiles.userPublicationName);
+    const sub = Meteor.subscribe(Plants.userPublicationName);
     return {
-      ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready(),
+      ready: sub.ready(),
     };
   }, []);
   const plants = _.pluck(Plants.collection.find().fetch(), 'name');
+  console.log(plants)
   const plantData = plants.map(project => getPlantData(project));
+  console.log(plantData)
   return ready ? (
-    <Container id={PageIDs.projectsPage} style={pageStyle}>
+    <Container id={PageIDs.plantsPage} style={pageStyle}>
       <Row xs={1} md={2} lg={4} className="g-2">
         {plantData.map((plant, index) => <MakeCard key={index} plant={plant} />)}
       </Row>
