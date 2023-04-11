@@ -10,7 +10,7 @@ class PlantsInterestsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      plant: String,
+      plantName: String,
       interest: String,
     });
     // Ensure collection documents obey schema.

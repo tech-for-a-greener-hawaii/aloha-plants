@@ -64,14 +64,14 @@ if (Forums.collection.find().count() === 0) {
 
 /** Define a new forum. Error if project already exists.  */
 const addPlant = (plant) => {
-  console.log(`Adding ${plant.title}`);
+  console.log(`Adding ${plant.name}`);
   Plants.collection.insert(plant);
 };
 
 if (Plants.collection.find().count() === 0) {
   if (Meteor.settings.defaultPlants) {
     console.log('Creating default plants');
-    console.log(Meteor.settings.defaultPlants)
+    // console.log(Meteor.settings.defaultPlants)
     Meteor.settings.defaultPlants.forEach(plant => addPlant(plant));
   }
 }
@@ -83,7 +83,7 @@ if (Meteor.users.find().count() === 0) {
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
     Meteor.settings.defaultProjects.map(project => addProject(project));
-    Meteor.settings.defaultPlants.map(plants => addPlant(plants));
+    // Meteor.settings.defaultPlants.map(plants => addPlant(plants));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }

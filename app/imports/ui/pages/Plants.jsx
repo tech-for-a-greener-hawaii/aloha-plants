@@ -26,7 +26,6 @@ const MakeCard = ({ plant }) => (
   <Col>
     <Card className="h-100">
       <Card.Body>
-        <h1>Hello</h1>
         <Card.Img src={plant.picture} width={50} />
         <Card.Title style={{ marginTop: '0px' }}>{plant.name}</Card.Title>
          {/*<Card.Subtitle> */}
@@ -34,14 +33,17 @@ const MakeCard = ({ plant }) => (
          {/*</Card.Subtitle> */}
         <Card.Text>
           {plant.description}
+          <hr/>
+          {plant.growingConditions}
+          {plant.picture}
         </Card.Text>
       </Card.Body>
       <Card.Body>
-        {/*{plant.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}*/}
+        {plant.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}
       </Card.Body>
-      {/* <Card.Body> */}
-      {/*  {plant.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)} */}
-      {/* </Card.Body> */}
+       {/*<Card.Body> */}
+       {/* {plant.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)} */}
+       {/*</Card.Body> */}
     </Card>
   </Col>
 );
