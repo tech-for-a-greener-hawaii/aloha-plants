@@ -143,12 +143,11 @@
     },
     {
       "name": "Another Plant",
-      "scientificName": "hibiscus brackenrigie",
+      "scientificName": "no name",
       "description": "Very cool plant",
-      "growingConditions": "...",
+      "growingConditions": "this is all different.",
       "interests": [
-        "Endemic",
-        "Flower"
+        "AI"
       ],
       "picture": "https://upload.wikimedia.org/wikipedia/commons/5/50/California_Arena_Point_fern.jpg"
     }
