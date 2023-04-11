@@ -8,6 +8,8 @@ import { Forums } from '../../api/forums/Forums';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
+import AddComment from '../components/AddComment';
+import { Comments } from '../../api/forums/Comments';
 
 /* Gets the Forum data as well as Profiles and Interests associated with the passed Forum name. */
 function getForumData(title) {
@@ -15,7 +17,7 @@ function getForumData(title) {
 }
 
 /* Component for layout out a Forum Card. */
-const MakeCard = ({ forum }) => (
+const MakeForumCard = ({ forum }) => (
   <Col>
     <Card className="h-100">
       <Card.Header>
@@ -24,16 +26,18 @@ const MakeCard = ({ forum }) => (
       </Card.Header>
       <Card.Body>
         <Card.Text>{forum.leadComment}</Card.Text>
+        <AddComment forumID={forum._id} />
       </Card.Body>
     </Card>
   </Col>
 );
 
-MakeCard.propTypes = {
+MakeForumCard.propTypes = {
   forum: PropTypes.shape({
     title: PropTypes.string,
     topic: PropTypes.string,
     leadComment: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
 };
 
@@ -41,9 +45,10 @@ MakeCard.propTypes = {
 const ForumsPage = () => {
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
-    const sub = Meteor.subscribe(Forums.userPublicationName);
+    const subForums = Meteor.subscribe(Forums.userPublicationName);
+    const subComments = Meteor.subscribe(Comments.userPublicationName);
     return {
-      ready: sub.ready(),
+      ready: subForums.ready() && subComments.ready(),
     };
   }, []);
   const forums = _.pluck(Forums.collection.find().fetch(), 'title');
@@ -53,7 +58,7 @@ const ForumsPage = () => {
       <h1 className="text-center py-4"><strong>Forums</strong></h1>
       <Container id={PageIDs.forumsPage} style={pageStyle}>
         <Row>
-          {forumData.map((forum, index) => <MakeCard key={index} forum={forum} />)}
+          {forumData.map((forum, index) => <MakeForumCard key={index} forum={forum} />)}
         </Row>
       </Container>
     </div>
