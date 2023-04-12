@@ -35,7 +35,6 @@ const Settings = () => {
   const submit = (data) => {
     Meteor.call(updateProfileMethod, data, (error) => {
       if (error) {
-        console.log("hit");
         swal('Error', error.message, 'error');
       } else {
         swal('Success', 'Profile updated successfully', 'success');
