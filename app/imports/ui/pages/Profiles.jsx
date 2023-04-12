@@ -60,7 +60,6 @@ MakeCard.propTypes = {
 
 /* Renders the Profile Collection as a set of Cards. */
 const ProfilesPage = () => {
-  const [profileDataFiltered, setProfileDataFiltered] = useState([]); //need this here for search to work
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(Profiles.userPublicationName);
@@ -75,6 +74,7 @@ const ProfilesPage = () => {
   // There is a potential race condition. We might not be ready at this point.
   // Need to ensure that getProfileData doesn't throw an error on line 18.
   const profileData = emails.map(email => getProfileData(email));
+  const [profileDataFiltered, setProfileDataFiltered] = useState(profileData); //need this here for search to work
   return ready ? (
     <Container id={PageIDs.profilesPage} style={pageStyle}>
       <Row>

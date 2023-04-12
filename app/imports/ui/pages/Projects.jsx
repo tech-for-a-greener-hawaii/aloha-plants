@@ -59,7 +59,7 @@ MakeCard.propTypes = {
 
 /* Renders the Project Collection as a set of Cards. */
 const ProjectsPage = () => {
-  const [projectDataFiltered, setProjectDataFiltered] = useState([]); //need this here for search to work
+
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(ProfilesProjects.userPublicationName);
@@ -72,6 +72,7 @@ const ProjectsPage = () => {
   }, []);
   const projects = _.pluck(Projects.collection.find().fetch(), 'name');
   const projectData = projects.map(project => getProjectData(project));
+  const [projectDataFiltered, setProjectDataFiltered] = useState(projectData); //need this here for search to work
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
       <Row>
