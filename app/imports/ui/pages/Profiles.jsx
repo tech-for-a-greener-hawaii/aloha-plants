@@ -79,7 +79,7 @@ const ProfilesPage = () => {
     <Container id={PageIDs.profilesPage} style={pageStyle}>
       <Row>
         <SearchBar baseData={profileData} filteredDataSetter={setProfileDataFiltered} dataFilterFunction={
-          (input ,searchIn) => {return input.firstName.toLowerCase().includes(searchIn.toLowerCase()) || input.lastName.toLowerCase().includes(searchIn.toLowerCase()) || input.bio.toLowerCase().includes(searchIn.toLowerCase())}
+          (input ,searchIn) => {return searchIn=="" || input.firstName.toLowerCase().includes(searchIn.toLowerCase()) || input.lastName.toLowerCase().includes(searchIn.toLowerCase()) || input.bio.toLowerCase().includes(searchIn.toLowerCase())}
         }/>
       </Row>
       <Row xs={1} md={2} lg={4} className="g-2">

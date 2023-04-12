@@ -83,7 +83,7 @@ const PlantsPage = () => {
     <Container id={PageIDs.plantsPage} style={pageStyle}>
       <Row>
         <SearchBar baseData={plantData} filteredDataSetter={setPlantDataFiltered} dataFilterFunction={
-          (input ,searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.scientificName.toLowerCase().includes(searchIn.toLowerCase())}
+          (input ,searchIn) => {return searchIn=="" || input.name.toLowerCase().includes(searchIn.toLowerCase()) || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.scientificName.toLowerCase().includes(searchIn.toLowerCase())}
         }/>
       </Row>
       <Row xs={1} md={2} lg={4} className="g-2" id={ComponentIDs.plantsSearchBar}>
