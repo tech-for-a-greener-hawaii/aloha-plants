@@ -32,7 +32,7 @@ export const ComponentIDs = {
   signUpFormSubmit: 'signUpFormSubmit',
 };
 
-export const PageIDs = {
+  export const PageIDs = {
   addProjectPage: 'addProjectPage',
   filterPage: 'filterPage',
   homePage: 'homePage',
@@ -42,6 +42,7 @@ export const PageIDs = {
   notFoundPage: 'notFoundPage',
   profilesPage: 'profilesPage',
   projectsPage: 'projectsPage',
+  plantsPage: 'plantsPage',
   forumsPage: 'forumsPage',
   signInPage: 'signInPage',
   signOutPage: 'signOutPage',

@@ -2,18 +2,17 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /** Encapsulates state and variable values for this collection. */
-class PlantsCollection {
+class CommentsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'PlantsCollection';
+    this.name = 'CommentsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: { type: String, unique: true},
-      scientificName: { type: String, optional: true },
-      description: { type: String, optional: true },
-      growingConditions: { type: String, optional: true },
+      forumID: { type: String, index: true, unique: true },
+      comment: { type: String, optional: true },
+      date: { type: Date, optional: true },
     });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);
@@ -23,4 +22,4 @@ class PlantsCollection {
   }
 }
 
-export const Plants = new PlantsCollection();
+export const Comments = new CommentsCollection();

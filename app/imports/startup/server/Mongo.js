@@ -7,6 +7,7 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
+import { Plants} from '../../api/plants/Plants';
 import { Forums } from '../../api/forums/Forums';
 
 /* eslint-disable no-console */
@@ -63,23 +64,30 @@ if (Forums.collection.find().count() === 0) {
   }
 }
 
+/** Define a new forum. Error if project already exists.  */
+const addPlant = (plant) => {
+  console.log(`Adding ${plant.name}`);
+  Plants.collection.insert(plant);
+};
+
+if (Plants.collection.find().count() === 0) {
+  if (Meteor.settings.defaultPlants) {
+    console.log('Creating default plants');
+    // console.log(Meteor.settings.defaultPlants)
+    Meteor.settings.defaultPlants.forEach(plant => addPlant(plant));
+  }
+}
+
 /** Initialize DB if it appears to be empty (i.e. no users defined.) */
 if (Meteor.users.find().count() === 0) {
-  if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles && Meteor.settings.defaultForums) {
+  if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles && Meteor.settings.defaultForums && Meteor.settings.defaultPlants) {
     console.log('Creating the default profiles');
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
     Meteor.settings.defaultProjects.map(project => addProject(project));
+    // Meteor.settings.defaultPlants.map(plants => addPlant(plants));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
-  }
-}
-
-// Populates default interests
-if (Interests.collection.find().count() === 0) {
-  console.log('Added default interests');
-  if (Meteor.settings.defaultInterests) {
-    Meteor.settings.defaultInterests.forEach(interest => addInterest(interest));
   }
 }
 
@@ -98,4 +106,5 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   jsonData.profiles.map(profile => addProfile(profile));
   jsonData.projects.map(project => addProject(project));
   jsonData.forums.map(forum => addForum(forum));
+  jsonData.plants.map(forum => addForum(forum));
 }
