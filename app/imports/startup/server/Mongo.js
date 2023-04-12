@@ -23,7 +23,7 @@ function createUser(email, role) {
 
 /** Define an interest.  Has no effect if interest already exists. */
 function addInterest(interest) {
-  Interests.collection.update({ name: interest }, { $set: { name: interest } }, { upsert: true });
+  Interests.collection.insert(interest);
 }
 
 /** Defines a new user and associated profile. Error if user already exists. */
@@ -88,8 +88,6 @@ if (Meteor.users.find().count() === 0) {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }
 }
-
-
 
 /**
  * If the loadAssetsFile field in settings.development.json is true, then load the data in private/data.json.

@@ -29,6 +29,23 @@ import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
  * back if any of the intermediate updates failed. Left as an exercise to the reader.
  */
 
+const addProfileMethod = 'Profiles.add';
+
+Meteor.methods({
+  'Profiles.add'({ email, firstName, lastName, picture, interests }) {
+    Profiles.collection.insert({ email, firstName, lastName, picture, interests });
+  },
+});
+
+// TODO Add projects to user page possibly with a current project lineup
+// const addProfilesProjectMethod = 'ProfilesProject.add';
+//
+// Meteor.methods({
+//   'ProfilesProject.add'({ email, projects }) {
+//     projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
+//   },
+// });
+
 const updateProfileMethod = 'Profiles.update';
 
 /**
@@ -37,12 +54,10 @@ const updateProfileMethod = 'Profiles.update';
  * updated situation specified by the user.
  */
 Meteor.methods({
-  'Profiles.update'({ email, firstName, lastName, bio, title, picture, interests, projects }) {
-    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, bio, title, picture } });
+  'Profiles.update'({email, firstName, lastName, picture, interests }) {
+    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, picture } });
     ProfilesInterests.collection.remove({ profile: email });
-    ProfilesProjects.collection.remove({ profile: email });
     interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
-    projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
   },
 });
 
@@ -65,4 +80,4 @@ Meteor.methods({
   },
 });
 
-export { updateProfileMethod, addProjectMethod };
+export { updateProfileMethod, addProjectMethod, addProfileMethod };

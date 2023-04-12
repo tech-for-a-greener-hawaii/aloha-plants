@@ -20,6 +20,14 @@ Meteor.publish(Profiles.userPublicationName, () => Profiles.collection.find());
 Meteor.publish(ProfilesInterests.userPublicationName, () => ProfilesInterests.collection.find());
 
 /** Define a publication to publish this collection. */
+// TODO either add functionality to projects and profiles or remove
+// Meteor.publish(ProfilesProjects.userPublicationName, () => {
+//   if (this.userId) {
+//     const username = Meteor.users.findOne(this.userId).username;
+//     return Profiles.collection.find({ email: username });
+//   }
+//   return this.ready();
+// });
 Meteor.publish(ProfilesProjects.userPublicationName, () => ProfilesProjects.collection.find());
 
 /** Define a publication to publish all projects. */

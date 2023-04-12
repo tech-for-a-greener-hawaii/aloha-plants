@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { Accounts } from 'meteor/accounts-base';
+import { Meteor } from 'meteor/meteor';
 import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { addProfileMethod } from '../../startup/both/Methods';
 import { ComponentIDs, PageIDs } from '../utilities/ids';
 
 /*
@@ -23,6 +25,13 @@ const SignUp = () => {
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
     const { email, password } = doc;
+    Meteor.call(addProfileMethod, { email: email, firstName: '', lastName: '', picture: '' }, (err) => {
+      if (err) {
+        setError(err.reason);
+      } else {
+        setError('');
+      }
+    });
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         setError(err.reason);

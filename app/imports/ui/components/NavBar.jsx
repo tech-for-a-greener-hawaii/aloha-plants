@@ -3,11 +3,12 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Container, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { BoxArrowRight, PersonFill, PersonPlusFill, Gear } from 'react-bootstrap-icons';
 import { ComponentIDs } from '../utilities/ids';
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const testImg = 'https://www.hartz.com/wp-content/uploads/2022/04/small-dog-owners-1.jpg';
   const { currentUser, loggedIn } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
     loggedIn: !!Meteor.user(),
@@ -35,7 +36,7 @@ const NavBar = () => {
                 <Nav.Link as={NavLink} id={ComponentIDs.filterMenuItem} to="/filter" key="filter">Filter</Nav.Link>]
             ) : ''}
           </Nav>
-          <Nav className="justify-content-end">
+          <Nav className="justify-content-end align-content-start">
             {currentUser === '' ? (
               <NavDropdown id={ComponentIDs.loginDropdown} title="Login">
                 <NavDropdown.Item id={ComponentIDs.loginDropdownSignIn} as={NavLink} to="/signin">
@@ -50,14 +51,24 @@ const NavBar = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <NavDropdown id={ComponentIDs.currentUserDropdown} title={currentUser}>
-                <NavDropdown.Item id={ComponentIDs.currentUserDropdownSignOut} as={NavLink} to="/signout">
-                  <BoxArrowRight />
-                  {' '}
-                  Sign
-                  out
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav>
+                <Navbar.Brand>
+                  <Image className="user-icon" src={testImg} alt="img" />
+                </Navbar.Brand>
+                <NavDropdown id={ComponentIDs.currentUserDropdown} title={currentUser}>
+                  <NavDropdown.Item id={ComponentIDs.currentUserDropdownSignOut} as={NavLink} to="/settings">
+                    <Gear />
+                    {' '}
+                    Settings
+                  </NavDropdown.Item>
+                  <NavDropdown.Item id={ComponentIDs.currentUserDropdownSignOut} as={NavLink} to="/signout">
+                    <BoxArrowRight />
+                    {' '}
+                    Sign
+                    out
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
             )}
           </Nav>
         </Navbar.Collapse>
