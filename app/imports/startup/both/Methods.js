@@ -54,7 +54,7 @@ const updateProfileMethod = 'Profiles.update';
  * updated situation specified by the user.
  */
 Meteor.methods({
-  'Profiles.update'({email, firstName, lastName, picture, interests }) {
+  'Profiles.update'({ email, firstName, lastName, picture, interests }) {
     Profiles.collection.update({ email }, { $set: { email, firstName, lastName, picture } });
     ProfilesInterests.collection.remove({ profile: email });
     interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
@@ -65,8 +65,8 @@ const addProjectMethod = 'Projects.add';
 
 /** Creates a new project in the Projects collection, and also updates ProjectsPlants and ProjectsInterests. */
 Meteor.methods({
-  'Projects.add'({ name, description, picture, interests, participants, homepage }) {
-    Projects.collection.insert({ name, description, picture, homepage });
+  'Projects.add'({ name, owner, description, picture, interests, homepage }) {
+    Projects.collection.insert({ name, owner, description, picture, homepage });
     ProfilesProjects.collection.remove({ project: name });
     ProjectsInterests.collection.remove({ project: name });
     if (interests) {
@@ -74,8 +74,8 @@ Meteor.methods({
     } else {
       throw new Meteor.Error('At least one interest is required.');
     }
-    if (participants) {
-      participants.map((participant) => ProfilesProjects.collection.insert({ project: name, profile: participant }));
+    if (owner) {
+      ProfilesProjects.collection.insert({ project: name, profile: owner });
     }
   },
 });

@@ -3,8 +3,6 @@
     {
       "firstName": "Philip",
       "lastName": "Johnson",
-      "bio": "I am a Professor and like to paddle outrigger canoes.",
-      "title": "Professor",
       "interests": [
       ],
       "projects":[
@@ -17,8 +15,6 @@
     {
       "firstName": "Henri",
       "lastName": "Casanova",
-      "bio": "In my spare time, I like to scuba dive.",
-      "title": "Professor",
       "interests": [
       ],
       "projects":[
@@ -30,8 +26,6 @@
     {
       "firstName": "Carleton",
       "lastName": "Moore",
-      "bio": "Every summer, I enjoy visiting Portland, Oregon.",
-      "title": "Assistant Professor",
       "interests": [
       ],
       "projects":[
@@ -43,8 +37,6 @@
     {
       "firstName": "Anthony",
       "lastName": "Christe",
-      "bio": "I enjoy competitive bicycle racing.",
-      "title": "Ph.D. (2020))",
       "interests": [
       ],
       "projects":[
@@ -56,8 +48,6 @@
     {
       "firstName": "Jason",
       "lastName": "Leigh",
-      "bio": "I escaped from Chicago and moved to Hawaii in 2014.",
-      "title": "Professor",
       "interests": [
       ],
       "projects":[
@@ -69,8 +59,6 @@
     {
       "firstName": "Serge",
       "lastName": "Negrashov",
-      "bio": "Most weekends, you can find me on my 8 foot dinghy.",
-      "title": "Ph.D. (2020)",
       "interests": [
       ],
       "projects":[
