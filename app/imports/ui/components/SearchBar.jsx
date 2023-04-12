@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import { TextField } from 'uniforms-bootstrap5';
-
-
+//baseData = is the data retrieved from the server and is not changed
+//filteredDataSetter is a function to modify the data that is being changed
+//dataFilterFunction is the function used to filter the data while searching
 const SearchBar = ({baseData, filteredDataSetter, dataFilterFunction}) => {
   const [searchIn, setSearchIn] = useState("");
   function filterFunctionWrapper(input) {
@@ -19,8 +20,6 @@ const SearchBar = ({baseData, filteredDataSetter, dataFilterFunction}) => {
           <input type="search"
                placeholder="Search"
                onChange={handleInput}
-                 variant="outlined"
-                 label="Search"
           />
         </div>
       </Row>

@@ -64,7 +64,7 @@ MakeCard.propTypes = {
 
 /* Renders the Project Collection as a set of Cards. */
 const PlantsPage = () => {
-  const [plantDataFiltered, setPlantDataFiltered] = useState([]);
+  const [plantDataFiltered, setPlantDataFiltered] = useState([]); //need this here for search to work
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub = Meteor.subscribe(Plants.userPublicationName);

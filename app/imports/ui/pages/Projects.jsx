@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Badge, Container, Card, Image, Row, Col } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
@@ -11,6 +11,7 @@ import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
+import SearchBar from '../components/SearchBar';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getProjectData(name) {
@@ -58,6 +59,7 @@ MakeCard.propTypes = {
 
 /* Renders the Project Collection as a set of Cards. */
 const ProjectsPage = () => {
+  const [projectDataFiltered, setProjectDataFiltered] = useState([]); //need this here for search to work
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(ProfilesProjects.userPublicationName);
@@ -72,8 +74,13 @@ const ProjectsPage = () => {
   const projectData = projects.map(project => getProjectData(project));
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
+      <Row>
+        <SearchBar baseData={projectData} filteredDataSetter={setProjectDataFiltered} dataFilterFunction={
+          (input ,searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /*|| input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase())*/}
+        }/>
+      </Row>
       <Row xs={1} md={2} lg={4} className="g-2">
-        {projectData.map((project, index) => <MakeCard key={index} project={project} />)}
+        {projectDataFiltered.map((project, index) => <MakeCard key={index} project={project} />)}
       </Row>
     </Container>
   ) : <LoadingSpinner />;
