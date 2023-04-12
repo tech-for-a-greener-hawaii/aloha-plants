@@ -6,8 +6,6 @@
       "bio": "I am a Professor and like to paddle outrigger canoes.",
       "title": "Professor",
       "interests": [
-        "Software Engineering",
-        "Climate Change"
       ],
       "projects":[
         "RadGrad",
@@ -22,8 +20,6 @@
       "bio": "In my spare time, I like to scuba dive.",
       "title": "Professor",
       "interests": [
-        "HPC",
-        "Distributed Computing"
       ],
       "projects":[
         "WRENCH"
@@ -37,8 +33,6 @@
       "bio": "Every summer, I enjoy visiting Portland, Oregon.",
       "title": "Assistant Professor",
       "interests": [
-        "Software Engineering",
-        "Renewable Energy"
       ],
       "projects":[
         "RadGrad"
@@ -52,8 +46,6 @@
       "bio": "I enjoy competitive bicycle racing.",
       "title": "Ph.D. (2020))",
       "interests": [
-        "AI",
-        "Distributed Computing"
       ],
       "projects":[
         "Open Power Quality"
@@ -67,7 +59,6 @@
       "bio": "I escaped from Chicago and moved to Hawaii in 2014.",
       "title": "Professor",
       "interests": [
-        "Visualization"
       ],
       "projects":[
         "Cyber Canoe"
@@ -81,7 +72,6 @@
       "bio": "Most weekends, you can find me on my 8 foot dinghy.",
       "title": "Ph.D. (2020)",
       "interests": [
-        "Scalable IP Networks"
       ],
       "projects":[
         "Open Power Quality"
@@ -96,8 +86,6 @@
       "homepage": "https://openpowerquality.org",
       "description": "Open source hardware and software for distributed power quality data collection, analysis, and visualization.",
       "interests": [
-        "Software Engineering",
-        "Renewable Energy"
       ],
       "picture": "https://avatars0.githubusercontent.com/u/4641939"
     },
@@ -106,7 +94,6 @@
       "homepage": "https://radgrad.org",
       "description": "Growing awesome computer scientists, one graduate at a time.",
       "interests": [
-        "Educational Technology"
       ],
       "picture": "https://www.radgrad.org/img/radgrad_logo.png"
     },
@@ -115,7 +102,6 @@
       "homepage": "https://wrench-project.org",
       "description": "WRENCH is an open-source library for developing simulators for large-scale scientific computation",
       "interests": [
-        "Distributed computing"
       ],
       "picture": "https://wrench-project.org/images/logo-vertical.png"
     },
@@ -124,10 +110,25 @@
       "homepage": "http://lava.manoa.hawaii.edu/blog/2014/07/11/cyber-canoe-cyber-infrastructure-enabled-collaborative-analysis-navigation-and-observation-environment/",
       "description": "Software for Unity projects involving stereoscopic resolution driven by 9 PCs with a GeForce 980 graphics card.",
       "interests": [
-        "Unity",
-        "Visualization"
       ],
       "picture": "https://www.hawaii.edu/its/wp-content/uploads/sites/2/2019/01/LAVAlogo-300x192-300x192.png"
+    }
+  ],
+  "defaultInterests": [
+    {
+      "name": "Farming"
+    },
+    {
+      "name": "Gardening"
+    },
+    {
+      "name": "Canoe Plants"
+    },
+    {
+      "name": "Plant Identification"
+    },
+    {
+      "name": "Volunteer"
     }
   ],
   "defaultPlants": [
@@ -154,6 +155,7 @@
       "picture": "https://upload.wikimedia.org/wikipedia/commons/5/50/California_Arena_Point_fern.jpg"
     }
   ],
+
   "defaultForums": [
     {
       "title": "Soil Quality",

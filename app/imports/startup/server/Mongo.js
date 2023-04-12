@@ -22,7 +22,9 @@ function createUser(email, role) {
 
 /** Define an interest.  Has no effect if interest already exists. */
 function addInterest(interest) {
-  Interests.collection.update({ name: interest }, { $set: { name: interest } }, { upsert: true });
+  // Interests.collection.update({ name: interest }, { $set: { name: interest } }, { upsert: true });
+  // TODO testing new interests insert
+  Interests.collection.insert(interest);
 }
 
 /** Defines a new user and associated profile. Error if user already exists. */
@@ -70,6 +72,14 @@ if (Meteor.users.find().count() === 0) {
     Meteor.settings.defaultProjects.map(project => addProject(project));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
+  }
+}
+
+// Populates default interests
+if (Interests.collection.find().count() === 0) {
+  console.log('Added default interests');
+  if (Meteor.settings.defaultInterests) {
+    Meteor.settings.defaultInterests.forEach(interest => addInterest(interest));
   }
 }
 
