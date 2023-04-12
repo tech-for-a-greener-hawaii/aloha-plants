@@ -1,5 +1,5 @@
 import React from 'react';
-import { AutoForm, TextField, LongTextField, SelectField, SubmitField } from 'uniforms-bootstrap5';
+import { AutoForm, TextField, SelectField, SubmitField } from 'uniforms-bootstrap5';
 import { Container, Col, Card, Row } from 'react-bootstrap';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -20,19 +20,14 @@ import { pageStyle } from './pageStyles';
 import { ComponentIDs, PageIDs } from '../utilities/ids';
 
 /* Create a schema to specify the structure of the data to appear in the form. */
-const makeSchema = (allInterests, allProjects, allPlants) => new SimpleSchema({
+// TODO remove the unneeded parts of the schema and leave interests
+const makeSchema = (allInterests) => new SimpleSchema({
   email: { type: String, label: 'Email', optional: true },
   firstName: { type: String, label: 'First', optional: true },
   lastName: { type: String, label: 'Last', optional: true },
-  bio: { type: String, label: 'Biographical statement', optional: true },
-  title: { type: String, label: 'Title', optional: true },
   picture: { type: String, label: 'Picture URL', optional: true },
   interests: { type: Array, label: 'Interests', optional: true },
   'interests.$': { type: String, allowedValues: allInterests },
-  projects: { type: Array, label: 'Projects', optional: true },
-  'projects.$': { type: String, allowedValues: allProjects },
-  plants: { type: Array, label: 'Plants', optional: true },
-  'plants.$': { type: String, allowedValues: allPlants },
 });
 
 /* Renders the Home Page: what appears after the user logs in. */
@@ -54,10 +49,11 @@ const Settings = () => {
     const sub1 = Meteor.subscribe(Interests.userPublicationName);
     const sub2 = Meteor.subscribe(Profiles.userPublicationName);
     const sub3 = Meteor.subscribe(ProfilesInterests.userPublicationName);
-    const sub4 = Meteor.subscribe(ProfilesProjects.userPublicationName);
-    const sub5 = Meteor.subscribe(Projects.userPublicationName);
+    // const sub4 = Meteor.subscribe(ProfilesProjects.userPublicationName);
+    // const sub5 = Meteor.subscribe(Projects.userPublicationName);
     return {
-      ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
+      // ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
+      ready: sub1.ready() && sub2.ready() && sub3.ready(),
       email: Meteor.user()?.username,
     };
   }, []);
@@ -68,14 +64,14 @@ const Settings = () => {
   const formSchema = makeSchema(allInterests, allProjects, allPlants);
   const bridge = new SimpleSchema2Bridge(formSchema);
   // Now create the model with all the user information.
-  const projects = _.pluck(ProfilesProjects.collection.find({ profile: email }).fetch(), 'project');
+  // const projects = _.pluck(ProfilesProjects.collection.find({ profile: email }).fetch(), 'project');
   const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
   const plants = _.pluck(ProfilesPlants.collection.find({ profile: email }).fetch(), 'interest');
-  // TODO
-  // const profile = Profiles.collection.findOne({ email });
+
   const profile = Profiles.collection.findOne({ email });
-  const model = _.extend({}, profile, { interests, projects, plants });
-  console.log(`profiles: ${profile}, email: ${email}`);
+  // const model = _.extend({}, profile, { interests });
+  const model = _.extend({}, profile, { interests, plants });
+
   return ready ? (
     <Container id={PageIDs.homePage} className="justify-content-center" style={pageStyle}>
       <Col>
@@ -88,16 +84,13 @@ const Settings = () => {
                 <Col xs={4}><TextField id={ComponentIDs.homeFormLastName} name="lastName" showInlineError placeholder="Last Name" /></Col>
                 <Col xs={4}><TextField name="email" showInlineError placeholder={email} disabled /></Col>
               </Row>
-              <LongTextField id={ComponentIDs.homeFormBio} name="bio" placeholder="Write a little bit about yourself." />
               <Row>
-                <Col xs={6}><TextField name="title" showInlineError placeholder="Title" /></Col>
-                <Col xs={6}><TextField name="picture" showInlineError placeholder="URL to picture" /></Col>
+                <Col><TextField name="picture" showInlineError placeholder="URL to picture" /></Col>
               </Row>
-              {/*<Row>*/}
-              {/*  <Col xs={4}><SelectField name="interests" showInlineError multiple /></Col>*/}
-              {/*  <Col xs={4}><SelectField name="projects" showInlineError multiple /></Col>*/}
+              <Row>
+                <Col><SelectField name="interests" showInlineError multiple /></Col>
               {/*  <Col xs={4}><SelectField name="plants" showInlineError multiple /></Col>*/}
-              {/*</Row>*/}
+              </Row>
               <SubmitField id={ComponentIDs.homeFormSubmit} value="Update" />
             </Card.Body>
           </Card>
