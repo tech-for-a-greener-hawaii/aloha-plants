@@ -11,6 +11,7 @@ class ProjectsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: { type: String, index: true, unique: true },
+      owner: { type: String, optional: true },
       homepage: { type: String, optional: true },
       description: { type: String, optional: true },
       picture: { type: String, optional: true },
