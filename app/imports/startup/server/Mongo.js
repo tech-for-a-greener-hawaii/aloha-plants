@@ -26,6 +26,13 @@ function addInterest(interest) {
   Interests.collection.insert(interest);
 }
 
+if (Interests.collection.find().count() === 0) {
+  console.log('Added default interests');
+  if (Meteor.settings.defaultInterests) {
+    Meteor.settings.defaultInterests.forEach(interest => addInterest(interest));
+  }
+}
+
 /** Defines a new user and associated profile. Error if user already exists. */
 function addProfile({ firstName, lastName, bio, title, interests, projects, picture, email, role }) {
   console.log(`Defining profile ${email}`);
