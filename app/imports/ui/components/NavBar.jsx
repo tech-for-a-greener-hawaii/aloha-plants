@@ -56,8 +56,6 @@ const NavBar = () => {
                   <Image className="user-icon" src={testImg} alt="img" />
                 </Navbar.Brand>
                 <NavDropdown id={ComponentIDs.currentUserDropdown} title={currentUser}>
-                  {/*settings*/}
-                  {/*create route to settings page*/}
                   <NavDropdown.Item id={ComponentIDs.currentUserDropdownSignOut} as={NavLink} to="/settings">
                     <Gear />
                     {' '}

@@ -10,9 +10,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Interests } from '../../api/interests/Interests';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
-import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProfilesPlants } from '../../api/profiles/ProfilesPlants';
-import { Projects } from '../../api/projects/Projects';
 import { Plants } from '../../api/plants/Plants';
 import { updateProfileMethod } from '../../startup/both/Methods';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -49,27 +47,21 @@ const Settings = () => {
     const sub1 = Meteor.subscribe(Interests.userPublicationName);
     const sub2 = Meteor.subscribe(Profiles.userPublicationName);
     const sub3 = Meteor.subscribe(ProfilesInterests.userPublicationName);
-    // const sub4 = Meteor.subscribe(ProfilesProjects.userPublicationName);
-    // const sub5 = Meteor.subscribe(Projects.userPublicationName);
     return {
-      // ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
       ready: sub1.ready() && sub2.ready() && sub3.ready(),
       email: Meteor.user()?.username,
     };
   }, []);
   // Create the form schema for uniforms. Need to determine all interests and projects for muliselect list.
   const allInterests = _.pluck(Interests.collection.find().fetch(), 'name');
-  const allProjects = _.pluck(Projects.collection.find().fetch(), 'name');
   const allPlants = _.pluck(Plants.collection.find().fetch(), 'name');
-  const formSchema = makeSchema(allInterests, allProjects, allPlants);
+  const formSchema = makeSchema(allInterests, allPlants);
   const bridge = new SimpleSchema2Bridge(formSchema);
   // Now create the model with all the user information.
-  // const projects = _.pluck(ProfilesProjects.collection.find({ profile: email }).fetch(), 'project');
   const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
   const plants = _.pluck(ProfilesPlants.collection.find({ profile: email }).fetch(), 'interest');
 
   const profile = Profiles.collection.findOne({ email });
-  // const model = _.extend({}, profile, { interests });
   const model = _.extend({}, profile, { interests, plants });
 
   return ready ? (
@@ -89,7 +81,6 @@ const Settings = () => {
               </Row>
               <Row>
                 <Col><SelectField name="interests" showInlineError multiple /></Col>
-              {/*  <Col xs={4}><SelectField name="plants" showInlineError multiple /></Col>*/}
               </Row>
               <SubmitField id={ComponentIDs.homeFormSubmit} value="Update" />
             </Card.Body>
