@@ -2,18 +2,17 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /** Encapsulates state and variable values for this collection. */
-class ProfilesCollection {
+class CommentsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ProfilesCollection';
+    this.name = 'CommentsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      email: { type: String, index: true, unique: true },
-      firstName: { type: String, optional: true },
-      lastName: { type: String, optional: true },
-      picture: { type: String, optional: true },
+      forumID: { type: String, index: true, unique: true },
+      comment: { type: String, optional: true },
+      date: { type: Date, optional: true },
     });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);
@@ -23,4 +22,4 @@ class ProfilesCollection {
   }
 }
 
-export const Profiles = new ProfilesCollection();
+export const Comments = new CommentsCollection();

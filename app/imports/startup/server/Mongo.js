@@ -23,16 +23,23 @@ function createUser(email, role) {
 
 /** Define an interest.  Has no effect if interest already exists. */
 function addInterest(interest) {
-  Interests.collection.update({ name: interest }, { $set: { name: interest } }, { upsert: true });
+  Interests.collection.insert(interest);
+}
+
+if (Interests.collection.find().count() === 0) {
+  console.log('Added default interests');
+  if (Meteor.settings.defaultInterests) {
+    Meteor.settings.defaultInterests.forEach(interest => addInterest(interest));
+  }
 }
 
 /** Defines a new user and associated profile. Error if user already exists. */
-function addProfile({ firstName, lastName, bio, title, interests, projects, picture, email, role }) {
+function addProfile({ firstName, lastName, interests, projects, picture, email, role }) {
   console.log(`Defining profile ${email}`);
   // Define the user in the Meteor accounts package.
   createUser(email, role);
   // Create the profile.
-  Profiles.collection.insert({ firstName, lastName, bio, title, picture, email });
+  Profiles.collection.insert({ firstName, lastName, picture, email });
   // Add interests and projects.
   interests.map(interest => ProfilesInterests.collection.insert({ profile: email, interest }));
   projects.map(project => ProfilesProjects.collection.insert({ profile: email, project }));
@@ -88,8 +95,6 @@ if (Meteor.users.find().count() === 0) {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }
 }
-
-
 
 /**
  * If the loadAssetsFile field in settings.development.json is true, then load the data in private/data.json.

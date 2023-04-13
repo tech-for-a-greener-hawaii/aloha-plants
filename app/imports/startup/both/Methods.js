@@ -29,6 +29,23 @@ import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
  * back if any of the intermediate updates failed. Left as an exercise to the reader.
  */
 
+const addProfileMethod = 'Profiles.add';
+
+Meteor.methods({
+  'Profiles.add'({ email, firstName, lastName, picture, interests }) {
+    Profiles.collection.insert({ email, firstName, lastName, picture, interests });
+  },
+});
+
+// TODO Add projects to user page possibly with a current project lineup
+// const addProfilesProjectMethod = 'ProfilesProject.add';
+//
+// Meteor.methods({
+//   'ProfilesProject.add'({ email, projects }) {
+//     projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
+//   },
+// });
+
 const updateProfileMethod = 'Profiles.update';
 
 /**
@@ -37,12 +54,10 @@ const updateProfileMethod = 'Profiles.update';
  * updated situation specified by the user.
  */
 Meteor.methods({
-  'Profiles.update'({ email, firstName, lastName, bio, title, picture, interests, projects }) {
-    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, bio, title, picture } });
+  'Profiles.update'({ email, firstName, lastName, picture, interests }) {
+    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, picture } });
     ProfilesInterests.collection.remove({ profile: email });
-    ProfilesProjects.collection.remove({ profile: email });
     interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
-    projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
   },
 });
 
@@ -50,8 +65,8 @@ const addProjectMethod = 'Projects.add';
 
 /** Creates a new project in the Projects collection, and also updates ProjectsPlants and ProjectsInterests. */
 Meteor.methods({
-  'Projects.add'({ name, description, picture, interests, participants, homepage }) {
-    Projects.collection.insert({ name, description, picture, homepage });
+  'Projects.add'({ name, owner, description, picture, interests, homepage }) {
+    Projects.collection.insert({ name, owner, description, picture, homepage });
     ProfilesProjects.collection.remove({ project: name });
     ProjectsInterests.collection.remove({ project: name });
     if (interests) {
@@ -59,10 +74,10 @@ Meteor.methods({
     } else {
       throw new Meteor.Error('At least one interest is required.');
     }
-    if (participants) {
-      participants.map((participant) => ProfilesProjects.collection.insert({ project: name, profile: participant }));
+    if (owner) {
+      ProfilesProjects.collection.insert({ project: name, profile: owner });
     }
   },
 });
 
-export { updateProfileMethod, addProjectMethod };
+export { updateProfileMethod, addProjectMethod, addProfileMethod };
