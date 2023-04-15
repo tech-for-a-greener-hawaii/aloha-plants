@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
@@ -35,7 +36,7 @@ const App = () => (
         <Route path="/plants" element={<Plants />} />
         <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
         <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />
-        <Route path="/addproject" element={<ProtectedRoute><AddProject /></ProtectedRoute>} />
+        <Route path="/addproject" element={<AdminRoute><AddProject /></AdminRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
         <Route path="/settings" element={<ProtectedRoute><Settings /> </ProtectedRoute>} />
         <Route path="*" element={<NotFound />} />
@@ -62,6 +63,29 @@ ProtectedRoute.propTypes = {
 
 ProtectedRoute.defaultProps = {
   children: <Home />,
+};
+
+/*
+* AdminRoute (see React Router v6 sample)
+* Checks for Admin login before routing to the requested page, otherwise goes to NotAuthorized page.
+* @param {any} { component: Component, ...rest }
+*/
+const AdminRoute = ({ children }) => {
+  const isLogged = Meteor.userId() !== null;
+  if (!isLogged) {
+    return <Navigate to="/signin" />;
+  }
+  const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin');
+  return (isLogged && isAdmin) ? children : <Navigate to="/notauthorized" />;
+};
+
+// Require a component and location to be passed to each ProtectedRoute.
+AdminRoute.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+};
+
+AdminRoute.defaultProps = {
+  children: <Landing />,
 };
 
 export default App;

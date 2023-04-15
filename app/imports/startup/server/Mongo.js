@@ -7,7 +7,7 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
-import { Plants} from '../../api/plants/Plants';
+import { Plants } from '../../api/plants/Plants';
 import { Forums } from '../../api/forums/Forums';
 
 /* eslint-disable no-console */
@@ -18,6 +18,9 @@ function createUser(email, role) {
   if (role === 'admin') {
     Roles.createRole(role, { unlessExists: true });
     Roles.addUsersToRoles(userID, 'admin');
+  } else if (role === 'creator') {
+    Roles.createRole(role);
+    Roles.addUsersToRoles(userID, 'creator');
   }
 }
 
@@ -86,6 +89,12 @@ if (Plants.collection.find().count() === 0) {
 /** Initialize DB if it appears to be empty (i.e. no users defined.) */
 if (Meteor.users.find().count() === 0) {
   if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles && Meteor.settings.defaultForums && Meteor.settings.defaultPlants) {
+    console.log('Creating the Admin User');
+    createUser('admin@foo.com', 'admin');
+    console.log('Creating the Default Creator: creator@foo.com');
+    createUser('creator@foo.com', 'creator');
+    console.log('Creating the Default User: john@foo.com');
+    createUser('john@foo.com', 'user');
     console.log('Creating the default profiles');
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
