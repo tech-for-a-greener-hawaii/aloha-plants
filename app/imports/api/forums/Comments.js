@@ -11,6 +11,7 @@ class CommentsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       forumID: { type: String },
+      owner: { type: String },
       comment: { type: String, optional: true },
       date: { type: Date, optional: true },
     });

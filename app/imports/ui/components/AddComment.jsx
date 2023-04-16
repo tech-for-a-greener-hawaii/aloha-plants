@@ -12,12 +12,12 @@ const formSchema = Comments.schema;
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 /* Renders the AddStuff page for adding a document. */
-const AddComment = ({ forumID }) => {
+const AddComment = ({ forumID, owner }) => {
   // On submit, insert the data.
   const submit = (data, formRef) => {
     const { date, comment } = data;
     Comments.collection.insert(
-      { date, forumID, comment },
+      { date, forumID, comment, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -42,6 +42,7 @@ const AddComment = ({ forumID }) => {
                 <TextField name="comment" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
+                <HiddenField name="owner" value={owner} />
                 <HiddenField name="forumID" value={forumID} />
                 <HiddenField name="date" value={new Date()} />
               </Card.Body>
@@ -55,6 +56,7 @@ const AddComment = ({ forumID }) => {
 
 AddComment.propTypes = {
   forumID: PropTypes.string.isRequired,
+  owner: PropTypes.string.isRequired,
 };
 
 export default AddComment;

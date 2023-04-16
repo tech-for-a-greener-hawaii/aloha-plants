@@ -5,6 +5,7 @@ import { ListGroup } from 'react-bootstrap';
 const ListComments = ({ comment }) => (
   <ListGroup.Item>
     <p className="fw-lighter">{comment.date.toLocaleDateString('en-US')}</p>
+    <p className="fw-lighter">By: {comment.owner}</p>
     <p>{comment.comment}</p>
   </ListGroup.Item>
 );

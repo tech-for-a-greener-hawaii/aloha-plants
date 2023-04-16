@@ -30,7 +30,7 @@ const MakeForumCard = ({ forum, comments }) => (
         <ListGroup variant="flush">
           {comments.map((comment) => <ListComments key={comment._id} comment={comment} />)}
         </ListGroup>
-        <AddComment forumID={forum._id} />
+        <AddComment forumID={forum._id} owner={Meteor.user().username} />
       </Card.Body>
     </Card>
   </Col>
