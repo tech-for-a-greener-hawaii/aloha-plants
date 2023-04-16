@@ -18,6 +18,7 @@ import Home from '../pages/Home';
 import Filter from '../pages/Filter';
 import AddProject from '../pages/AddProject';
 import Forums from '../pages/Forums';
+import AddForum from '../pages/AddForum';
 import Settings from '../pages/Settings';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -32,6 +33,7 @@ const App = () => (
         <Route path="/signout" element={<SignOut />} />
         <Route path="/interests" element={<Interests />} />
         <Route path="/forums" element={<Forums />} />
+        <Route path="/addforum" element={<AddForum />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/plants" element={<Plants />} />
         <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
