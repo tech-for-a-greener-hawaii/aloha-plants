@@ -32,11 +32,11 @@ const App = () => (
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
         <Route path="/interests" element={<Interests />} />
-        <Route path="/forums" element={<Forums />} />
-        <Route path="/addforum" element={<AddForum />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/plants" element={<Plants />} />
         <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+        <Route path="/forums" element={<ProtectedRoute><Forums /></ProtectedRoute>} />
+        <Route path="/addforum" element={<ProtectedRoute><AddForum /></ProtectedRoute>} />
         <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />
         <Route path="/addproject" element={<AdminRoute><AddProject /></AdminRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
