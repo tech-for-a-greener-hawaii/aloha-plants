@@ -6,7 +6,6 @@ import { Container, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill, Gear } from 'react-bootstrap-icons';
 import { ComponentIDs } from '../utilities/ids';
 import { Profiles } from '../../api/profiles/Profiles';
-// import defaultProfileImage from '/images/defaultProfileImage.jpg';
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
