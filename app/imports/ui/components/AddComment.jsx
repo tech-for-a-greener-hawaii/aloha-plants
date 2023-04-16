@@ -35,7 +35,7 @@ const AddComment = ({ forumID }) => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center"><h4>Add Timestamped Comment</h4></Col>
+          <Col className="text-center" />
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
