@@ -5,17 +5,32 @@ import { NavLink } from 'react-router-dom';
 import { Container, Image, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill, Gear } from 'react-bootstrap-icons';
 import { ComponentIDs } from '../utilities/ids';
+import { Profiles } from '../../api/profiles/Profiles';
+// import defaultProfileImage from '/images/defaultProfileImage.jpg';
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const testImg = 'https://www.hartz.com/wp-content/uploads/2022/04/small-dog-owners-1.jpg';
+
+  const { ready, email } = useTracker(() => {
+    // Ensure that minimongo is populated with all collections prior to running render().
+    const sub = Meteor.subscribe(Profiles.userPublicationName);
+    return {
+      ready: sub.ready(),
+      email: Meteor.user()?.username,
+    };
+  }, []);
+  // TODO get the defaultProfileImage.png to load
+  const defaultProfileImage = 'https://thumbs.dreamstime.com/b/default-profile-picture-avatar-photo-placeholder-vector-illustration-default-profile-picture-avatar-photo-placeholder-vector-189495158.jpg';
+  const userProfile = Profiles.collection.findOne({ email: email });
+  const userImage = userProfile != null ? userProfile.picture : defaultProfileImage;
+
   const { currentUser, loggedIn } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
     loggedIn: !!Meteor.user(),
   }), []);
   const menuStyle = { marginBottom: '0px' };
   const navbarClassName = loggedIn ? 'bg-dark' : 'bg-light';
-  return (
+  return ready ? (
     <Navbar expand="lg" style={menuStyle} className={navbarClassName}>
       <Container>
         <Navbar.Brand as={NavLink} to="/" className="align-items-center">
@@ -51,7 +66,7 @@ const NavBar = () => {
             ) : (
               <Nav>
                 <Navbar.Brand>
-                  <Image className="user-icon" src={testImg} alt="img" />
+                  <img className="user-icon" src={userImage} alt="img" />
                 </Navbar.Brand>
                 <NavDropdown id={ComponentIDs.currentUserDropdown} title={currentUser}>
                   <NavDropdown.Item id={ComponentIDs.currentUserDropdownSignOut} as={NavLink} to="/settings">
@@ -72,7 +87,7 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
+  ) : <div />;
 };
 
 export default NavBar;
