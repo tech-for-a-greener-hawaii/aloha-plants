@@ -17,7 +17,7 @@ class PlantsCollection {
       propogation: { type: String, optional: true },
       range: {type:String, optional:true},
       pests: { type: String, optional: true },
-      picture:{ type: String, optional: True},
+      picture:{ type: String, optional: true},
     });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);
