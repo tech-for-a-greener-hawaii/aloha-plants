@@ -1,23 +1,28 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import PropTypes from 'prop-types';
-import { Comments } from '../../api/forums/Comments';
+import SimpleSchema from 'simpl-schema';
+import { Forums } from '../../api/forums/Forums';
 
 // Create a schema to specify the structure of the data to appear in the form.
-const formSchema = Comments.schema;
+const formSchema = new SimpleSchema({
+  title: String,
+  topic: String,
+  leadComment: String,
+});
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 /* Renders the AddStuff page for adding a document. */
-const AddComment = ({ forumID, owner }) => {
+const AddForum = () => {
+
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { date, comment } = data;
-    Comments.collection.insert(
-      { date, forumID, comment, owner },
+    const { title, topic, leadComment } = data;
+    Forums.collection.insert(
+      { title, topic, leadComment },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -35,16 +40,23 @@ const AddComment = ({ forumID, owner }) => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center" />
+          <Col className="text-center"><h2>Add Forum</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="comment" />
-                <SubmitField value="Submit" />
+                <Row>
+                  <Col>
+                    <TextField name="title" />
+                    <TextField name="topic" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <LongTextField name="leadComment" />
+                  </Col>
+                  <SubmitField value="Submit" />
+                </Row>
                 <ErrorsField />
-                <HiddenField name="owner" value={owner} />
-                <HiddenField name="forumID" value={forumID} />
-                <HiddenField name="date" value={new Date()} />
               </Card.Body>
             </Card>
           </AutoForm>
@@ -54,9 +66,4 @@ const AddComment = ({ forumID, owner }) => {
   );
 };
 
-AddComment.propTypes = {
-  forumID: PropTypes.string.isRequired,
-  owner: PropTypes.string.isRequired,
-};
-
-export default AddComment;
+export default AddForum;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Badge, Container, Card, Row, Col } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
@@ -10,7 +10,10 @@ import { Plants } from '../../api/plants/Plants';
 import { PlantsInterests } from '../../api/plants/PlantsInterests';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
-import { PageIDs } from '../utilities/ids';
+import { ComponentIDs, PageIDs } from '../utilities/ids';
+import SearchBar from '../components/SearchBar';
+import { useStickyState } from '../utilities/StickyState';
+import { render } from 'react-dom';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getPlantData(name) {
@@ -65,6 +68,7 @@ MakeCard.propTypes = {
 
 /* Renders the Project Collection as a set of Cards. */
 const PlantsPage = () => {
+  const [plantDataFiltered, setPlantDataFiltered] = useState([]); //need this here for search to work
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub = Meteor.subscribe(Plants.userPublicationName);
@@ -76,11 +80,18 @@ const PlantsPage = () => {
   const plants = _.pluck(Plants.collection.find().fetch(), 'name');
   console.log(plants)
   const plantData = plants.map(project => getPlantData(project));
-  console.log(plantData)
+  //console.log(plantData)
+  //console.log(plantDataFiltered)
+  //setPlantDataFiltered([...plantData]);
   return ready ? (
     <Container id={PageIDs.plantsPage} style={pageStyle}>
-      <Row xs={1} md={2} lg={4} className="g-2">
-        {plantData.map((plant, index) => <MakeCard key={index} plant={plant} />)}
+      <Row>
+        <SearchBar baseData={plantData} filteredDataSetter={setPlantDataFiltered} dataFilterFunction={
+          (input ,searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.scientificName.toLowerCase().includes(searchIn.toLowerCase())}
+        }/>
+      </Row>
+      <Row xs={1} md={2} lg={4} className="g-2" id={ComponentIDs.plantsSearchBar}>
+        {plantDataFiltered.map((plant, index) => <MakeCard key={index} plant={plant} />)}
       </Row>
     </Container>
   ) : <LoadingSpinner />;

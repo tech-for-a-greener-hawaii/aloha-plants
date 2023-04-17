@@ -9,6 +9,9 @@ const NotAuthorized = () => (
         <h2>
           <p>Not Authorized</p>
         </h2>
+        <h6>
+          <p>Admin Access Only</p>
+        </h6>
       </Col>
     </Row>
   </Container>
