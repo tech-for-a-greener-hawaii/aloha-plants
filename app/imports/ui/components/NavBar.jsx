@@ -18,10 +18,10 @@ const NavBar = () => {
       email: Meteor.user()?.username,
     };
   }, []);
-  // TODO get the defaultProfileImage.png to load
-  const defaultProfileImage = 'https://thumbs.dreamstime.com/b/default-profile-picture-avatar-photo-placeholder-vector-illustration-default-profile-picture-avatar-photo-placeholder-vector-189495158.jpg';
+
+  const defaultProfileImage = '/images/defaultProfileImage.png';
   const userProfile = Profiles.collection.findOne({ email: email });
-  const userImage = userProfile != null ? userProfile.picture : defaultProfileImage;
+  const userImage = userProfile != null && userProfile.picture != null ? userProfile.picture : defaultProfileImage;
 
   const { currentUser, loggedIn } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
@@ -65,7 +65,7 @@ const NavBar = () => {
             ) : (
               <Nav>
                 <Navbar.Brand>
-                  <img className="user-icon" src={userImage} alt="img" />
+                  <Image className="user-icon" src={userImage} alt="img" />
                 </Navbar.Brand>
                 <NavDropdown id={ComponentIDs.currentUserDropdown} title={currentUser}>
                   <NavDropdown.Item id={ComponentIDs.currentUserDropdownSignOut} as={NavLink} to="/settings">
