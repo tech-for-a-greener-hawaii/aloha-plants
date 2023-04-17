@@ -14,6 +14,10 @@ class PlantsCollection {
       scientificName: { type: String, optional: true },
       description: { type: String, optional: true },
       growingConditions: { type: String, optional: true },
+      propogation: { type: String, optional: true },
+      range: {type:String, optional:true},
+      pests: { type: String, optional: true },
+      picture:{ type: String, optional: True},
     });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);

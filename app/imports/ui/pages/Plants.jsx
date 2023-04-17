@@ -24,7 +24,7 @@ function getPlantData(name) {
 /* Component for layout out a Plant Card. */
 const MakeCard = ({ plant }) => (
   <Col>
-    <Card className="h-100">
+    <Card className="h-100" bg="success">
       <Card.Body>
         <Card.Img src={plant.picture} width={50} />
         <Card.Title style={{ marginTop: '0px' }}>{plant.name}</Card.Title>
@@ -54,8 +54,12 @@ MakeCard.propTypes = {
     name: PropTypes.string,
     scientificName: PropTypes.string,
     growingConditions: PropTypes.string,
-    picture: PropTypes.string,
+    propagation: PropTypes.string,
+    range: PropTypes.string,
+    pests: PropTypes.string,
     interests: PropTypes.arrayOf(PropTypes.string),
+    picture: PropTypes.string,
+
   }).isRequired,
 };
 
