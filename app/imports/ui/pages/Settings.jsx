@@ -38,6 +38,7 @@ const Settings = () => {
         swal('Error', error.message, 'error');
       } else {
         swal('Success', 'Profile updated successfully', 'success');
+        setTimeout(() => window.location.reload(), 1000);
       }
     });
   };
