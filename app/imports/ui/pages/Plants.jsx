@@ -81,9 +81,8 @@ MakeCard.propTypes = {
     range: PropTypes.string,
     culturalUses: PropTypes,
     pests: PropTypes.string,
-    interests: PropTypes.arrayOf(PropTypes.string),
+    // interests: PropTypes.arrayOf(PropTypes.string),
     picture: PropTypes.string,
-
   }).isRequired,
 };
 

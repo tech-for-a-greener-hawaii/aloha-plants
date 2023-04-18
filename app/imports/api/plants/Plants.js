@@ -20,7 +20,6 @@ class PlantsCollection {
       culturalUses: {type:String, optional:true},
       pests: { type: String, optional: true },
       picture:{ type: String, optional: true},
-      interests
     });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);

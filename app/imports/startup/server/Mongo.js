@@ -75,10 +75,10 @@ if (Forums.collection.find().count() === 0) {
 /** Define a new forum. Error if project already exists.  */
 const addPlant = (plant) => {
   console.log(`Adding ${plant.name}`);
-  // console.log(plant.picture)
+  console.log(plant)
   Plants.collection.insert(plant);
-  // var interests = plant['interests']
-  // interests.map(interest => PlantsInterests.collection.insert({ plant: name, interest }));
+  var interests = plant.interests
+  interests.map(interest => PlantsInterests.collection.insert({ plant: name, interest }));
 
 };
 
