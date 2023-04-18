@@ -27,7 +27,7 @@ function getPlantData(name) {
 /* Component for layout out a Plant Card. */
 const MakeCard = ({ plant }) => (
   <Col>
-    <Card className="h-100" bg="success">
+    <Card className="h-100 plant">
       <Card.Body>
         <Card.Img src={plant.picture} width={50} />
         <Card.Title style={{ marginTop: '0px' }}>{plant.name}</Card.Title>
@@ -38,10 +38,26 @@ const MakeCard = ({ plant }) => (
           <Card.Subtitle>
             <span>{plant.indigenousStatus}</span>
           </Card.Subtitle>
-          {plant.description}
           <hr/>
-          {plant.growingConditions}
-          {plant.picture}
+          <div style={{ display: 'block', fontStyle: 'italic' }}>
+            <strong>Description:</strong> {plant.description}
+          </div>
+          <div style={{ display: 'block', fontStyle: 'italic' }}>
+            <strong>Growing conditions:</strong> {plant.growingConditions}
+          </div>
+          <div style={{ display: 'block', fontStyle: 'italic' }}>
+            <strong>Propagation:</strong> {plant.propagation}
+          </div>
+          <div style={{ display: 'block', fontStyle: 'italic' }}>
+            <strong>Range:</strong> {plant.range}
+          </div>
+          <div style={{ display: 'block', fontStyle: 'italic' }}>
+            <strong>Cultural uses:</strong> {plant.culturalUses}
+          </div>
+          <div style={{ display: 'block', fontStyle: 'italic' }}>
+            <strong>Pests:</strong> {plant.pests}
+          </div>
+
         </Card.Text>
       </Card.Body>
       <Card.Body>
@@ -63,7 +79,7 @@ MakeCard.propTypes = {
     growingConditions: PropTypes.string,
     propagation: PropTypes.string,
     range: PropTypes.string,
-    culturalUses: PropTypes
+    culturalUses: PropTypes,
     pests: PropTypes.string,
     interests: PropTypes.arrayOf(PropTypes.string),
     picture: PropTypes.string,
