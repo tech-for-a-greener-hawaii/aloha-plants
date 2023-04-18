@@ -20,6 +20,7 @@ import AddProject from '../pages/AddProject';
 import Forums from '../pages/Forums';
 import AddForum from '../pages/AddForum';
 import Settings from '../pages/Settings';
+import AdminProjects from '../pages/AdminProjects';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -39,6 +40,7 @@ const App = () => (
         <Route path="/addforum" element={<ProtectedRoute><AddForum /></ProtectedRoute>} />
         <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />
         <Route path="/addproject" element={<AdminRoute><AddProject /></AdminRoute>} />
+        <Route path="/adminprojects" element={<AdminRoute><AdminProjects /></AdminRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
         <Route path="/settings" element={<ProtectedRoute><Settings /> </ProtectedRoute>} />
         <Route path="*" element={<NotFound />} />
