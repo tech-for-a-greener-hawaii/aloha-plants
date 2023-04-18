@@ -122,5 +122,5 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   jsonData.profiles.map(profile => addProfile(profile));
   jsonData.projects.map(project => addProject(project));
   jsonData.forums.map(forum => addForum(forum));
-  jsonData.plants.map(forum => addForum(forum));
+  jsonData.plants.map(plant => addPlant(plant));
 }

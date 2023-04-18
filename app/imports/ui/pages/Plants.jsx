@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Badge, Container, Card, Row, Col } from 'react-bootstrap';
+import { Container, Card, Row, Col } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
-// import { Profiles } from '../../api/profiles/Profiles';
-import { render } from 'react-dom';
 import { ProfilesPlants } from '../../api/profiles/ProfilesPlants';
 import { Plants } from '../../api/plants/Plants';
 import { PlantsInterests } from '../../api/plants/PlantsInterests';
@@ -65,7 +63,7 @@ const MakeCard = ({ plant }) => (
         </Card.Text>
       </Card.Body>
       <Card.Body>
-        {/*{interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}*/}
+        {/* {interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)} */}
       </Card.Body>
     </Card>
   </Col>
@@ -115,7 +113,7 @@ const PlantsPage = () => {
         />
       </Row>
       <Row xs={1} md={2} lg={3} className="g-2" id={ComponentIDs.plantsSearchBar}>
-        {plantDataFiltered.map((plant, index) => <MakeCard key={index} plant={plant} interests={interests} />)}
+        {plantDataFiltered.map((plant, index) => <MakeCard key={index} plant={plant} />)}
       </Row>
     </Container>
   ) : <LoadingSpinner />;
