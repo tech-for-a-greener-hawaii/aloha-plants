@@ -37,14 +37,15 @@ Meteor.methods({
   },
 });
 
+
 // TODO Add projects to user page possibly with a current project lineup
-// const addProfilesProjectMethod = 'ProfilesProject.add';
-//
-// Meteor.methods({
-//   'ProfilesProject.add'({ email, projects }) {
-//     projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
-//   },
-// });
+const addProfilesProjectMethod = 'ProfilesProject.add';
+
+Meteor.methods({
+  'ProfilesProject.add'({ email, projects }) {
+    projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
+  },
+});
 
 const updateProfileMethod = 'Profiles.update';
 

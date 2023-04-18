@@ -24,6 +24,17 @@ function createUser(email, role) {
   }
 }
 
+// function addProjectsInterests({ project, interests }) {
+//   ProjectsInterests.collection.insert({ project: project, interests: interests });
+// }
+//
+// if (ProjectsInterests.collection.find().count() === 0) {
+//   console.log('Added ProjectsInterests collection');
+//   if (Meteor.settings.defaultProjectsInterests) {
+//     Meteor.settings.defaultProjectsInterests.map(projectsInterests => addProjectsInterests(projectsInterests));
+//   }
+// }
+
 /** Define an interest.  Has no effect if interest already exists. */
 function addInterest(interest) {
   Interests.collection.insert(interest);
@@ -47,7 +58,7 @@ function addProfile({ firstName, lastName, interests, projects, picture, email, 
   interests.map(interest => ProfilesInterests.collection.insert({ profile: email, interest }));
   projects.map(project => ProfilesProjects.collection.insert({ profile: email, project }));
   // Make sure interests are defined in the Interests collection if they weren't already.
-  interests.map(interest => addInterest(interest));
+  // interests.map(interest => addInterest(interest));
 }
 
 /** Define a new project. Error if project already exists.  */
@@ -55,8 +66,6 @@ function addProject({ name, homepage, description, interests, picture }) {
   console.log(`Defining project ${name}`);
   Projects.collection.insert({ name, homepage, description, picture });
   interests.map(interest => ProjectsInterests.collection.insert({ project: name, interest }));
-  // Make sure interests are defined in the Interests collection if they weren't already.
-  interests.map(interest => addInterest(interest));
 }
 
 /** Define a new forum. Error if project already exists.  */

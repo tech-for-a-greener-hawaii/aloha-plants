@@ -25,6 +25,7 @@ const SignUp = () => {
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
     const { email, password } = doc;
+    console.log(`${email} + ${password}`);
     Meteor.call(addProfileMethod, { email: email, firstName: '', lastName: '', picture: '' }, (err) => {
       if (err) {
         setError(err.reason);

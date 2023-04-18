@@ -1,16 +1,16 @@
 {
   "defaultProfiles": [
     {
-      "firstName": "Philip",
-      "lastName": "Johnson",
+      "firstName": "John",
+      "lastName": "Kennedy",
       "interests": [
+        "Volunteer"
       ],
       "projects":[
-        "RadGrad",
-        "Open Power Quality"
+        "Save Plants"
       ],
-      "picture": "https://github.com/philipmjohnson.png",
-      "email": "johnson@hawaii.edu"
+      "picture": "https://github.com/brian-d-dang.png",
+      "email": "test@foo.com"
     },
     {
       "firstName": "Henri",
@@ -18,7 +18,7 @@
       "interests": [
       ],
       "projects":[
-        "WRENCH"
+        "Makiki Arboretum Trail Plant Search"
       ],
       "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Henri_Casanova1.jpg",
       "email": "henric@hawaii.edu"
@@ -29,77 +29,32 @@
       "interests": [
       ],
       "projects":[
-        "RadGrad"
+        "Save Plants"
       ],
       "picture": "https://github.com/cammoore.png",
       "email": "cmoore@hawaii.edu"
-    },
-    {
-      "firstName": "Anthony",
-      "lastName": "Christe",
-      "interests": [
-      ],
-      "projects":[
-        "Open Power Quality"
-      ],
-      "picture": "https://anthonyjchriste.github.io/images/me.png",
-      "email": "achriste@hawaii.edu"
-    },
-    {
-      "firstName": "Jason",
-      "lastName": "Leigh",
-      "interests": [
-      ],
-      "projects":[
-        "Cyber Canoe"
-      ],
-      "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Jason_Leigh-2014.jpg",
-      "email": "leighj@hawaii.edu"
-    },
-    {
-      "firstName": "Serge",
-      "lastName": "Negrashov",
-      "interests": [
-      ],
-      "projects":[
-        "Open Power Quality"
-      ],
-      "picture": "https://sergey-negrashov.github.io/images/serge.jpg",
-      "email": "sin8@hawaii.edu"
     }
   ],
   "defaultProjects": [
     {
-      "name": "Open Power Quality",
-      "homepage": "https://openpowerquality.org",
-      "description": "Open source hardware and software for distributed power quality data collection, analysis, and visualization.",
+      "name": "Save Plants",
+      "homepage": "https://saveplants.org/",
+      "description": "Rare plants included in the National Collection are safeguarded from extinction and can help conservationists restore healthy, diverse populations to nature.",
       "interests": [
+        "Volunteer" ,
+        "Plant Identification"
       ],
-      "picture": "https://avatars0.githubusercontent.com/u/4641939"
+      "picture": "https://saveplants.org/wp-content/uploads/2020/12/the-results.png"
     },
     {
-      "name": "RadGrad",
-      "homepage": "https://radgrad.org",
-      "description": "Growing awesome computer scientists, one graduate at a time.",
+      "name": "Makiki Arboretum Trail Plant Search",
+      "homepage": "",
+      "description": "Hike through Makiki and search for plants and learn of the local fauna in Hawaii",
       "interests": [
+        "Plant Identification",
+        "Canoe Plants"
       ],
-      "picture": "https://www.radgrad.org/img/radgrad_logo.png"
-    },
-    {
-      "name": "WRENCH",
-      "homepage": "https://wrench-project.org",
-      "description": "WRENCH is an open-source library for developing simulators for large-scale scientific computation",
-      "interests": [
-      ],
-      "picture": "https://wrench-project.org/images/logo-vertical.png"
-    },
-    {
-      "name": "Cyber Canoe",
-      "homepage": "http://lava.manoa.hawaii.edu/blog/2014/07/11/cyber-canoe-cyber-infrastructure-enabled-collaborative-analysis-navigation-and-observation-environment/",
-      "description": "Software for Unity projects involving stereoscopic resolution driven by 9 PCs with a GeForce 980 graphics card.",
-      "interests": [
-      ],
-      "picture": "https://www.hawaii.edu/its/wp-content/uploads/sites/2/2019/01/LAVAlogo-300x192-300x192.png"
+      "picture": "https://lh5.googleusercontent.com/p/AF1QipNIA65pxAVXSKl2771ANm1_vW3X6N6d1KQ1yH8m=w203-h151-k-no"
     }
   ],
   "defaultInterests": [
