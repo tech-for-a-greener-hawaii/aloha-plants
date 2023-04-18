@@ -32,14 +32,14 @@ const AddComment = ({ forumID, owner }) => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container className="py-3">
+    <Container className="pt-5">
       <Row className="justify-content-center">
-        <Col xs={10}>
+        <Col xs={12}>
           <Col className="text-center" />
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-            <Card>
+            <Card className="flush">
               <Card.Body>
-                <TextField name="comment" />
+                <TextField className="pb-2" name="comment" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
                 <HiddenField name="owner" value={owner} />

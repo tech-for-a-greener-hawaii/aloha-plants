@@ -69,3 +69,9 @@ body {
   height:37px;
   border-radius: 50%;
 }
+
+#forum-background {
+  background-image: url("/images/oahu-garden.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
