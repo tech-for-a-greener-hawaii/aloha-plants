@@ -121,30 +121,143 @@
   ],
   "defaultPlants": [
     {
-      "name": "ma'o hau hele",
-      "scientificName": "hibiscus brackenrigie",
-      "description": "Endemic shrub to small tree",
+      "name": "'A'ali'i",
+      "scientificName": "Dodonaea viscosa",
+      "indigenousStatus": "All HI. Except Kahoolawe",
+      "description": "A dense shrub (4-8 ft.) with small green leaves and tiny flowers that develop into star shaped papery seed capsules.",
       "growingConditions": "Full sun, dry/mesic",
-      "propagation": "da kine",
-      "range": "Hawaiian endemic",
+      "propagation": "by seed",
+      "range": "‘A’ali’i is an indigenous plant with a range that starts in the dry coastal lowland areas where it was once the most dominant shrub and up into the wetter mesic forests, on all the main islands except for Kahoʻolawe (where it most likely occurred in the past and presently it is being out planted there), and then dominant again in the upper dry forest and sub-alpine dry forests of Maui and Hawaiʻi.",
+      "culturalUses": "The seed capsules are highly valued for used in lei weaving, and the red capsules are used for making a red dye. The beautiful wood of ʻaʻaliʻi is very hard and is used for making smaller hand tools and weapons.",
       "pests": "beatles: being by an artifitial light at night helps",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/aalii-150x118.jpg",
       "interests": [
-        "AI"
-      ],
-      "picture": "https://wrench-project.org/images/logo-vertical.png"
+        "indigenous"
+      ]
+
     },
     {
-      "name": "ma'o",
-      "scientificName": "like related to cotton",
-      "description": "Endemic shrub to small tree",
+      "name": "'Akia",
+      "scientificName": "Wikstroemia uva-ursi",
+      "indigenousStatus": "Endemic: Kaua’i, O’ahu, Maui, Molokai",
+      "description": "Dense shrubs that either grow prostrate or sprawl up to 3-4 ft. tall. They have small oval shaped leaves, greenish-blue in color that is attached to braches which are reddish brown. When in bloom, numerous clusters of tiny yellow flowers develop which eventually turn into small orange or red fruits about ½-3/4 inch in diameter. The flowers have a very musky but distinct scent to them and can be easily smelt from a distance usually more so in the early evening.",
       "growingConditions": "Full sun, dry/mesic",
-      "propagation": "da kine",
-      "range": "Hawaiian endemic",
-      "pests": "beatles: being by an artifitial light at night helps",
+      "propagation": "by seed",
+      "range": "This endemic plant can easily be seen in numerous landscapes throughout Honolulu and the rest of the State. This plant, along with naupaka (Scaevola sericea), pohinahina (Vitex rotundifolia), and pualoalo (Hibiscus arnottianus) are among the most used native plants in Hawaiian landscapes today. Although, in the wild it is quite rare, found only in dry, open, often disturbed, lowland or coastal habitats on Kaua’i, O’ahu Molokai, and Maui where it is also reported as far inland as ‘Iao Valley.",
+      "culturalUses": "Many members of this genus Wikstroemia were used as a narcotic to catch fish. The bark, roots and leaves were pounded and mixed with bait and then thrown in the water to feed the fish; upon ingesting, the fish would swim in a “drunken” state which made them easier to scoop up with a net or to spear. The mashed plant parts are also used in Hawaiian spell casting and sorcery.",
+      "pests": "...",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/23_be9f6a8a03ba33d1cc2b2a6e4855518c-150x112.jpg",
       "interests": [
-        "farming"
-      ],
-      "picture": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.fineartamerica.com%2Fimages-medium-large%2Fhawaiian-mao-hau-hele-1937-joe-diaz.jpg&f=1&nofb=1&ipt=8f9830d68360d7ccf18f01224e2b8f588b5207927d9f11f0ca2e582c3d444c65&ipo=images"
+        "endemic",
+        "landscaping"
+      ]
+
+    },
+    {
+      "name": "'Aweoweo",
+      "scientificName": "Chenopodium oahuense",
+      "indigenousStatus": "Endemic: Kauai, Oahu, Molokai, Maui, Lanai, Hawaii, plus Lisianski, Laysan, Necke, French Frigate Shoals, Nihoa.",
+      "description": "‘Aweoweo are typically low shrubs to small trees 2-8ft. tall with light blue/green leaves that are in the shape of a goose’s foot (they belong to the goose foot plant family Chenopodiacae). Sometimes the leaves call be very tiny, about ¼”-1/2″ across or they can be up to 2 inches depending on the growing conditions. Usually less water and more sun will result in smaller, thicker leaves whereas regular watering will make the plant have larger more thin leaves like in the picture. The flowers are very small and are in clusters above the plant. The older stems are usually streaked with red, similar to the fish, but also, when the leaves and flowers are crushed it smells just like the ‘aweoweo fish too! fo’ real! I not joking! But, you have to crush it first. You don’t have to worry about the plant smelling up your yard.",
+      "growingConditions": "Full sun, dry/mesic",
+      "propagation": "by seed",
+      "range": "‘Aweoweo, the plant not the fish, is found in drier, harsh habitats like near the ocean, in the lowland dry forest or all the way up in the sub-alpine shrub land of the large volcanoes like Mauna Kea. Although its species name is oahuense, this endemic plant is found on all of the main Hawaiian Islands except Kaho’olawe (it was probably found there before) but also on most of the Northwestern Hawaiian islands as well.",
+      "culturalUses": "The young leaves and stems are wrapped in ti leaves and steamed to be eaten in times of famine. The harder wood at the base of the plant can also be shaped in to fish hooks so you can catch ‘aweoweo with ‘aweoweo.",
+      "pests": "...",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_135_508306e0749e6d3de4f84ae3181bf44a.png.jpeg",
+      "interests": [
+        "endemic"
+      ]
+    },
+    {
+      "name": "Pili",
+      "scientificName": "Heterogpogon contortus",
+      "indigenousStatus": "Endemic: Kauai, Oahu, Molokai, Maui, Lanai, Hawaii, plus Lisianski, Laysan, Necke, French Frigate Shoals, Nihoa.",
+      "description": "Pili grass forms bunches or tufts of light blueish-green leaf blades which range in height from two to three ft. tall. Their flowers, although insignificant in appearance, form spikelets at the top of the plant and often become tangled amongst each other. This dense cluster of seeds is most likely how the plant received its name since the word pili means to stick or cling to.",
+      "growingConditions": "Full sun in hot, dry areas",
+      "propagation": "by seed",
+      "range": "Pili grass is an indigenous plant, or perhaps even a Polynesian introduction that is found in dry open areas, rocky cliffs or slopes near the ocean. It is found throughout the tropics as well as all of the main Hawaiian islands in scattered population. An interesting side note is that many of the Great Plains States utilize pili for in their restorations of grasslands and prairies. Its is probably safe to say that there is more pili grass growing out in those state’s than there is growing here in Hawai’i .",
+      "culturalUses": "Pili was used in the past primarily for thatching houses and can still be used today for that purpose. It was also placed on hula altars for Laka in hopes that newly gained knowledge would pili, or stick in their minds.",
+      "pests": "...",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_57_bd95af07b957c8a69050b0445603606d2-150x118.jpg",
+      "interests": [
+      ]
+    },
+    {
+      "name": "'Uki'uki",
+      "scientificName": "Dianella sandwicense",
+      "indigenousStatus": "All HI except Niihau and Kahoolawe",
+      "description": "From what I have seen there are two basic forms of ‘uki’uki found through out the state. One form has a more compact growth habit, only about 1-1.5 ft. tall (from now on this one will be referred to as the ‘short’ one) while the other has a taller, less compact look to it and can grow to about 2.5-3 ft. tall (we’ll call this one the ‘taller’ one). Both are beautiful lilies but in their own way. The short one (as seen in the picture above) has dark green leaf blades and when in bloom it sends up a short stalk in the middle of the foliage that is covered with small purple and yellow flowers that once pollinated develop into dark purple or even lavender berries about ½”-1” in diameter. The seeds of this form are black, smooth and extremely glossy. The taller one has lighter green foliage and sends out a taller stalk with much more of the same small flowers but these are usually white and yellow and once they are pollinated the fruit that develop are more transparent looking and not as vibrant purple color, sometimes they look brown and the seeds are not glossy and smooth like the short one, instead they are rough and come in a variety of shapes.",
+      "growingConditions": " It does well in practically any growing condition from full sun to practically full shade, outdoors to indoors, moderate water to little water, just about anything. I prefer to use it as an accent plant around large boulders or at the base of larger plants and shrubs.",
+      "propagation": "seed",
+      "range": "All forms of ‘uki’uki are classified as indigenous meaning that they are native to Hawai’i but also other parts of the world. These plants are found in many different vegetation zones from lowland dry forests to higher wet forests, in fact, I’ve seen it growing near the ocean around naupaka as well as in the marsh on the top of Mount Ka’ala and practically everywhere else in between. ‘Uki’uki is found on all the main islands except Ni’ihau and Kaho’olawe, although they most likely occurred there in the past.",
+      "culturalUses": "The leaves can be used for thatching while the berries of the short one make a nice bluish-purple dye for kapa while the taller one usually makes a yellowish-brown dye. As delicious as the berries look, don’t eat them they don’t taste ono at all and they turn your whole mouth blue, trust me I know.",
+      "pests": "white scales and mealy bugs;  If you do notice them on the underside of the leaves, they can be manually removed by either shooting them off with water or by cleaning them off with your fingers using soapy water",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_46_a2704db71919d3e7d958f9dfca31882b-150x118.jpg",
+      "interests": [
+        "indigenous",
+        "landscaping"
+      ]
+    },
+    {
+      "name": "Wiliwili",
+      "scientificName": "Erythrina sandwicensis",
+      "indigenousStatus": "Endemic",
+      "description": "Deciduous trees up to 40 feet tall with light green leaves, reddish-tan bark, and creamy green to dark orange-colored flowers that develop into seed pods with bright orange seeds. Sharp thorns develop on the trunk and branches. The thorns begin to fade as the tree ages.",
+      "growingConditions": "Wiliwili does well in any sunny, dry area. After established does not need to be watered",
+      "propagation": "seeds",
+      "range": "This endemic plant is found on coastal-lowland dry forests on all the main islands.",
+      "culturalUses": "The light wood is used culturally for constructing canoe outriggers, floats and surfboards. The seeds and individual flowers were strung into lei.",
+      "pests": "...",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_112_56058bb3e3516bc31ab9d82a6146c55c-150x118.jpg",
+      "interests": [
+        "endemic"
+      ]
+    },
+    {
+      "name": "Awapuhi",
+      "scientificName": "Zingerber zerumbet",
+      "indigenousStatus": "Polynesian Introduced",
+      "description": "Awesome understory or full sun specimen.  Watch out, like most gingers it has the ability to take over an area.  It also is deciduous meaning that it annually loses its foliage after flowering and lays dormant for about 3 months but will pop up bigger and fuller the next season!",
+      "growingConditions": "",
+      "propagation": "Root",
+      "range": "",
+      "culturalUses": "Medicinally, for cooking (leaves wrapped and flavored meat), drinking and to make one smell better.",
+      "pests": "...",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_32_58429e8c9ec711318f5499ee5869cbfa-150x118.jpg",
+      "interests": [
+      ]
+    },
+    {
+      "name": "Pohinahina",
+      "scientificName": "Vitex rotundifolia",
+      "indigenousStatus": "Indigenous",
+      "description": "A sprawling shrub (2-3ft.) with rounded leaves that are silvery-green in color on top and whitish underneath. Small purple flowers form clusters which emerge at the top of the plant and sit in a pocket of the top leaves, very cool looking and it is definitely a striking site when a large area is in full bloom.",
+      "growingConditions": "thrive in full sun",
+      "propagation": "Cuttings/seeds",
+      "range": "This is an indigenous plant meaning that it is native to Hawaii as well as other parts of the Pacific, even Japan! Here it is found on sandy coasts of all the main islands except Kaho’olawe although it may have occurred there in the past.",
+      "culturalUses": "The fragrant leaves of this plant can be layered between folded kapa to repel insects but now days I guess you can put them in your BVD drawers. The leaves and flowers can also be arranged in head leis (lei po’o), very nice.",
+      "pests": "...",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_95_871546a370a6ac11c7bd6350ac8c392f.jpg",
+      "interests": [
+        "indigenous",
+        "landscaping"
+      ]
+    },
+    {
+      "name": "Ohia Lehua - Ohia - Lehua Mamo- Lehua - Mamo",
+      "scientificName": "Metrosideros polymorpha",
+      "indigenousStatus": "Endemic: All HI except Ni’ihau and Kaho’olawe",
+      "description": "Of the five different species of ‘ohi’a recognized, this is the most variable. The leaves of this plant range from 1/2″ to 3″, they can also be very glabrous or very hairy. The new leaves or liko range in color from dark purple, almost black to red, gold and everything in between. Some plants bush out while others grow to over 80 ft. tall. The ‘ohi’a or lehua as some people call, are best known for its flowers. They are just as variable as the plants themselves. Color ranges from very dark red (lehua ‘apane) all the way through to yellow (lehua mamo) or even white (lehua kea) according to some legends. I’ve even seen a flower that was dark red at the base, gradually faded to yellow and finally ended with greenish tips, it was unbelievable.",
+      "growingConditions": "",
+      "propagation": "",
+      "range": "The ‘ohi’a is an endemic plant found on all of the main islands except Ni’ihau and Kaho’olawe, at least that’s where they’re found today, They were most likely found on those other islands in the past. Today ‘ohi’a are found mainly at higher elevations, there are some places where you can still see them on the coast and in lowland dry forests but these instances are very rare. Originally, there range extended from sea level all the way up to around 6,500 ft.",
+      "culturalUses": "One of the most important woods in Hawaiian culture, ‘ohi’a was used for a number of things: In house construction, rafters and posts were made of it; decking, seats and gunwales of canoes were also made of ‘ohi’a; various leis either used the flowers, flower buds or leaf buds of ‘ohi’a; it decorated hula altars for the god Kuka’ohi’a and religious images called ki’i were made of ‘ohi’a as well.",
+      "pests": "...",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/09/tn_42_692aedf2417968495794d80c04acb0814-150x118.jpg",
+      "interests": [
+        "Endemic",
+        "Landscape"
+      ]
     }
   ],
 

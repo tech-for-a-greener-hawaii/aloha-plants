@@ -31,10 +31,13 @@ const MakeCard = ({ plant }) => (
       <Card.Body>
         <Card.Img src={plant.picture} width={50} />
         <Card.Title style={{ marginTop: '0px' }}>{plant.name}</Card.Title>
-         {/*<Card.Subtitle> */}
-         {/*<span className="date">{plant.title}</span> */}
-         {/*</Card.Subtitle> */}
+         <Card.Subtitle>
+         <span style={{fontStyle: 'italic'}}>{plant.scientificName}</span>
+         </Card.Subtitle>
         <Card.Text>
+          <Card.Subtitle>
+            <span>{plant.indigenousStatus}</span>
+          </Card.Subtitle>
           {plant.description}
           <hr/>
           {plant.growingConditions}
@@ -53,12 +56,14 @@ const MakeCard = ({ plant }) => (
 
 MakeCard.propTypes = {
   plant: PropTypes.shape({
-    description: PropTypes.string,
     name: PropTypes.string,
     scientificName: PropTypes.string,
+    indigenousStatus: PropTypes.string,
+    description: PropTypes.string,
     growingConditions: PropTypes.string,
     propagation: PropTypes.string,
     range: PropTypes.string,
+    culturalUses: PropTypes
     pests: PropTypes.string,
     interests: PropTypes.arrayOf(PropTypes.string),
     picture: PropTypes.string,
@@ -90,7 +95,7 @@ const PlantsPage = () => {
           (input ,searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.scientificName.toLowerCase().includes(searchIn.toLowerCase())}
         }/>
       </Row>
-      <Row xs={1} md={2} lg={4} className="g-2" id={ComponentIDs.plantsSearchBar}>
+      <Row xs={1} md={2} lg={3} className="g-2" id={ComponentIDs.plantsSearchBar}>
         {plantDataFiltered.map((plant, index) => <MakeCard key={index} plant={plant} />)}
       </Row>
     </Container>
