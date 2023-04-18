@@ -8,6 +8,7 @@ import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
 import { Plants } from '../../api/plants/Plants';
+import { PlantsInterests } from '../../api/plants/PlantsInterests';
 import { Forums } from '../../api/forums/Forums';
 
 /* eslint-disable no-console */
@@ -75,11 +76,8 @@ if (Forums.collection.find().count() === 0) {
 /** Define a new forum. Error if project already exists.  */
 const addPlant = (plant) => {
   console.log(`Adding ${plant.name}`);
-  // console.log(plant.picture)
+  plant.interests.map(interest => PlantsInterests.collection.insert({ plantName: plant.name, interest }));
   Plants.collection.insert(plant);
-  // var interests = plant['interests']
-  // interests.map(interest => PlantsInterests.collection.insert({ plant: name, interest }));
-
 };
 
 if (Plants.collection.find().count() === 0) {

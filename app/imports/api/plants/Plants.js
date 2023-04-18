@@ -12,10 +12,12 @@ class PlantsCollection {
     this.schema = new SimpleSchema({
       name: { type: String, unique: true},
       scientificName: { type: String, optional: true },
+      indigenousStatus: { type: String, optional: true },
       description: { type: String, optional: true },
       growingConditions: { type: String, optional: true },
       propogation: { type: String, optional: true },
       range: {type:String, optional:true},
+      culturalUses: {type:String, optional:true},
       pests: { type: String, optional: true },
       picture:{ type: String, optional: true},
     });
