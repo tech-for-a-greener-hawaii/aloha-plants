@@ -12,6 +12,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
 import SearchBar from '../components/SearchBar';
+import DeleteProject from '../components/DeleteProject';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getProjectData(name) {
@@ -42,6 +43,7 @@ const MakeCard = ({ project }) => (
       <Card.Body>
         {project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}
       </Card.Body>
+      <DeleteProject project={project} />
     </Card>
   </Col>
 );
