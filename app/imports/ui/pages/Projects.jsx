@@ -123,13 +123,9 @@ const ProjectsPage = () => {
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
       <Row>
-        <SearchBar
-          baseData={projectData}
-          filteredDataSetter={setProjectDataFiltered}
-          dataFilterFunction={
-            (input, searchIn) => input.name.toLowerCase().includes(searchIn.toLowerCase()) /* || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase()) */
-          }
-        />
+        <SearchBar baseData={projectData} filteredDataSetter={setProjectDataFiltered} dataFilterFunction={
+          (input, searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /*|| input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase())*/}
+        }/>
       </Row>
       <Row xs={1} md={2} lg={4} className="g-2 mt-2">
         {projectDataFiltered.map((project, index) => <MakeCard key={index} project={project} email={email} />)}

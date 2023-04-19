@@ -8,6 +8,7 @@ import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
 import { Plants } from '../../api/plants/Plants';
+import { PlantsInterests } from '../../api/plants/PlantsInterests';
 import { Forums } from '../../api/forums/Forums';
 
 /* eslint-disable no-console */
@@ -84,6 +85,7 @@ if (Forums.collection.find().count() === 0) {
 /** Define a new forum. Error if project already exists.  */
 const addPlant = (plant) => {
   console.log(`Adding ${plant.name}`);
+  plant.interests.map(interest => PlantsInterests.collection.insert({ plantName: plant.name, interest }));
   Plants.collection.insert(plant);
 };
 
@@ -129,5 +131,5 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   jsonData.profiles.map(profile => addProfile(profile));
   jsonData.projects.map(project => addProject(project));
   jsonData.forums.map(forum => addForum(forum));
-  jsonData.plants.map(forum => addForum(forum));
+  jsonData.plants.map(plant => addPlant(plant));
 }
