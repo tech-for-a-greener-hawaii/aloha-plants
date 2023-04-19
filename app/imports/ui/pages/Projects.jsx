@@ -59,32 +59,28 @@ const MakeCard = ({ project, email }) => {
     <Col>
       <Card className="h-100" id="project-card">
         <Card.Body>
-          <Card.Img src={project.picture} width={50} height={200} />
+          <Card.Img src={project.picture} width={50} height={300} />
           <Card.Title style={{ marginTop: '10px' }}>{project.name}</Card.Title>
           <Card.Text>
-            {project.interests.map((interest, index) => <Badge key={index} className="project-interest-spacing secondary">{interest}</Badge>)}
+            {project.interests.map((interest, index) => <Badge key={index} bg="warning" className="project-interest-spacing">{interest}</Badge>)}
           </Card.Text>
           <Card.Text className="mt-2">
             <hr />
-            {/*<strong>Description:</strong>*/}
-            <p>{project.description}</p>
+            <p><strong>Description:</strong> {project.description}</p>
+            <p><strong>Contact:</strong> {project.owner}</p>
           </Card.Text>
         </Card.Body>
-        {/*<Card.Body>*/}
-        {/*  {project.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}*/}
-        {/*</Card.Body>*/}
         <Card.Body>
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
             <HiddenField name="profile" value={email} />
             <HiddenField name="project" value={project.name} />
-            {email}
-            {project.name}
             <SubmitField id="test" />
           </AutoForm>
 
         </Card.Body>
         <Card.Body>
-          {project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}
+
+          {/*{project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}*/}
         </Card.Body>
       </Card>
     </Col>
@@ -94,6 +90,7 @@ const MakeCard = ({ project, email }) => {
 MakeCard.propTypes = {
   project: PropTypes.shape({
     description: PropTypes.string,
+    owner: PropTypes.string,
     name: PropTypes.string,
     participants: PropTypes.arrayOf(PropTypes.string),
     picture: PropTypes.string,
@@ -120,6 +117,7 @@ const ProjectsPage = () => {
   }, []);
   const projects = _.pluck(Projects.collection.find().fetch(), 'name');
   const projectData = projects.map(project => getProjectData(project));
+  console.log(`data: ${projectData[1]}`);
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
       <Row>
@@ -127,7 +125,7 @@ const ProjectsPage = () => {
           (input, searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /*|| input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase())*/}
         }/>
       </Row>
-      <Row xs={1} md={2} lg={4} className="g-2 mt-2">
+      <Row xs={1} md={2} lg={3} className="g-2 mt-2">
         {projectDataFiltered.map((project, index) => <MakeCard key={index} project={project} email={email} />)}
       </Row>
     </Container>

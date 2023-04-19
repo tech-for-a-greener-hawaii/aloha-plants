@@ -63,9 +63,9 @@ function addProfile({ firstName, lastName, interests, projects, picture, email, 
 }
 
 /** Define a new project. Error if project already exists.  */
-function addProject({ name, homepage, description, interests, picture }) {
+function addProject({ name, owner, homepage, description, interests, picture }) {
   console.log(`Defining project ${name}`);
-  Projects.collection.insert({ name, homepage, description, picture });
+  Projects.collection.insert({ name, owner, homepage, description, picture });
   interests.map(interest => ProjectsInterests.collection.insert({ project: name, interest }));
 }
 
