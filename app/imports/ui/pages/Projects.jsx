@@ -25,8 +25,6 @@ function getProjectData(name) {
   return _.extend({}, data, { interests, participants: profilePictures });
 }
 
-// function
-
 /* Component for layout out a Project Card. */
 const MakeCard = ({ project, email }) => {
   const schema = new SimpleSchema({
@@ -59,17 +57,22 @@ const MakeCard = ({ project, email }) => {
 
   return (
     <Col>
-      <Card className="h-100">
+      <Card className="h-100" id="project-card">
         <Card.Body>
-          <Card.Img src={project.picture} width={50} />
-          <Card.Title style={{ marginTop: '0px' }}>{project.name}</Card.Title>
+          <Card.Img src={project.picture} width={50} height={200} />
+          <Card.Title style={{ marginTop: '10px' }}>{project.name}</Card.Title>
           <Card.Text>
-            {project.description}
+            {project.interests.map((interest, index) => <Badge key={index} className="project-interest-spacing secondary">{interest}</Badge>)}
+          </Card.Text>
+          <Card.Text className="mt-2">
+            <hr />
+            {/*<strong>Description:</strong>*/}
+            <p>{project.description}</p>
           </Card.Text>
         </Card.Body>
-        <Card.Body>
-          {project.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}
-        </Card.Body>
+        {/*<Card.Body>*/}
+        {/*  {project.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}*/}
+        {/*</Card.Body>*/}
         <Card.Body>
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
             <HiddenField name="profile" value={email} />
@@ -78,6 +81,7 @@ const MakeCard = ({ project, email }) => {
             {project.name}
             <SubmitField id="test" />
           </AutoForm>
+
         </Card.Body>
         <Card.Body>
           {project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}
@@ -127,7 +131,7 @@ const ProjectsPage = () => {
           }
         />
       </Row>
-      <Row xs={1} md={2} lg={4} className="g-2">
+      <Row xs={1} md={2} lg={4} className="g-2 mt-2">
         {projectDataFiltered.map((project, index) => <MakeCard key={index} project={project} email={email} />)}
       </Row>
     </Container>
