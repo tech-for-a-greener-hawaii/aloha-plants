@@ -23,8 +23,9 @@ const NavBar = () => {
   const userProfile = Profiles.collection.findOne({ email: email });
   const userImage = userProfile != null && userProfile.picture != null ? userProfile.picture : defaultProfileImage;
 
-  const { currentUser, loggedIn } = useTracker(() => ({
+  const { currentUser, loggedIn, adminUser } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
+    adminUser: Meteor.user() ? Meteor.user().username : '',
     loggedIn: !!Meteor.user(),
   }), []);
   const menuStyle = { marginBottom: '0px' };
@@ -41,12 +42,17 @@ const NavBar = () => {
             {currentUser ? (
               <Nav.Link as={NavLink} id={ComponentIDs.homeMenuItem} to="/home" key="home">Home</Nav.Link>
             ) : ''}
-            <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/projects" key="projects">Projects</Nav.Link>
+            {currentUser === '' || !(currentUser === 'admin@foo.com') ? (
+              <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/projects" key="projects">Projects</Nav.Link>
+            ) : ''}
+            {currentUser === 'admin@foo.com' ? (
+              <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/adminprojects" key="adminprojects">Projects</Nav.Link>
+            ) : ''}
             <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/plants" key="plants">Plants</Nav.Link>
             {currentUser ? (
               <Nav.Link as={NavLink} id={ComponentIDs.profilesMenuItem} to="/Forums" key="forums">Forums</Nav.Link>
             ) : ''}
-            {currentUser ? (
+            {adminUser === 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addProject" key="addP">Add Project</Nav.Link>
             ) : ''}
           </Nav>
