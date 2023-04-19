@@ -79,8 +79,8 @@ const MakeCard = ({ project, email }) => {
 
         </Card.Body>
         <Card.Body>
-
-          {/*{project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}*/}
+          {/*TODO WILL REMOVE, USING FOR TESTING ADD & REMOVE*/}
+          {project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}
         </Card.Body>
       </Card>
     </Col>

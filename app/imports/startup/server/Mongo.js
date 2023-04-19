@@ -52,12 +52,19 @@ if (Interests.collection.find().count() === 0) {
 function addProfile({ firstName, lastName, interests, projects, picture, email, role }) {
   console.log(`Defining profile ${email}`);
   // Define the user in the Meteor accounts package.
-  createUser(email, role);
+  // check if user already exists
+  if (Accounts.findUserByEmail(email) == null) {
+    createUser(email, role);
+  }
   // Create the profile.
   Profiles.collection.insert({ firstName, lastName, picture, email });
   // Add interests and projects.
-  interests.map(interest => ProfilesInterests.collection.insert({ profile: email, interest }));
-  projects.map(project => ProfilesProjects.collection.insert({ profile: email, project }));
+  if (interests != null) {
+    interests.map(interest => ProfilesInterests.collection.insert({ profile: email, interest }));
+  }
+  if (projects != null) {
+    projects.map(project => ProfilesProjects.collection.insert({ profile: email, project }));
+  }
   // Make sure interests are defined in the Interests collection if they weren't already.
   // interests.map(interest => addInterest(interest));
 }
@@ -67,6 +74,7 @@ function addProject({ name, owner, homepage, description, interests, picture }) 
   console.log(`Defining project ${name}`);
   Projects.collection.insert({ name, owner, homepage, description, picture });
   interests.map(interest => ProjectsInterests.collection.insert({ project: name, interest }));
+  ProfilesProjects.collection.insert({ profile: owner, project: name });
 }
 
 /** Define a new forum. Error if project already exists.  */
@@ -102,10 +110,14 @@ if (Meteor.users.find().count() === 0) {
   if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles && Meteor.settings.defaultForums && Meteor.settings.defaultPlants) {
     console.log('Creating the Admin User');
     createUser('admin@foo.com', 'admin');
+    addProfile({ firstName: '', lastName: '', interests: null, projects: null, picture: '', email: 'admin@foo.com', role: 'admin' });
     console.log('Creating the Default Creator: creator@foo.com');
     createUser('creator@foo.com', 'creator');
+    addProfile({ firstName: '', lastName: '', interests: null, projects: null, picture: '', email: 'creator@foo.com', role: 'creator' });
     console.log('Creating the Default User: john@foo.com');
     createUser('john@foo.com', 'user');
+    addProfile({ firstName: '', lastName: '', interests: null, projects: null, picture: '', email: 'john@foo.com', role: 'user' });
+
     console.log('Creating the default profiles');
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');

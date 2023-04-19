@@ -7,7 +7,7 @@
         "Volunteer"
       ],
       "projects":[
-        "Save Plants"
+        "Honolulu Botanical Gardens"
       ],
       "picture": "https://github.com/brian-d-dang.png",
       "email": "test@foo.com"
@@ -16,6 +16,7 @@
       "firstName": "Henri",
       "lastName": "Casanova",
       "interests": [
+        "Volunteer"
       ],
       "projects":[
         "Makiki Arboretum Trail Plant Search"
@@ -27,9 +28,11 @@
       "firstName": "Carleton",
       "lastName": "Moore",
       "interests": [
+        "Volunteer"
       ],
       "projects":[
-        "Save Plants"
+        "Honolulu Botanical Gardens",
+        "Makiki Arboretum Trail Plant Search"
       ],
       "picture": "https://github.com/cammoore.png",
       "email": "cmoore@hawaii.edu"
