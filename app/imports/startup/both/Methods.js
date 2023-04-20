@@ -37,12 +37,19 @@ Meteor.methods({
   },
 });
 
-// TODO Add projects to user page possibly with a current project lineup
 const addProfilesProjectMethod = 'ProfilesProject.add';
 
 Meteor.methods({
   'ProfilesProject.add'({ profile, project }) {
     ProfilesProjects.collection.insert({ profile, project });
+  },
+});
+
+const removeProfilesProjectMethod = 'ProfilesProject.remove';
+
+Meteor.methods({
+  'ProfilesProject.remove'({ profile, project }) {
+    ProfilesProjects.collection.remove({ profile, project });
   },
 });
 
@@ -80,4 +87,4 @@ Meteor.methods({
   },
 });
 
-export { updateProfileMethod, addProjectMethod, addProfileMethod, addProfilesProjectMethod };
+export { updateProfileMethod, addProjectMethod, addProfileMethod, addProfilesProjectMethod, removeProfilesProjectMethod };

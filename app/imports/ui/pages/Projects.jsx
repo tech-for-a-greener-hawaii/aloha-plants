@@ -13,7 +13,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
 import SearchBar from '../components/SearchBar';
-import { addProfilesProjectMethod } from '../../startup/both/Methods';
+import { addProfilesProjectMethod, removeProfilesProjectMethod } from '../../startup/both/Methods';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getProjectData(name) {
@@ -41,11 +41,11 @@ const MakeCard = ({ project, email }) => {
 
   };
   const remove = (data) => {
-    Meteor.call(addProfilesProjectMethod, data, (error) => {
+    Meteor.call(removeProfilesProjectMethod, data, (error) => {
       if (error) {
         swal('Error', error.message, 'error');
       } else {
-        swal('Success', 'Project added successfully', 'success');
+        swal('Success', 'Project removed successfully', 'success');
         // eslint-disable-next-line no-restricted-globals
         location.reload();
       }
@@ -79,7 +79,7 @@ const MakeCard = ({ project, email }) => {
                 <Button
                   className="mt-auto"
                   variant="danger"
-                  onClick={() => signup({ profile: email, project: project.name })}
+                  onClick={() => remove({ profile: email, project: project.name })}
                 >
                   remove
                 </Button>
