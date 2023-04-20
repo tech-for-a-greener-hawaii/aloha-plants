@@ -13,6 +13,7 @@ import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
 import SearchBar from '../components/SearchBar';
 import DeleteProject from '../components/DeleteProject';
+import { Link } from 'react-router-dom';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getProjectData(name) {
@@ -43,6 +44,7 @@ const MakeCard = ({ project }) => (
       <Card.Body>
         {project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}
       </Card.Body>
+      <Link className="text-center" to={`/edit/${project._id}`}>Edit</Link>
       <DeleteProject project={project} />
     </Card>
   </Col>
@@ -56,12 +58,13 @@ MakeCard.propTypes = {
     picture: PropTypes.string,
     title: PropTypes.string,
     interests: PropTypes.arrayOf(PropTypes.string),
+    _id: PropTypes.string,
   }).isRequired,
 };
 
 /* Renders the Project Collection as a set of Cards. */
 const AdminProjectsPage = () => {
-  const [projectDataFiltered, setProjectDataFiltered] = useState([]); //need this here for search to work
+  const [projectDataFiltered, setProjectDataFiltered] = useState([]); // need this here for search to work
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(ProfilesProjects.userPublicationName);
@@ -76,11 +79,10 @@ const AdminProjectsPage = () => {
   const projectData = projects.map(project => getProjectData(project));
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
-      test
       <Row>
         <SearchBar baseData={projectData} filteredDataSetter={setProjectDataFiltered} dataFilterFunction={
-          (input ,searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /*|| input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase())*/}
-        }/>
+          (input , searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /* || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase()) */ }
+        } />
       </Row>
       <Row xs={1} md={2} lg={4} className="g-2">
         {projectDataFiltered.map((project, index) => <MakeCard key={index} project={project} />)}
