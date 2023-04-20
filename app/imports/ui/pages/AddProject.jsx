@@ -33,7 +33,6 @@ const AddProject = () => {
 
   /* On submit, insert the data. */
   const submit = (data, formRef) => {
-    console.log(data);
     Meteor.call(addProjectMethod, data, (error) => {
       if (error) {
         swal('Error', error.message, 'error');

@@ -20,7 +20,6 @@ function getProjectData(name) {
   const data = Projects.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
-  // const profilePictures = profiles.map(profile => Profiles.collection.findOne({ email: profile })?.picture);
   return _.extend({}, data, { interests, participants: profiles });
 }
 
@@ -67,9 +66,6 @@ const MakeCard = ({ project, email }) => {
             <p><strong>Description:</strong> {project.description}</p>
             <p><strong>Contact:</strong> {project.owner}</p>
           </Card.Text>
-          {/*TODO WILL REMOVE, USING FOR TESTING ADD & REMOVE*/}
-          {/*{project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}*/}
-          {project.participants.map((p, index) => <p key={index}> {p} </p>)}
         </Card.Body>
         <Card.Footer>
           <Row className="mt-auto">
@@ -101,7 +97,6 @@ MakeCard.propTypes = {
     participants: PropTypes.arrayOf(PropTypes.string),
     picture: PropTypes.string,
     interests: PropTypes.arrayOf(PropTypes.string),
-    _id: PropTypes.string,
   }).isRequired,
   email: PropTypes.string.isRequired,
 };
