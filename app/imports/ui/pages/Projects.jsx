@@ -17,6 +17,7 @@ import SearchBar from '../components/SearchBar';
 function getProjectData(name) {
   const data = Projects.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
+  console.log(interests);
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
   const profilePictures = profiles.map(profile => Profiles.collection.findOne({ email: profile })?.picture);
   return _.extend({}, data, { interests, participants: profilePictures });
