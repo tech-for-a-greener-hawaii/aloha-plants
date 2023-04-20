@@ -74,6 +74,7 @@ body {
   background-image: url("/images/oahu-garden.jpg");
   background-size: cover;
   background-attachment: fixed;
+}
  
 .plant{
   background-color: var(--primary-color) !important;
