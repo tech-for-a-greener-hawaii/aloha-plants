@@ -52,7 +52,7 @@ if (Interests.collection.find().count() === 0) {
 function addProfile({ firstName, lastName, interests, projects, picture, email, role }) {
   console.log(`Defining profile ${email}`);
   // Define the user in the Meteor accounts package.
-  // check if user already exists
+  // Check if user already exists
   if (Accounts.findUserByEmail(email) == null) {
     createUser(email, role);
   }

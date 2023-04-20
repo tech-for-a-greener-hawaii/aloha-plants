@@ -1,58 +1,56 @@
 import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Badge, Container, Card, Image, Row, Col, Button } from 'react-bootstrap';
+import { Badge, Container, Card, Row, Col, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
-import { AutoForm, SubmitField, HiddenField, TextField } from 'uniforms-bootstrap5';
-import SimpleSchema from 'simpl-schema';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import swal from 'sweetalert';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { Projects } from '../../api/projects/Projects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
-import { ComponentIDs, PageIDs } from '../utilities/ids';
+import { PageIDs } from '../utilities/ids';
 import SearchBar from '../components/SearchBar';
+import { addProfilesProjectMethod } from '../../startup/both/Methods';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getProjectData(name) {
   const data = Projects.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
-  const profilePictures = profiles.map(profile => Profiles.collection.findOne({ email: profile })?.picture);
-  return _.extend({}, data, { interests, participants: profilePictures });
+  // const profilePictures = profiles.map(profile => Profiles.collection.findOne({ email: profile })?.picture);
+  return _.extend({}, data, { interests, participants: profiles });
 }
 
 /* Component for layout out a Project Card. */
 const MakeCard = ({ project, email }) => {
-  const schema = new SimpleSchema({
-    profile: String,
-    project: String,
-  });
+  // Checks if user has already signed up for the project
+  const checkSignup = _.contains(project.participants, email);
+  const signup = (data) => {
+    Meteor.call(addProfilesProjectMethod, data, (error) => {
+      if (error) {
+        swal('Error', error.message, 'error');
+      } else {
+        swal('Success', 'Signed up!', 'success');
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+      }
+    });
 
-  const bridge = new SimpleSchema2Bridge(schema);
+  };
+  const remove = (data) => {
+    Meteor.call(addProfilesProjectMethod, data, (error) => {
+      if (error) {
+        swal('Error', error.message, 'error');
+      } else {
+        swal('Success', 'Project added successfully', 'success');
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+      }
+    });
 
-  const submit = (data) => {
-    console.log('DOES THIS HIT');
-    console.log(data);
-    console.log(`Test button: ${data.project} ${data.profile}`);
-    // Meteor.call(addProfileMethod, { email: email, firstName: '', lastName: '', picture: '' }, (err) => {
-    //   if (err) {
-    //     setError(err.reason);
-    //   } else {
-    //     setError('');
-    //   }
-    // });
-    // Accounts.createUser({ email, username: email, password }, (err) => {
-    //   if (err) {
-    //     setError(err.reason);
-    //   } else {
-    //     setError('');
-    //     setRedirectToRef(true);
-    //   }
-    // });
   };
 
   return (
@@ -69,19 +67,27 @@ const MakeCard = ({ project, email }) => {
             <p><strong>Description:</strong> {project.description}</p>
             <p><strong>Contact:</strong> {project.owner}</p>
           </Card.Text>
-        </Card.Body>
-        <Card.Body>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)}>
-            <HiddenField name="profile" value={email} />
-            <HiddenField name="project" value={project.name} />
-            <SubmitField id="test" />
-          </AutoForm>
-
-        </Card.Body>
-        <Card.Body>
           {/*TODO WILL REMOVE, USING FOR TESTING ADD & REMOVE*/}
-          {project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}
+          {/*{project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}*/}
+          {project.participants.map((p, index) => <p key={index}> {p} </p>)}
         </Card.Body>
+        <Card.Footer>
+          <Row className="mt-auto">
+            <Col />
+            <Col className="d-flex align-items-center justify-content-center">
+              { checkSignup ? (
+                <Button
+                  className="mt-auto"
+                  variant="danger"
+                  onClick={() => signup({ profile: email, project: project.name })}
+                >
+                  remove
+                </Button>
+              ) : (<Button className="mt-auto" variant="primary" onClick={() => signup({ profile: email, project: project.name })}>Sign up</Button>)}
+            </Col>
+            <Col />
+          </Row>
+        </Card.Footer>
       </Card>
     </Col>
   );
@@ -95,10 +101,9 @@ MakeCard.propTypes = {
     participants: PropTypes.arrayOf(PropTypes.string),
     picture: PropTypes.string,
     interests: PropTypes.arrayOf(PropTypes.string),
+    _id: PropTypes.string,
   }).isRequired,
-  email: PropTypes.shape({
-    email: PropTypes.string,
-  }).isRequired,
+  email: PropTypes.string.isRequired,
 };
 
 /* Renders the Project Collection as a set of Cards. */
@@ -117,7 +122,6 @@ const ProjectsPage = () => {
   }, []);
   const projects = _.pluck(Projects.collection.find().fetch(), 'name');
   const projectData = projects.map(project => getProjectData(project));
-  console.log(`data: ${projectData[1]}`);
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
       <Row>
