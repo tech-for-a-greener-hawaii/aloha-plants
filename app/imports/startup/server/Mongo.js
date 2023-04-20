@@ -77,6 +77,7 @@ if (Forums.collection.find().count() === 0) {
 const addPlant = (plant) => {
   console.log(`Adding ${plant.name}`);
   plant.interests.map(interest => PlantsInterests.collection.insert({ plantName: plant.name, interest }));
+  console.log(PlantsInterests.collection.find().count());
   Plants.collection.insert(plant);
 };
 
