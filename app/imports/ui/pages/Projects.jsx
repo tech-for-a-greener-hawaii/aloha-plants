@@ -19,6 +19,7 @@ import { addProfilesProjectMethod, removeProfilesProjectMethod } from '../../sta
 function getProjectData(name) {
   const data = Projects.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
+  console.log(interests);
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
   return _.extend({}, data, { interests, participants: profiles });
 }

@@ -15,11 +15,9 @@ import SearchBar from '../components/SearchBar';
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getPlantData(name) {
   const data = Plants.collection.findOne({ name });
-  const interests = _.pluck(PlantsInterests.collection.find({ name: name }).fetch(), 'interest');
-  console.log('what is going on');
-  console.log(interests);
-  console.log(PlantsInterests.collection.find());
-  console.log(PlantsInterests.collection);
+  const interests = _.pluck(PlantsInterests.collection.find({ plantName: name }).fetch(), 'interest');
+  console.log('what is going on I am printing find().count() on the line below');
+  console.log(PlantsInterests.collection.find().count());
   const profiles = _.pluck(ProfilesPlants.collection.find({ name: name }).fetch(), 'profile');
   const profilePictures = profiles.map(profile => Plants.collection.findOne({ email: profile })?.picture);
   console.log(_.extend({}, data, { interests, participants: profilePictures }));
