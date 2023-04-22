@@ -1,6 +1,7 @@
 {
   "defaultProfiles": [
     {
+      "email": "test@foo.com",
       "firstName": "John",
       "lastName": "Kennedy",
       "interests": [
@@ -10,9 +11,10 @@
         "Honolulu Botanical Gardens"
       ],
       "picture": "https://github.com/brian-d-dang.png",
-      "email": "test@foo.com"
+      "role": "user"
     },
     {
+      "email": "henric@hawaii.edu",
       "firstName": "Henri",
       "lastName": "Casanova",
       "interests": [
@@ -22,9 +24,10 @@
         "Makiki Arboretum Trail Plant Search"
       ],
       "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Henri_Casanova1.jpg",
-      "email": "henric@hawaii.edu"
+      "role": "user"
     },
     {
+      "email": "cmoore@hawaii.edu",
       "firstName": "Carleton",
       "lastName": "Moore",
       "interests": [
@@ -35,7 +38,7 @@
         "Makiki Arboretum Trail Plant Search"
       ],
       "picture": "https://github.com/cammoore.png",
-      "email": "cmoore@hawaii.edu"
+      "role": "user"
     }
   ],
   "defaultProjects": [

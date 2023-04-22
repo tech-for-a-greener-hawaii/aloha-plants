@@ -46,7 +46,7 @@ function addProfile({ firstName, lastName, interests, projects, picture, email, 
     createUser(email, role);
   }
   // Create the profile.
-  Profiles.collection.insert({ firstName, lastName, picture, email });
+  Profiles.collection.insert({ email, firstName, lastName, picture, role });
   // Add interests and projects.
   if (interests != null) {
     interests.map(interest => ProfilesInterests.collection.insert({ profile: email, interest }));

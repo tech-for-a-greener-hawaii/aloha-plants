@@ -14,6 +14,7 @@ class ProfilesCollection {
       firstName: { type: String, optional: true },
       lastName: { type: String, optional: true },
       picture: { type: String, optional: true },
+      role: { type: String, required: true },
     });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);
