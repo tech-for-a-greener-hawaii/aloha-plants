@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Badge, Container, Card, Image, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
@@ -12,7 +11,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
 import SearchBar from '../components/SearchBar';
-import DeleteProject from '../components/DeleteProject';
+import ProjectCard from '../components/ProjectCard';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getProjectData(name) {
@@ -23,46 +22,10 @@ function getProjectData(name) {
   return _.extend({}, data, { interests, participants: profilePictures });
 }
 
-/* Component for layout out a Project Card. */
-const MakeCard = ({ project }) => (
-  <Col>
-    <Card className="h-100">
-      <Card.Body>
-        <Card.Img src={project.picture} width={50} />
-        <Card.Title style={{ marginTop: '0px' }}>{project.name}</Card.Title>
-        <Card.Subtitle>
-          <span className="date">{project.title}</span>
-        </Card.Subtitle>
-        <Card.Text>
-          {project.description}
-        </Card.Text>
-      </Card.Body>
-      <Card.Body>
-        {project.interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}
-      </Card.Body>
-      <Card.Body>
-        {project.participants.map((p, index) => <Image key={index} roundedCircle src={p} width={50} />)}
-      </Card.Body>
-      <DeleteProject project={project} />
-    </Card>
-  </Col>
-);
-
-MakeCard.propTypes = {
-  project: PropTypes.shape({
-    description: PropTypes.string,
-    name: PropTypes.string,
-    participants: PropTypes.arrayOf(PropTypes.string),
-    picture: PropTypes.string,
-    title: PropTypes.string,
-    interests: PropTypes.arrayOf(PropTypes.string),
-  }).isRequired,
-};
-
 /* Renders the Project Collection as a set of Cards. */
 const AdminProjectsPage = () => {
-  const [projectDataFiltered, setProjectDataFiltered] = useState([]); //need this here for search to work
-  const { ready } = useTracker(() => {
+  const [projectDataFiltered, setProjectDataFiltered] = useState([]); // need this here for search to work
+  const { ready, email } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(ProfilesProjects.userPublicationName);
     const sub2 = Meteor.subscribe(Projects.userPublicationName);
@@ -70,20 +33,22 @@ const AdminProjectsPage = () => {
     const sub4 = Meteor.subscribe(Profiles.userPublicationName);
     return {
       ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready(),
+      email: Meteor.user()?.username,
     };
   }, []);
   const projects = _.pluck(Projects.collection.find().fetch(), 'name');
   const projectData = projects.map(project => getProjectData(project));
+  const currentUser = _.where(Profiles.collection.find().fetch(), { email: email, role: 'admin' });
+  const role = _.pluck(currentUser, 'role');
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
-      test
       <Row>
         <SearchBar baseData={projectData} filteredDataSetter={setProjectDataFiltered} dataFilterFunction={
-          (input ,searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /*|| input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase())*/}
-        }/>
+          (input , searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /* || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase()) */ }
+        } />
       </Row>
-      <Row xs={1} md={2} lg={4} className="g-2">
-        {projectDataFiltered.map((project, index) => <MakeCard key={index} project={project} />)}
+      <Row xs={1} md={2} lg={3} className="g-2 mt-2">
+        {projectDataFiltered.map((project, index) => <ProjectCard key={index} project={project} email={email} role={role} />)}
       </Row>
     </Container>
   ) : <LoadingSpinner />;

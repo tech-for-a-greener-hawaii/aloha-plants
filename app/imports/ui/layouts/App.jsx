@@ -21,6 +21,7 @@ import Forums from '../pages/Forums';
 import AddForum from '../pages/AddForum';
 import Settings from '../pages/Settings';
 import AdminProjects from '../pages/AdminProjects';
+import EditProject from '../pages/EditProject';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -35,6 +36,7 @@ const App = () => (
         <Route path="/interests" element={<Interests />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/plants" element={<Plants />} />
+        <Route path="/edit/:_id" element={<AdminRoute><EditProject /></AdminRoute>} />
         <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
         <Route path="/forums" element={<ProtectedRoute><Forums /></ProtectedRoute>} />
         <Route path="/addforum" element={<ProtectedRoute><AddForum /></ProtectedRoute>} />

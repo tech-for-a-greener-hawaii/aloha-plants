@@ -1,105 +1,91 @@
 {
   "defaultProfiles": [
     {
-      "firstName": "Philip",
-      "lastName": "Johnson",
+      "email": "test@foo.com",
+      "firstName": "John",
+      "lastName": "Kennedy",
       "interests": [
+        "Volunteer"
       ],
       "projects":[
-        "RadGrad",
-        "Open Power Quality"
+        "Honolulu Botanical Gardens"
       ],
-      "picture": "https://github.com/philipmjohnson.png",
-      "email": "johnson@hawaii.edu"
+      "picture": "https://github.com/brian-d-dang.png",
+      "role": "user"
     },
     {
+      "email": "henric@hawaii.edu",
       "firstName": "Henri",
       "lastName": "Casanova",
       "interests": [
+        "Volunteer"
       ],
       "projects":[
-        "WRENCH"
+        "Makiki Arboretum Trail Plant Search"
       ],
       "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Henri_Casanova1.jpg",
-      "email": "henric@hawaii.edu"
+      "role": "user"
     },
     {
+      "email": "cmoore@hawaii.edu",
       "firstName": "Carleton",
       "lastName": "Moore",
       "interests": [
+        "Volunteer"
       ],
       "projects":[
-        "RadGrad"
+        "Honolulu Botanical Gardens",
+        "Makiki Arboretum Trail Plant Search"
       ],
       "picture": "https://github.com/cammoore.png",
-      "email": "cmoore@hawaii.edu"
-    },
-    {
-      "firstName": "Anthony",
-      "lastName": "Christe",
-      "interests": [
-      ],
-      "projects":[
-        "Open Power Quality"
-      ],
-      "picture": "https://anthonyjchriste.github.io/images/me.png",
-      "email": "achriste@hawaii.edu"
-    },
-    {
-      "firstName": "Jason",
-      "lastName": "Leigh",
-      "interests": [
-      ],
-      "projects":[
-        "Cyber Canoe"
-      ],
-      "picture": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/Jason_Leigh-2014.jpg",
-      "email": "leighj@hawaii.edu"
-    },
-    {
-      "firstName": "Serge",
-      "lastName": "Negrashov",
-      "interests": [
-      ],
-      "projects":[
-        "Open Power Quality"
-      ],
-      "picture": "https://sergey-negrashov.github.io/images/serge.jpg",
-      "email": "sin8@hawaii.edu"
+      "role": "user"
     }
   ],
   "defaultProjects": [
     {
-      "name": "Open Power Quality",
-      "homepage": "https://openpowerquality.org",
-      "description": "Open source hardware and software for distributed power quality data collection, analysis, and visualization.",
+      "name": "Ka Papa Lo‘i o Kānewai and Ka Papa Loʻi ʻo Punaluʻu",
+      "owner" : "admin@foo.com",
+      "homepage": "https://manoa.hawaii.edu/hshk/ka-papa-loi-o-kanewai/getinvolved/",
+      "description": "All groups are encouraged to participate in the normal work at either loʻi.  We usually start visiting groups by sharing stories of Kāne and Kanaloa, a lesson on the present ahupuaʻa, and the history of the site.  Next, a short hike/walk to the poʻowai will be taken to explain the water system and how the water is diverted to the loʻi.  A quick lesson on the water cycle is also covered.  Then the work begins with picking leaves for fertilizer, hehihehi i ka loʻi, puʻepuʻe and clearing the ʻauwai system.  Visitors will learn the parts of kalo, along with a few ʻōlelo noʻeau and ʻōlelo nane.",
       "interests": [
+        "Volunteer",
+        "Canoe Plants",
+        "Community"
       ],
-      "picture": "https://avatars0.githubusercontent.com/u/4641939"
+      "picture": "https://wpcdn.us-midwest-1.vip.tn-cloud.net/www.honolulumagazine.com/content/uploads/data-import/1a1c6cf4/essential-guide-taro-loi-love.jpg"
     },
     {
-      "name": "RadGrad",
-      "homepage": "https://radgrad.org",
-      "description": "Growing awesome computer scientists, one graduate at a time.",
+      "name": "Honolulu Botanical Gardens",
+      "owner" : "admin@foo.com",
+      "homepage": "https://www.volunteermatch.org/search/org706151.jsp",
+      "description": "The mission of Honolulu Botanical Gardens is to plan, and develop, curate, maintain and study documented collections of tropical plants in an aesthetic setting for the purpose of: conservation, botany, horticulture, education, and passive recreation. There is always a steady amount of work or teaching opportunities within every Botanical Garden. The Honolulu Botanical gardens are located all around the island of Oahu.",
       "interests": [
+        "Community",
+        "Volunteer"
       ],
-      "picture": "https://www.radgrad.org/img/radgrad_logo.png"
+      "picture": "https://loveoahu.org/wp-content/uploads/hoomaluhia-botanical-garden-along-stream.jpg"
     },
     {
-      "name": "WRENCH",
-      "homepage": "https://wrench-project.org",
-      "description": "WRENCH is an open-source library for developing simulators for large-scale scientific computation",
+      "name": "Makiki Arboretum Trail Plant Search",
+      "owner": "test@foo.com",
+      "homepage": "",
+      "description": "Hike through Makiki and search for plants and learn of the local fauna in Hawaii. Tour guides will lead the way as we search and record the plants we find. Snacks will be provided for children. We advise volunteers to bring water",
       "interests": [
+        "Plant Identification",
+        "Canoe Plants"
       ],
-      "picture": "https://wrench-project.org/images/logo-vertical.png"
+      "picture": "https://lh5.googleusercontent.com/p/AF1QipNIA65pxAVXSKl2771ANm1_vW3X6N6d1KQ1yH8m=w203-h151-k-no"
     },
     {
-      "name": "Cyber Canoe",
-      "homepage": "http://lava.manoa.hawaii.edu/blog/2014/07/11/cyber-canoe-cyber-infrastructure-enabled-collaborative-analysis-navigation-and-observation-environment/",
-      "description": "Software for Unity projects involving stereoscopic resolution driven by 9 PCs with a GeForce 980 graphics card.",
+      "name": "Reforestation and Afforestation in Kwahu Mountains",
+      "owner": "test@foo.com",
+      "homepage": "https://www.volunteerworld.com/en/volunteer-program/reforestation-and-tree-planting-in-ghana-abetifi",
+      "description": "Help the climate by growing seedlings and planting trees in the communities affected by deforestation and climate change. Work with the local community to educate and provide a long term chain of reforestation. Gain a new family, living in shared volunteer housing gives you the perfect chance to make life long friends across the globe. Make unforgettabe memories travelling with your fellow volunteers at weekends to places such as Mole Safari Park, Cape Coast Castle & Boti Waterfall.",
       "interests": [
+        "Conservation",
+        "Volunteer"
       ],
-      "picture": "https://www.hawaii.edu/its/wp-content/uploads/sites/2/2019/01/LAVAlogo-300x192-300x192.png"
+      "picture": "https://image.volunteerworld.com/d3eb1379e8b07eab84e4560e9a64244919dfd36e/Dual-Reforestation.png?auto=format&crop=faces&fit=crop&h=519.75&w=924"
     }
   ],
   "defaultInterests": [
@@ -117,6 +103,12 @@
     },
     {
       "name": "Volunteer"
+    },
+    {
+      "name": "Conservation"
+    },
+    {
+      "name": "Community"
     }
   ],
   "defaultPlants": [

@@ -75,8 +75,16 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
- 
+
 .plant{
   background-color: var(--primary-color) !important;
   color: white;
+}
+#project-card {
+  background-color: #366550;
+  color:white;
+}
+
+.project-interest-spacing {
+  margin-right: 5px;
 }
