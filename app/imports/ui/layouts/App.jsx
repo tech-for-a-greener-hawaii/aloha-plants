@@ -17,6 +17,7 @@ import Interests from '../pages/Interests';
 import Home from '../pages/Home';
 import Filter from '../pages/Filter';
 import AddProject from '../pages/AddProject';
+import AddPlant from '../pages/AddPlant';
 import Forums from '../pages/Forums';
 import AddForum from '../pages/AddForum';
 import Settings from '../pages/Settings';
@@ -39,6 +40,7 @@ const App = () => (
         <Route path="/addforum" element={<ProtectedRoute><AddForum /></ProtectedRoute>} />
         <Route path="/filter" element={<ProtectedRoute><Filter /></ProtectedRoute>} />
         <Route path="/addproject" element={<AdminRoute><AddProject /></AdminRoute>} />
+        <Route path="/addplant" element={<AdminRoute><AddPlant /></AdminRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
         <Route path="/settings" element={<ProtectedRoute><Settings /> </ProtectedRoute>} />
         <Route path="*" element={<NotFound />} />

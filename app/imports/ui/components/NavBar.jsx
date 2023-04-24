@@ -49,6 +49,9 @@ const NavBar = () => {
             {currentUser ? (
               <Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addProject" key="addP">Add Project</Nav.Link>
             ) : ''}
+            {currentUser ? (
+              <Nav.Link as={NavLink} id={ComponentIDs.addPlantMenuItem} to="/addPlant" key="addPlant">Add Plant</Nav.Link>
+            ) : ''}
           </Nav>
           <Nav className="justify-content-end align-content-start">
             {currentUser === '' ? (
