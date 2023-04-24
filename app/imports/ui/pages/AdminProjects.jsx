@@ -18,11 +18,12 @@ function getProjectData(name) {
   const data = Projects.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
-  return _.extend({}, data, { interests, participants: profiles });
+  const profilePictures = profiles.map(profile => Profiles.collection.findOne({ email: profile })?.picture);
+  return _.extend({}, data, { interests, participants: profilePictures });
 }
 
 /* Renders the Project Collection as a set of Cards. */
-const ProjectsPage = () => {
+const AdminProjectsPage = () => {
   const [projectDataFiltered, setProjectDataFiltered] = useState([]); // need this here for search to work
   const { ready, email } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
@@ -37,20 +38,20 @@ const ProjectsPage = () => {
   }, []);
   const projects = _.pluck(Projects.collection.find().fetch(), 'name');
   const projectData = projects.map(project => getProjectData(project));
-  // const checkRole = Roles.userIsInRole()
-  // console.log(`user role ${this.userId}`);
+  const currentUser = _.where(Profiles.collection.find().fetch(), { email: email, role: 'admin' });
+  const role = _.pluck(currentUser, 'role');
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
       <Row>
         <SearchBar baseData={projectData} filteredDataSetter={setProjectDataFiltered} dataFilterFunction={
-          (input, searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /*|| input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase())*/}
-        }/>
+          (input , searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /* || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase()) */ }
+        } />
       </Row>
       <Row xs={1} md={2} lg={3} className="g-2 mt-2">
-        {projectDataFiltered.map((project, index) => <ProjectCard key={index} project={project} email={email} />)}
+        {projectDataFiltered.map((project, index) => <ProjectCard key={index} project={project} email={email} role={role} />)}
       </Row>
     </Container>
   ) : <LoadingSpinner />;
 };
 
-export default ProjectsPage;
+export default AdminProjectsPage;

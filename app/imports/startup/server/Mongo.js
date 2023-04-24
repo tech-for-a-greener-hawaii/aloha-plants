@@ -8,6 +8,7 @@ import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
 import { Plants } from '../../api/plants/Plants';
+import { PlantsInterests } from '../../api/plants/PlantsInterests';
 import { Forums } from '../../api/forums/Forums';
 
 /* eslint-disable no-console */
@@ -40,23 +41,27 @@ if (Interests.collection.find().count() === 0) {
 function addProfile({ firstName, lastName, interests, projects, picture, email, role }) {
   console.log(`Defining profile ${email}`);
   // Define the user in the Meteor accounts package.
-  createUser(email, role);
+  // Check if user already exists
+  if (Accounts.findUserByEmail(email) == null) {
+    createUser(email, role);
+  }
   // Create the profile.
-  Profiles.collection.insert({ firstName, lastName, picture, email });
+  Profiles.collection.insert({ email, firstName, lastName, picture, role });
   // Add interests and projects.
-  interests.map(interest => ProfilesInterests.collection.insert({ profile: email, interest }));
-  projects.map(project => ProfilesProjects.collection.insert({ profile: email, project }));
-  // Make sure interests are defined in the Interests collection if they weren't already.
-  interests.map(interest => addInterest(interest));
+  if (interests != null) {
+    interests.map(interest => ProfilesInterests.collection.insert({ profile: email, interest }));
+  }
+  if (projects != null) {
+    projects.map(project => ProfilesProjects.collection.insert({ profile: email, project }));
+  }
 }
 
 /** Define a new project. Error if project already exists.  */
-function addProject({ name, homepage, description, interests, picture }) {
+function addProject({ name, owner, homepage, description, interests, picture }) {
   console.log(`Defining project ${name}`);
-  Projects.collection.insert({ name, homepage, description, picture });
+  Projects.collection.insert({ name, owner, homepage, description, picture });
   interests.map(interest => ProjectsInterests.collection.insert({ project: name, interest }));
-  // Make sure interests are defined in the Interests collection if they weren't already.
-  interests.map(interest => addInterest(interest));
+  ProfilesProjects.collection.insert({ profile: owner, project: name });
 }
 
 /** Define a new forum. Error if project already exists.  */
@@ -75,11 +80,9 @@ if (Forums.collection.find().count() === 0) {
 /** Define a new forum. Error if project already exists.  */
 const addPlant = (plant) => {
   console.log(`Adding ${plant.name}`);
-  // console.log(plant.picture)
+  plant.interests.map(interest => PlantsInterests.collection.insert({ plantName: plant.name, interest }));
+  console.log(PlantsInterests.collection.find().count());
   Plants.collection.insert(plant);
-  // var interests = plant['interests']
-  // interests.map(interest => PlantsInterests.collection.insert({ plant: name, interest }));
-
 };
 
 if (Plants.collection.find().count() === 0) {
@@ -95,10 +98,14 @@ if (Meteor.users.find().count() === 0) {
   if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles && Meteor.settings.defaultForums && Meteor.settings.defaultPlants) {
     console.log('Creating the Admin User');
     createUser('admin@foo.com', 'admin');
+    addProfile({ firstName: '', lastName: '', interests: null, projects: null, picture: '', email: 'admin@foo.com', role: 'admin' });
     console.log('Creating the Default Creator: creator@foo.com');
     createUser('creator@foo.com', 'creator');
+    addProfile({ firstName: '', lastName: '', interests: null, projects: null, picture: '', email: 'creator@foo.com', role: 'creator' });
     console.log('Creating the Default User: john@foo.com');
     createUser('john@foo.com', 'user');
+    addProfile({ firstName: '', lastName: '', interests: null, projects: null, picture: '', email: 'john@foo.com', role: 'user' });
+
     console.log('Creating the default profiles');
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
@@ -124,5 +131,5 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   jsonData.profiles.map(profile => addProfile(profile));
   jsonData.projects.map(project => addProject(project));
   jsonData.forums.map(forum => addForum(forum));
-  jsonData.plants.map(forum => addForum(forum));
+  jsonData.plants.map(plant => addPlant(plant));
 }
