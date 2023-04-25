@@ -80,8 +80,13 @@ if (Forums.collection.find().count() === 0) {
 /** Define a new forum. Error if project already exists.  */
 const addPlant = (plant) => {
   console.log(`Adding ${plant.name}`);
-  
-  plant.interests.map(interest => PlantsInterests.collection.insert({ plantName: plant.name, interest }));
+  console.log(`interests ${plant.interests}`);
+  if (typeof plant.interests !== 'undefined') {
+    plant.interests.map(interest => PlantsInterests.collection.insert({ plantName: plant.name, interest }));
+    console.log(PlantsInterests.collection.find().count());
+  } else {
+    console.log('there are not interests for this plant^');
+  }
   Plants.collection.insert(plant);
 };
 
@@ -90,7 +95,9 @@ if (Plants.collection.find().count() === 0) {
     console.log('Creating default plants');
     // console.log(Meteor.settings.defaultPlants)
     Meteor.settings.defaultPlants.forEach(plant => addPlant(plant));
-    console.log(PlantsInterests.collection.find().count());
+    console.log('were the interests added:');
+    console.log(PlantsInterests.collection.find().count())
+    console.log(PlantsInterests.collection.findOne());
   }
 }
 
@@ -111,8 +118,6 @@ if (Meteor.users.find().count() === 0) {
     Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
     console.log('Creating the default projects');
     Meteor.settings.defaultProjects.map(project => addProject(project));
-    console.log('Creating default plants');
-    Meteor.settings.defaultPlants.map(plants => addPlant(plants));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }
