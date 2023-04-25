@@ -103,6 +103,7 @@ const PlantsPage = () => {
     <Container id={PageIDs.plantsPage} style={pageStyle}>
       <Row>
         <SearchBar
+          filteredData={plantDataFiltered}
           baseData={plantData}
           filteredDataSetter={setPlantDataFiltered}
           dataFilterFunction={

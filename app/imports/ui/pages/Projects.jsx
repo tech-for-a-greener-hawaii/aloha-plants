@@ -42,7 +42,7 @@ const ProjectsPage = () => {
   return ready ? (
     <Container id={PageIDs.projectsPage} style={pageStyle}>
       <Row>
-        <SearchBar baseData={projectData} filteredDataSetter={setProjectDataFiltered} dataFilterFunction={
+        <SearchBar filteredData={projectDataFiltered} baseData={projectData} filteredDataSetter={setProjectDataFiltered} dataFilterFunction={
           (input, searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /*|| input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase())*/}
         }/>
       </Row>
