@@ -5,6 +5,7 @@ import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { Forums } from '../../api/forums/Forums';
+import { PageIDs } from '../utilities/ids';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
@@ -38,7 +39,7 @@ const AddForum = () => {
   let fRef = null;
   return (
     <Container className="py-3">
-      <Row className="justify-content-center">
+      <Row id={PageIDs.addForumPage} className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Add Forum</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>

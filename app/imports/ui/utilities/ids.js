@@ -1,6 +1,6 @@
 export const ComponentIDs = {
   addProjectMenuItem: 'addProjectMenuItem',
-  addPlantsMenuItem: 'addPlantsMenuItem',
+  addPlantMenuItem: 'addPlantsMenuItem',
   addProjectFormName: 'addProjectFormName',
   addProjectFormPicture: 'addProjectFormPicture',
   addProjectFormHomePage: 'addProjectFormHomePage',
@@ -31,6 +31,9 @@ export const ComponentIDs = {
   signUpFormEmail: 'signUpFormEmail',
   signUpFormPassword: 'signUpFormPassword',
   signUpFormSubmit: 'signUpFormSubmit',
+  plantsMenuItem: 'plantsMenuItem',
+  forumsMenuItem: 'forumsMenuItem',
+  currentUserDropdownSettings: 'currentUserDropdownSettings',
 };
 
   export const PageIDs = {
@@ -48,4 +51,9 @@ export const ComponentIDs = {
   signInPage: 'signInPage',
   signOutPage: 'signOutPage',
   signUpPage: 'signUpPage',
+    addForumPage: 'addForumPage',
+    addPlantPage: 'addPlantPage',
+    adminProjectsPage: 'adminProjectsPage',
+    editProjectPage: 'editProjectPage',
+    settingsPage: 'settingsPage',
 };

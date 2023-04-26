@@ -48,9 +48,9 @@ const NavBar = () => {
             {currentUser === 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/adminprojects" key="adminprojects">Projects</Nav.Link>
             ) : ''}
-            <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/plants" key="plants">Plants</Nav.Link>
+            <Nav.Link as={NavLink} id={ComponentIDs.plantsMenuItem} to="/plants" key="plants">Plants</Nav.Link>
             {currentUser ? (
-              <Nav.Link as={NavLink} id={ComponentIDs.profilesMenuItem} to="/Forums" key="forums">Forums</Nav.Link>
+              <Nav.Link as={NavLink} id={ComponentIDs.forumsMenuItem} to="/Forums" key="forums">Forums</Nav.Link>
             ) : ''}
             {adminUser === 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addProject" key="addP">Add Project</Nav.Link>
@@ -79,7 +79,7 @@ const NavBar = () => {
                   <Image className="user-icon" src={userImage} alt="img" />
                 </Navbar.Brand>
                 <NavDropdown id={ComponentIDs.currentUserDropdown} title={currentUser}>
-                  <NavDropdown.Item id={ComponentIDs.currentUserDropdownSignOut} as={NavLink} to="/settings">
+                  <NavDropdown.Item id={ComponentIDs.currentUserDropdownSettings} as={NavLink} to="/settings">
                     <Gear />
                     {' '}
                     Settings

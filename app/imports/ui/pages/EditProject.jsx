@@ -8,6 +8,7 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Projects } from '../../api/projects/Projects';
+import { PageIDs } from '../utilities/ids';
 
 const bridge = new SimpleSchema2Bridge(Projects.schema);
 
@@ -40,7 +41,7 @@ const EditProject = () => {
 
   return ready ? (
     <Container className="py-3">
-      <Row className="justify-content-center">
+      <Row id={PageIDs.editProjectPage} className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Edit Project</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>

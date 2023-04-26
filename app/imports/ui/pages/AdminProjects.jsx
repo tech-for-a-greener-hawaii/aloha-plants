@@ -41,8 +41,8 @@ const AdminProjectsPage = () => {
   const currentUser = _.where(Profiles.collection.find().fetch(), { email: email, role: 'admin' });
   const role = _.pluck(currentUser, 'role');
   return ready ? (
-    <Container id={PageIDs.projectsPage} style={pageStyle}>
-      <Row>
+    <Container style={pageStyle}>
+      <Row id={PageIDs.projectsPage}>
         <SearchBar baseData={projectData} filteredDataSetter={setProjectDataFiltered} dataFilterFunction={
           (input , searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /* || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase()) */ }
         } />
