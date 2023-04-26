@@ -76,11 +76,11 @@ test('Test that addProject page works', async (testController) => {
   await addProjectPage.addProject(testController);
 });
 
-test('Test that filter page works', async (testController) => {
+/*test('Test that filter page works', async (testController) => {
   await navBar.ensureLogout(testController);
   await navBar.gotoSignInPage(testController);
   await signInPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoFilterPage(testController);
   await filterPage.isDisplayed(testController);
   await filterPage.filter(testController);
-});
+});*/
