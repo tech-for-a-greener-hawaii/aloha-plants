@@ -5,6 +5,7 @@ import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { Plants } from '../../api/plants/Plants';
+import { PageIDs } from '../utilities/ids';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
@@ -44,7 +45,7 @@ const AddPlant = () => {
   let fRef = null;
   return (
     <Container className="py-3">
-      <Row className="justify-content-center">
+      <Row id={PageIDs.addPlantPage} className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Add Plants</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
