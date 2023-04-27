@@ -45,7 +45,7 @@ const NavBar = () => {
             {!loggedIn ? (
               <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/browseprojects" key="browseprojects">Projects</Nav.Link>
             ) : ''}
-            {loggedIn ? (
+            {loggedIn && currentUser !== 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/projects" key="projects">Projects</Nav.Link>
             ) : ''}
             {currentUser === 'admin@foo.com' ? (
