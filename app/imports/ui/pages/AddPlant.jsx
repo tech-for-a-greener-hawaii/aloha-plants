@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
@@ -51,17 +51,41 @@ const AddPlant = () => {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="name" />
-                <TextField name="scientificName" />
-                <TextField name="indigenousStatus" />
-                <TextField name="description" />
-                <TextField name="growingConditions" />
-                <TextField name="propogation" />
-                <TextField name="range" />
-                <TextField name="culturalUses" />
-                <TextField name="pests" />
-                <TextField name="picture" />
-                <SubmitField value="Submit" />
+                <Row>
+                  <Col>
+                    <TextField name="name" />
+                  </Col>
+                  <Col>
+                    <TextField name="scientificName" />
+                  </Col>
+                  <Col>
+                    <TextField name="indigenousStatus" />
+                  </Col>
+                </Row>
+                <LongTextField name="description" />
+                <Row>
+                  <Col>
+                    <TextField name="growingConditions" />
+                  </Col>
+                  <Col>
+                    <TextField name="propogation" />
+                  </Col>
+                  <Col>
+                    <TextField name="range" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <TextField name="culturalUses" />
+                  </Col>
+                  <Col>
+                    <TextField name="pests" />
+                  </Col>
+                  <Col>
+                    <TextField name="picture" />
+                  </Col>
+                </Row>
+                <SubmitField className="text-center" value="Submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>
