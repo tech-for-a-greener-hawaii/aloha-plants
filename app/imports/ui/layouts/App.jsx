@@ -23,6 +23,7 @@ import AddForum from '../pages/AddForum';
 import Settings from '../pages/Settings';
 import AdminProjects from '../pages/AdminProjects';
 import EditProject from '../pages/EditProject';
+import LandingProjects from '../pages/LandingProjects';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -35,7 +36,8 @@ const App = () => (
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
         <Route path="/interests" element={<Interests />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/browseprojects" element={<LandingProjects />} />
+        <Route path="/projects" element={<ProtectedRoute><Projects /></ProtectedRoute>} />
         <Route path="/plants" element={<Plants />} />
         <Route path="/edit/:_id" element={<AdminRoute><EditProject /></AdminRoute>} />
         <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
