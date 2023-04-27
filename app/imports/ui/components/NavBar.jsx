@@ -55,7 +55,7 @@ const NavBar = () => {
             {adminUser === 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addProject" key="addP">Add Project</Nav.Link>
             ) : ''}
-            {currentUser ? (
+            {adminUser === 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.addPlantMenuItem} to="/addPlant" key="addPlant">Add Plant</Nav.Link>
             ) : ''}
           </Nav>
