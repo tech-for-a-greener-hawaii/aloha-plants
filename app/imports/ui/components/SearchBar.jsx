@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 const SearchBar = ({ filteredData, baseData, filteredDataSetter, dataFilterFunction }) => {
   SearchBar.propTypes = {
-    filteredData: PropTypes.PropTypes.objectOf(PropTypes.object()).isRequired,
-    baseData: PropTypes.PropTypes.objectOf(PropTypes.object()).isRequired,
+    // filteredData: PropTypes.PropTypes.objectOf(PropTypes.object()).isRequired,
+    // baseData: PropTypes.PropTypes.objectOf(PropTypes.object()).isRequired,
     filteredDataSetter: PropTypes.func.isRequired,
     dataFilterFunction: PropTypes.func.isRequired,
   };
