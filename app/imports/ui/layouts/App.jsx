@@ -24,6 +24,7 @@ import Settings from '../pages/Settings';
 import AdminProjects from '../pages/AdminProjects';
 import EditProject from '../pages/EditProject';
 import LandingProjects from '../pages/LandingProjects';
+import RemoveUsers from '../pages/RemoveUsers';
 
 /* Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
@@ -47,6 +48,7 @@ const App = () => (
         <Route path="/addproject" element={<AdminRoute><AddProject /></AdminRoute>} />
         <Route path="/addplant" element={<AdminRoute><AddPlant /></AdminRoute>} />
         <Route path="/adminprojects" element={<AdminRoute><AdminProjects /></AdminRoute>} />
+        <Route path="/removeusers" element={<AdminRoute><RemoveUsers /></AdminRoute>} />
         <Route path="/notauthorized" element={<NotAuthorized />} />
         <Route path="/settings" element={<ProtectedRoute><Settings /> </ProtectedRoute>} />
         <Route path="*" element={<NotFound />} />

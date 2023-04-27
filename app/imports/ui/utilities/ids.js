@@ -34,6 +34,7 @@ export const ComponentIDs = {
   plantsMenuItem: 'plantsMenuItem',
   forumsMenuItem: 'forumsMenuItem',
   currentUserDropdownSettings: 'currentUserDropdownSettings',
+  removeUsersMenuItem: 'removeUsersMenuItem',
 };
 
 export const PageIDs = {
@@ -56,4 +57,5 @@ export const PageIDs = {
   adminProjectsPage: 'adminProjectsPage',
   editProjectPage: 'editProjectPage',
   settingsPage: 'settingsPage',
+  removeUsersPage: 'removeUsersPage',
 };
