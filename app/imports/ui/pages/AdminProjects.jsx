@@ -43,9 +43,14 @@ const AdminProjectsPage = () => {
   return ready ? (
     <Container style={pageStyle}>
       <Row id={PageIDs.projectsPage}>
-        <SearchBar baseData={projectData} filteredDataSetter={setProjectDataFiltered} dataFilterFunction={
-          (input , searchIn) => {return input.name.toLowerCase().includes(searchIn.toLowerCase()) /* || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase()) */ }
-        } />
+        <SearchBar
+          filteredData={projectDataFiltered}
+          baseData={projectData}
+          filteredDataSetter={setProjectDataFiltered}
+          dataFilterFunction={
+            (input, searchIn) => input.name.toLowerCase().includes(searchIn.toLowerCase()) /* || input.description.toLowerCase().includes(searchIn.toLowerCase()) || input.title.toLowerCase().includes(searchIn.toLowerCase()) */
+          }
+        />
       </Row>
       <Row xs={1} md={2} lg={3} className="g-2 mt-2">
         {projectDataFiltered.map((project, index) => <ProjectCard key={index} project={project} email={email} role={role} />)}

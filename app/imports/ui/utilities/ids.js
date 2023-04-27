@@ -36,7 +36,7 @@ export const ComponentIDs = {
   currentUserDropdownSettings: 'currentUserDropdownSettings',
 };
 
-  export const PageIDs = {
+export const PageIDs = {
   addProjectPage: 'addProjectPage',
   filterPage: 'filterPage',
   homePage: 'homePage',
@@ -51,9 +51,9 @@ export const ComponentIDs = {
   signInPage: 'signInPage',
   signOutPage: 'signOutPage',
   signUpPage: 'signUpPage',
-    addForumPage: 'addForumPage',
-    addPlantPage: 'addPlantPage',
-    adminProjectsPage: 'adminProjectsPage',
-    editProjectPage: 'editProjectPage',
-    settingsPage: 'settingsPage',
+  addForumPage: 'addForumPage',
+  addPlantPage: 'addPlantPage',
+  adminProjectsPage: 'adminProjectsPage',
+  editProjectPage: 'editProjectPage',
+  settingsPage: 'settingsPage',
 };
