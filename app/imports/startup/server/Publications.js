@@ -6,7 +6,6 @@ import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { Projects } from '../../api/projects/Projects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
 import { Plants } from '../../api/plants/Plants';
-import { PlantsInterests} from '../../api/plants/PlantsInterests';
 import { Forums } from '../../api/forums/Forums';
 import { Comments } from '../../api/forums/Comments';
 
