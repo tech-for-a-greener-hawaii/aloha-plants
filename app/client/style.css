@@ -48,7 +48,7 @@ body {
 }
 
 .landing-lightGreen-background {
-  background-color: darkgreen;
+  background-color: #D3D3D3;
   color: var(--bowfolio-navbar-text);
   padding-top: 20px;
 }
