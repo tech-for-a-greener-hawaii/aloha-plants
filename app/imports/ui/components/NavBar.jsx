@@ -61,6 +61,9 @@ const NavBar = () => {
             {adminUser === 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.addPlantMenuItem} to="/addPlant" key="addPlant">Add Plant</Nav.Link>
             ) : ''}
+            {adminUser === 'admin@foo.com' ? (
+              <Nav.Link as={NavLink} id={ComponentIDs.removeUsersMenuItem} to="/removeusers" key="removeUsers">Remove Users</Nav.Link>
+            ) : ''}
           </Nav>
           <Nav className="justify-content-end align-content-start">
             {currentUser === '' ? (
