@@ -24,8 +24,6 @@ const ProfileCard = ({ profile }) => {
   const remove = (data) => {
     Profiles.collection.remove({ _id: data._id });
     setShow(false);
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
   };
 
   const defaultProfileImage = '/images/defaultProfileImage.png';
