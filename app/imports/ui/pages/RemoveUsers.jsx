@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
-import { Button, Col, Image, Row, Modal, InputGroup, Form, Card, Badge } from 'react-bootstrap';
+import { Button, Col, Row, Modal, Form, Card } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
 import { useTracker } from 'meteor/react-meteor-data';
-import { ComponentIDs, PageIDs } from '../utilities/ids';
+import { PageIDs } from '../utilities/ids';
 import { Profiles } from '../../api/profiles/Profiles';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 
 /* A simple static component to render some text for the landing page. */
 
 const ProfileCard = ({ profile }) => {
   const [show, setShow] = useState(false);
+  const [disableButton, setDisableButton] = useState(true);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const input = document.getElementById('deleteText');
-  const remove = (data) => {
-    if (input.value === 'DELETE') {
-      Profiles.collection.remove({ _id: data._id });
-      setShow(false);
-      // eslint-disable-next-line no-restricted-globals
-      location.reload();
+  const checkInput = (event) => {
+    if (event.target.value === 'DELETE') {
+      setDisableButton(false);
+    } else {
+      setDisableButton(true);
     }
+  };
+  const remove = (data) => {
+    Profiles.collection.remove({ _id: data._id });
+    setShow(false);
   };
 
   const defaultProfileImage = '/images/defaultProfileImage.png';
@@ -46,18 +47,19 @@ const ProfileCard = ({ profile }) => {
         >
           Delete
         </Button>
-        <Modal show={show} onHide={handleClose} centered>
+        <Modal show={show} onHide={() => handleClose()} centered>
           <Modal.Header closeButton>
             <Modal.Title>Remove User</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Type DELETE to confirm</p>
+            <p>Type <strong>DELETE</strong> to confirm</p>
             <Form.Control
               id="deleteText"
               aria-label="Username"
+              onChange={checkInput}
             />
             <div className="d-flex justify-content-end mt-3">
-              <Button id="deleteButton" variant="danger" onClick={() => remove(profile)}>
+              <Button disabled={disableButton} id="deleteButton" variant="danger" onClick={() => remove(profile)}>
                 CONFIRM
               </Button>
             </div>
