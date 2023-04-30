@@ -13,43 +13,43 @@ const Landing = () => (
         <Row style={{ paddingBottom: '20px' }} />
       </Container>
     </div>
-    <div className="landing-white-background">
+    <div className="landing-white-background pb-4">
       <Container className="justify-content-center text-center">
-        <h2 style={{ paddingBottom: '20px', color: 'white' }}>Add your interests and profile picture....</h2>
+        <h2 style={{ paddingBottom: '20px', color: 'white' }}>Browse Hawaii plants page and find local projects....</h2>
         <Row md={1} lg={2}>
           <Col xs={6}>
-            <Image src="/images/home-page.png" width={500} />
+            <Image src="/images/plant-page.png" width={500} />
           </Col>
           <Col xs={6}>
-            <Image src="/images/profiles-page.png" width={500} />
+            <Image src="/images/project-page.png" width={500} />
           </Col>
         </Row>
       </Container>
     </div>
-    <div className="landing-green-background">
+    <div className="landing-green-background pb-4">
       <Container className="justify-content-center text-center">
-        <h2 style={{ paddingBottom: '20px', color: 'white' }}>....then check out local projects</h2>
+        <h2 style={{ paddingBottom: '20px', color: 'white' }}>....then check out the plant forums to discuss plant topics</h2>
         <Row md={1} lg={2}>
           <Col xs={6}>
-            <Image src="/images/add-project-page.png" width={500} />
+            <Image src="/images/forum-page.png" width={500} />
           </Col>
           <Col xs={6}>
-            <Image src="/images/projects-page.png" width={500} />
+            <Image src="/images/add-forum.png" width={500} />
           </Col>
         </Row>
       </Container>
     </div>
-    <div className="landing-white-background text-center">
+    <div className="landing-white-background text-center pb-4">
       <h2 style={{ paddingBottom: '20px', color: 'white' }}>
-        Become a creator to start your own project!
+        Become a creator to start your own project or add in missing plant data!
       </h2>
       <Container>
         <Row md={1} lg={2}>
           <Col xs={6}>
-            <Image src="/images/interests-page.png" width={500} />
+            <Image src="/images/add-project.png" width={500} />
           </Col>
           <Col xs={6}>
-            <Image src="/images/filter-page.png" width={500} />
+            <Image src="/images/add-plant.png" width={500} />
           </Col>
         </Row>
       </Container>
