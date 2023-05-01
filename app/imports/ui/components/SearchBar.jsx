@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 
-/* test */
 /* eslint react/prop-types: 0 */
 const SearchBar = ({ filteredData, baseData, filteredDataSetter, dataFilterFunction }) => {
   const [searchIn, setSearchIn] = useState('');
