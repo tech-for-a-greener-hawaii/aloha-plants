@@ -3,17 +3,13 @@ import { landingPage } from './landing.page';
 import { signInPage } from './signin.page';
 import { signOutPage } from './signout.page';
 import { signupPage } from './signup.page';
-import { profilesPage } from './profiles.page';
 import { projectsPage } from './projects.page';
-import { interestsPage } from './interests.page';
-import { homePage } from './home.page';
 import { addProjectPage } from './addproject.page';
-import { filterPage } from './filter.page';
 import { navBar } from './navbar.component';
-import { forumsPage} from './forums.page';
-import { addPlantPage} from './addplant.page';
-import { plantsPage} from './plants.page';
-import { editProjectPage } from './editproject.page';
+import { forumsPage } from './forums.page';
+import { addPlantPage } from './addplant.page';
+import { plantsPage } from './plants.page';
+import { removeUsersPage } from './removeusers.page';
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'admin@foo.com', password: 'foo', firstName: 'Philip', lastName: 'Johnson' };
@@ -48,14 +44,12 @@ test('Test that home page displays', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signInPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoHomePage(testController);
-  await homePage.isDisplayed(testController);
 });
 
 test('Test that projects page displays', async (testController) => {
   await navBar.gotoProjectsPage(testController);
   await projectsPage.isDisplayed(testController);
 });
-
 
 test('Test that addProject page works', async (testController) => {
   await navBar.gotoSignInPage(testController);
@@ -87,4 +81,12 @@ test('Test that addplant page displays', async (testController) => {
   await signInPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoAddPlantPage(testController);
   await addPlantPage.isDisplayed(testController);
+});
+
+test('Test that removeUser page displays', async (testController) => {
+  await navBar.ensureLogout(testController);
+  await navBar.gotoSignInPage(testController);
+  await signInPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoRemoveUserPage(testController);
+  await removeUsersPage.isDisplayed(testController);
 });

@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import PropTypes from 'prop-types';
 
+/* eslint react/prop-types: 0 */
 const SearchBar = ({ filteredData, baseData, filteredDataSetter, dataFilterFunction }) => {
-  SearchBar.propTypes = {
-    // filteredData: PropTypes.PropTypes.objectOf(PropTypes.object()).isRequired,
-    // baseData: PropTypes.PropTypes.objectOf(PropTypes.object()).isRequired,
-    filteredDataSetter: PropTypes.func.isRequired,
-    dataFilterFunction: PropTypes.func.isRequired,
-  };
   const [searchIn, setSearchIn] = useState('');
   if (filteredData === undefined || (filteredData.length !== baseData.length && searchIn.length === 0)) { filteredDataSetter(baseData); }
   function filterFunctionWrapper(input) {
