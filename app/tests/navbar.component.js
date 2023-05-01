@@ -104,6 +104,14 @@ class NavBar {
     await testController.click(`#${ComponentIDs.loginDropdown}`);
     await testController.click(`#${ComponentIDs.loginDropdownSignUp}`);
   }
+
+  async gotoHomePage(testController) {
+    const visible = await Selector(`#${ComponentIDs.basicNavbarNav}`).visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    await testController.click(`#${ComponentIDs.homeMenuItem}`);
+  }
 }
 
 export const navBar = new NavBar();
