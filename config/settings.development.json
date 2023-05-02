@@ -753,14 +753,44 @@
       "leadComment": "Discussion about different ideas/systems to collect and redistribute natural rain water"
     },
     {
-      "title": "Forum 3",
-      "topic": "Topic 3",
-      "leadComment": "Discussion 3"
+      "title": "Growing Your Own Food",
+      "topic": "Growing Your Own Food",
+      "leadComment": "Share tips and advice on how to grow your own food and become more self-sufficient. Discuss the benefits of growing native plants and other crops that are well-suited to your local environment."
     },
     {
-      "title": "Forum 4",
-      "topic": "Topic 4",
-      "leadComment": "Discussion 4"
+      "title": "Protecting Endangered Species",
+      "topic": "Protecting Endangered Species",
+      "leadComment": "Discuss ways to protect and conserve endangered species, such as planting native plants that provide habitat and food for wildlife, reducing human impact on their habitats, and supporting conservation organizations."
+    },
+    {
+      "title": "Sustainable Living",
+      "topic": "Sustainable Living",
+      "leadComment": "Share your ideas and experiences on how to live more sustainably, including reducing your carbon footprint, using renewable energy, and conserving resources. Discuss how to integrate sustainable practices into your daily life."
+    },
+    {
+      "title": "Malama Aina Projects",
+      "topic": "Malama Aina Projects",
+      "leadComment": "Share information and updates on current conservation projects in your area. Discuss how you can get involved and help protect and restore local ecosystems, such as planting native plants, removing invasive species, and restoring wetlands."
+    },
+    {
+      "title": "Traditional Farming Practices",
+      "topic": "Traditional Farming Practices",
+      "leadComment": "Discuss traditional farming practices and their importance for food security and sustainable agriculture. Share knowledge and techniques for growing crops in harmony with the land, using natural fertilizers and pest control methods, and preserving heirloom varieties."
+    },
+    {
+      "title": "Advocating for Conservation",
+      "topic": "Advocating for Conservation",
+      "leadComment": "Share your experiences and tips for advocating for conservation policies and initiatives at the local, state, and national levels. Discuss how to build coalitions, engage policymakers, and raise awareness about the importance of conservation and environmental protection."
+    },
+    {
+      "title": "Indoor Plants",
+      "topic": "Indoor Plants",
+      "leadComment": "Discuss how to take care of indoor plants and how they've affected your lifestyle. What indoor plants are easiest to take care of? What plants would be a good addition to a college student's dorm?"
+    },
+    {
+      "title": "Carnivorous Plants",
+      "topic": "Carnivorous Plants",
+      "leadComment": "How to take care of carnivorous plants. These plants require additional attention and are much different to take care of. What are some tips and tricks for taking care of them? Share your experiences with carnivorous plants."
     }
   ],
   "loadAssetsFile":  false
