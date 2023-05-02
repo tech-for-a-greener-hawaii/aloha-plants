@@ -12,7 +12,6 @@ import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
 import SearchBar from '../components/SearchBar';
 import ProjectCard from '../components/ProjectCard';
-import { PlantsInterests } from '../../api/plants/PlantsInterests';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getProjectData(name) {

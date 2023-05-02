@@ -61,9 +61,6 @@ const MakeCard = ({ plant }) => (
 
         </Card.Text>
       </Card.Body>
-      {/*<Card.Body>*/}
-      {/*   {interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}*/}
-      {/*</Card.Body>*/}
     </Card>
   </Col>
 );
@@ -77,7 +74,7 @@ MakeCard.propTypes = {
     growingConditions: PropTypes.string,
     propagation: PropTypes.string,
     range: PropTypes.string,
-    culturalUses: PropTypes,
+    culturalUses: PropTypes.string,
     pests: PropTypes.string,
     // interests: PropTypes.arrayOf(PropTypes.string),
     picture: PropTypes.string,
