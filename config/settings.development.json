@@ -1,9 +1,9 @@
 {
   "defaultProfiles": [
     {
-      "email": "test@foo.com",
-      "firstName": "John",
-      "lastName": "Kennedy",
+      "email": "bdd@foo.com",
+      "firstName": "Brian",
+      "lastName": "Dang",
       "interests": [
         "Volunteer"
       ],
@@ -39,6 +39,37 @@
       ],
       "picture": "https://github.com/cammoore.png",
       "role": "user"
+    },
+    {
+      "email": "pfry@hawaii.edu",
+      "firstName": "Philip",
+      "lastName": "Fry",
+      "interests": [
+        "Volunteer",
+        "Canoe Plants",
+        "Community"
+      ],
+      "projects":[
+        "Honolulu Botanical Gardens",
+        "Honolulu Zoo Children's Discovery Forest",
+        "Kaha Garden"
+      ],
+      "picture": "",
+      "role": "admin"
+    },
+    {
+      "email": "pfarns@hawaii.edu",
+      "firstName": "Professor",
+      "lastName": "Farnsworth",
+      "interests": [
+        "Volunteer",
+        "Canoe Plants",
+        "Community"
+      ],
+      "projects":[
+      ],
+      "picture": "",
+      "role": "admin"
     }
   ],
   "defaultProjects": [
@@ -86,6 +117,136 @@
         "Volunteer"
       ],
       "picture": "https://image.volunteerworld.com/d3eb1379e8b07eab84e4560e9a64244919dfd36e/Dual-Reforestation.png?auto=format&crop=faces&fit=crop&h=519.75&w=924"
+    },
+    {
+      "name": "He'eia Estuary Restoration Project",
+      "owner": "cmoore@hawaii.edu",
+      "homepage": "https://www.huihawaii.org/volunteer-opportunities.html",
+      "description": "Located on He'eia State Park (currently managed by Kama 'āina Kids), will take place at the mouth of He'eia Stream in an five acre area dominated by non-native species including mangrove and hau bush where both species have encroached on the stream corridor, making it nearly impassable. Replacement of native plant species aid in erosion control, filtration of storm water runoff, and provide habitat for native species.",
+      "interests": [
+        "Canoe Plants",
+        "Volunteer",
+        "Conservation"
+      ],
+      "picture": "https://www.huihawaii.org/uploads/1/6/6/3/16632890/kailua-freshman-march-2017_orig.jpg"
+    },
+    {
+      "name": "Kaha Garden",
+      "owner": "henric@hawaii.edu",
+      "homepage": "https://www.huihawaii.org/volunteer-opportunities.html",
+      "description": "Kaha Garden is a native xeriscape garden located in urban Kailua and maintained solely by community volunteers.  Volunteers at Kaha Garden are taught to identify native plants, learn their growing patterns, how to properly propagate, and where to plant different species to maximize their ecological benefits.  Community workdays are held quarterly at this site. This event is ideal for volunteers of all ages or with limited time to donate, volunteers can come & go as their schedule allows.",
+      "interests": [
+        "Canoe Plants",
+        "Volunteer",
+        "Plant Identification"
+      ],
+      "picture": "https://www.huihawaii.org/uploads/1/6/6/3/16632890/kaha2015_1_orig.jpg"
+    },
+    {
+      "name": "Trees For Kaimuki",
+      "owner": "henric@hawaii.edu",
+      "homepage": "https://www.treesforhonolulu.org/trees-for-kaimuki/",
+      "description": "TFHF has teamed up with EnVision Kaimukī, the City and County of Honolulu’s Urban Forestry Division, Smart Trees Pacific, the National Park Service, The Outdoor Circle, and other partners on this new community-based initiative. The concept behind this initiative is twofold: 1) Develop a Sense of Community Ownership & Pride – Involve residents and business owners /employees in the planning, planting, and caring for new trees, 2) Model for Other Communities – A successful effort in a single community can then serve as a replicable and inviting model for other communities",
+      "interests": [
+        "Community",
+        "Conservation"
+      ],
+      "picture": "https://treesforhl.wpenginepowered.com/wp-content/uploads/2021/05/tfk-1@2x-min.jpg"
+    },
+    {
+      "name": "Hawaii Forest Industry Association",
+      "owner": "henric@hawaii.edu",
+      "homepage": "https://hawaiiforest.org/volunteer_and_educational_opportunities/",
+      "description": "Adult and youth groups from the community and educational institutions are invited to contact the Hawai‘i Forest Industry Association to volunteer at the ongoing dryland forest restoration project. Tasks may include planting seedlings, removing alien weeds, constructing trails, and similar work. Volunteers may be able to participate in a periodically scheduled “work day” on the site, or special arrangements may be possible.",
+      "interests": [
+        "Community",
+        "Conservation"
+      ],
+      "picture": "https://hawaiiforest.org/wp-content/uploads/YYC0001_sm.jpg"
+    },
+    {
+      "name": "Honolulu Zoo Children's Discovery Forest",
+      "owner": "henric@hawaii.edu",
+      "homepage": "https://hawaiiforest.org/honolulu_zoo_discovery_forest/",
+      "description": "HFIA, Hawai‘i Forest Institute (HFI), and community partners are planning the Honolulu Zoo Children’s Discovery Forest, which will be created at the Honolulu Zoo in Waikiki on the Island of O‘ahu. The project site is located near the zoo entrance, adjacent to the future site of a Native Hawaiian Village. The Discovery Forest will be a representation of natural systems, creating a scene of Hawai‘i before the arrival of humans. The exhibit will be designed to demonstrate culturally significant Hawaiian plant species, the significance of place, and the kuleana of mālama ‘āina by integrating traditional Hawaiian forest ecosystems, forest stewardship opportunities, and innovative land-based education for residents and visitors.",
+      "interests": [
+        "Community",
+        "Conservation",
+        "Plant Identification",
+        "Canoe Plants"
+      ],
+      "picture": "https://hawaiiforest.org/wp-content/uploads/HFIA-logo.png"
+    },
+    {
+      "name": "Organic Farm Living, Learning & Helping (Hawaii)",
+      "owner": "pfry@foo.com",
+      "homepage": "https://helpstay.com/stays/Organic-Farm-Living-Learning-Helping-Hawaii#overview",
+      "description": "We are a 4 acre NO SPRAY small family farm in Honolulu, HI in the town of Hawaii Kai. This farm has been in the family for almost 40 years. My grandmother is still alive and this is where I grew up as a child. On a clear day you can view a beautiful sunset. If you are willing, you will learn why it`s so important to grow your own food at home. We live on an island and if the ships stop coming we have to learn how to survive and be sustainable. Oahu has many different cultures so if you like to explore the island then you will have a great cultural experience.",
+      "interests": [
+        "Farming"
+      ],
+      "picture": "https://helpstay.com/system/e598d85e62b7d12a3db269f3209af58cf2566b2c.jpg?1571845534"
+    },
+    {
+      "name": "Maui Farm Community Programs",
+      "owner": "pfarns@hawaii.edu",
+      "homepage": "https://www.themauifarm.org/community",
+      "description": "Farm-based programs utilize farming and gardening activities to improve the mental, emotional, spiritual and physical health of participants, while helping people rediscover their connection to nature in positive ways that facilitate their personal growth and development. Individuals of all ages learn the importance of appreciating and caring for our natural resources, growing our own healthy food, and understanding the importance of sustainability efforts. Through hands-on learning, we teach sustainable agriculture practices and cultural values that support children, youth and adults in becoming good stewards of the ʻaina (land), while encouraging environmental awareness and stewardship.",
+      "interests": [
+        "Farming"
+      ],
+      "picture": "https://static.wixstatic.com/media/82954d_5c9f7f85e5be4ae9bd561f26f3ea18ff~mv2.jpg/v1/fill/w_1225,h_708,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/82954d_5c9f7f85e5be4ae9bd561f26f3ea18ff~mv2.jpg"
+    },
+    {
+      "name": "VOLUNTEERING AT LAHAINA FAMILY FARMS",
+      "owner": "pfarns@hawaii.edu",
+      "homepage": "https://lahainafamilyfarms.com/volunteer",
+      "description": "Lahaina Family Farms is a developing farm, so the tasks include but are not limited to: invasive species removal, native plant restoration, dryland forest management, garden tending, planting + harvesting, animal care, improvement projects",
+      "interests": [
+        "Farming"
+      ],
+      "picture": "https://isteam.wsimg.com/ip/8cf2075d-73a5-4dfd-8925-e5de5e3ec9a6/IMG_4810-0001.jpg/:/rs=w:1240,h:620,cg:true,m/cr=w:1240,h:620"
+    },
+    {
+      "name": "Haleakalā National Park Hawaii Volunteers",
+      "owner": "pfarns@hawaii.edu",
+      "homepage": "https://www.nps.gov/hale/getinvolved/volunteer.htm",
+      "description": "Volunteers are essential members of the Haleakalā National Park team. They further the preservation of the park by doing a variety of jobs across all divisions of the park, from interpretation to resource management, facility maintenance, and more! Volunteers help the park by being present for visitors on the trails, monitoring and removing invasive plant species, protecting vulnerable wildlife and habitat, and assisting park operations across the board.The majority of our opportunities are geared towards people who live on the island of Maui and are able to commute into the park. Housing for volunteer opportunities is not provide.",
+      "interests": [
+        "Conservation"
+      ],
+      "picture": "https://www.nps.gov/hale/getinvolved/images/Crater_trail-guardian-nick-visitor_NPS-photo_1.jpg?maxwidth=1300&autorotate=false&quality=78&format=webp"
+    },
+    {
+      "name": "Friends of Haleakala National Park",
+      "owner": "pfarns@hawaii.edu",
+      "homepage": "",
+      "description": "Volunteers will help park horticulturist with jobs involving caring for the rare, endemic plants being propagated, such as transplanting, weeding, cleaning and preparing seeds for storage or planting, and some pot washing.  The park recycles pots which have to be carefully cleaned to prevent the spread of plant diseases. There may sometimes be some out planting, but most of the service work is done inside, and participants can drive up to the location of the work.  The workday is 9:00 to noon the first Tuesday of each month.    To sign up or to learn more,  please call Mary SantaMaria at (808)572-1584 and leave a message.   ",
+      "interests": [
+        "Canoe Plants",
+        "Conservation"
+      ],
+      "picture": "https://www.fhnp.org/hp1.jpg"
+    },
+    {
+      "name": "KA‘ENA WEED CONTROL",
+      "owner": "pfry@foo.com",
+      "homepage": "https://oanrp.com/kaena-weed-control/",
+      "description": "We will clear koa haole (Leucaena leucocephala) from a sand dune located in the Mokule‘ia section of Ka‘ena Point State Park.  The restoration site is located about half-way between the parking lot and the Natural Area Reserve (NAR) and near a regular haul-out site for Hawaiian monk seals.  We will use folding saws and loppers to cut the weeds and then apply herbicide to the cut stem with drip applicator bottles.  Participants will hike the scenic coast and learn about Ka‘ena’s natural and cultural resources, including nesting Laysan albatross in the NAR.",
+      "interests": [
+        "Conservation"
+      ],
+      "picture": "https://dlnr.hawaii.gov/dsp/files/2014/09/Kelvin_Kaena8banner.jpg"
+    },
+    {
+      "name": "Volunteer to Plant Trees Abroad",
+      "owner": "bdd@foo.com",
+      "homepage": "https://www.volunteerforever.com/article_post/volunteer-to-plant-trees-abroad/",
+      "description": "Journey to Auckland, where you’ll care for the stunning beaches, landscapes, and islands there. A focus of the project involves the conservation of traditional Māori land. You’ll work side-by-side with the local community. Duties include planting native trees, removing invasive species, collecting seeds, and composting and mulching. Other duties include beach cleanups and tree planting events with local schools.",
+      "interests": [
+        "Volunteer"
+      ],
+      "picture": "https://www.volunteerforever.com/wp-content/uploads/2020/01/Header-Image.jpg"
     }
   ],
   "defaultInterests": [
