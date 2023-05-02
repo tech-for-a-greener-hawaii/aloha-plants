@@ -11,24 +11,20 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
 import SearchBar from '../components/SearchBar';
-import ProjectCard from '../components/ProjectCard';
-import { PlantsInterests } from '../../api/plants/PlantsInterests';
+import LandingProjectCard from '../components/LandingProjectCard';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getProjectData(name) {
   const data = Projects.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
-  console.log(name);
-  console.log('what is going on I am printing find().count() on the line below');
-  console.log(ProjectsInterests.collection.find().count());
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
   return _.extend({}, data, { interests, participants: profiles });
 }
 
 /* Renders the Project Collection as a set of Cards. */
-const ProjectsPage = () => {
+const LandingProjects = () => {
   const [projectDataFiltered, setProjectDataFiltered] = useState([]); // need this here for search to work
-  const { ready, email } = useTracker(() => {
+  const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub1 = Meteor.subscribe(ProfilesProjects.userPublicationName);
     const sub2 = Meteor.subscribe(Projects.userPublicationName);
@@ -56,10 +52,10 @@ const ProjectsPage = () => {
         />
       </Row>
       <Row xs={1} md={2} lg={3} className="g-2 mt-2">
-        {projectDataFiltered.map((project, index) => <ProjectCard key={index} project={project} email={email} />)}
+        {projectDataFiltered.map((project, index) => <LandingProjectCard key={index} project={project} />)}
       </Row>
     </Container>
   ) : <LoadingSpinner />;
 };
 
-export default ProjectsPage;
+export default LandingProjects;

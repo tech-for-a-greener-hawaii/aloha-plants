@@ -66,14 +66,16 @@ const ForumsPage = () => {
   const forumData = forums.map(forum => getForumData(forum));
   const commentData = Comments.collection.find({}).fetch();
   return ready ? (
-    <div id="forum-background">
-      <h1 className="text-center py-4"><strong>Forums</strong></h1>
-      <Container id={PageIDs.forumsPage} style={pageStyle}>
-        {forumData.map((forum, index) => <Row className="justify-content-center py-2"><MakeForumCard key={index} forum={forum} comments={commentData.filter(comment => (comment.forumID === forum._id))} /></Row>)}
-        <Row className="text-center justify-content-center">
-          <Link to="/addforum/">Add Forum</Link>
-        </Row>
-      </Container>
+    <div id={PageIDs.forumsPage}>
+      <div id="forum-background">
+        <h1 className="text-center py-4"><strong>Forums</strong></h1>
+        <Container id={PageIDs.forumsPage} style={pageStyle}>
+          {forumData.map((forum, index) => <Row className="justify-content-center py-2"><MakeForumCard key={index} forum={forum} comments={commentData.filter(comment => (comment.forumID === forum._id))} /></Row>)}
+          <Row className="text-center justify-content-center">
+            <Link to="/addforum/">Add Forum</Link>
+          </Row>
+        </Container>
+      </div>
     </div>
   ) : <LoadingSpinner />;
 };

@@ -66,7 +66,7 @@ const Settings = () => {
   const model = _.extend({}, profile, { interests, plants });
 
   return ready ? (
-    <Container id={PageIDs.homePage} className="justify-content-center" style={pageStyle}>
+    <Container id={PageIDs.settingsPage} className="justify-content-center" style={pageStyle}>
       <Col>
         <Col className="justify-content-center text-center"><h2>Settings</h2></Col>
         <AutoForm model={model} schema={bridge} onSubmit={data => submit(data)}>

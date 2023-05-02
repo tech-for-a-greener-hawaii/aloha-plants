@@ -11,6 +11,7 @@ import DeleteProject from './DeleteProject';
 const ProjectCard = ({ project, email, role }) => {
   // Checks if user has already signed up for the project
   const checkSignup = _.contains(project.participants, email);
+  const checkOwner = project.owner === email;
   const signup = (data) => {
     Meteor.call(addProfilesProjectMethod, data, (error) => {
       if (error) {
@@ -56,15 +57,15 @@ const ProjectCard = ({ project, email, role }) => {
           <Row className="mt-auto">
             <Col />
             <Col className="d-flex align-items-center justify-content-center">
-              { checkSignup ? (
+              { checkSignup || checkOwner ? (
                 <Button
                   className="mt-auto"
                   variant="danger"
                   onClick={() => remove({ profile: email, project: project.name })}
                 >
-                  remove
+                  Leave
                 </Button>
-              ) : (<Button className="mt-auto" variant="primary" onClick={() => signup({ profile: email, project: project.name })}>Sign up</Button>)}
+              ) : (<Button className="mt-auto" variant="secondary" onClick={() => signup({ profile: email, project: project.name })}>Sign up</Button>)}
             </Col>
             <Col />
           </Row>
@@ -73,10 +74,16 @@ const ProjectCard = ({ project, email, role }) => {
           roleCheck ?
             (
               <Container fluid>
-                <Row>
-                  <Link className="text-center" to={`/edit/${project._id}`}>Edit</Link>
+                <Row className="py-2">
+                  <Col />
+                  <Col>
+                    <Link className="text-center" color="white" to={`/edit/${project._id}`}>Edit</Link>
+                  </Col>
+                  <Col className="text-center">
+                    <DeleteProject project={project} />
+                  </Col>
+                  <Col />
                 </Row>
-                <Row><DeleteProject project={project} /></Row>
               </Container>
             ) : (<div />)
         }

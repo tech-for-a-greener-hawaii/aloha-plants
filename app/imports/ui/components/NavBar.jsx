@@ -42,21 +42,27 @@ const NavBar = () => {
             {currentUser ? (
               <Nav.Link as={NavLink} id={ComponentIDs.homeMenuItem} to="/home" key="home">Home</Nav.Link>
             ) : ''}
-            {currentUser === '' || !(currentUser === 'admin@foo.com') ? (
+            {!loggedIn ? (
+              <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/browseprojects" key="browseprojects">Projects</Nav.Link>
+            ) : ''}
+            {loggedIn && currentUser !== 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/projects" key="projects">Projects</Nav.Link>
             ) : ''}
             {currentUser === 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/adminprojects" key="adminprojects">Projects</Nav.Link>
             ) : ''}
-            <Nav.Link as={NavLink} id={ComponentIDs.projectsMenuItem} to="/plants" key="plants">Plants</Nav.Link>
+            <Nav.Link as={NavLink} id={ComponentIDs.plantsMenuItem} to="/plants" key="plants">Plants</Nav.Link>
             {currentUser ? (
-              <Nav.Link as={NavLink} id={ComponentIDs.profilesMenuItem} to="/Forums" key="forums">Forums</Nav.Link>
+              <Nav.Link as={NavLink} id={ComponentIDs.forumsMenuItem} to="/Forums" key="forums">Forums</Nav.Link>
             ) : ''}
             {adminUser === 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.addProjectMenuItem} to="/addProject" key="addP">Add Project</Nav.Link>
             ) : ''}
-            {currentUser ? (
+            {adminUser === 'admin@foo.com' ? (
               <Nav.Link as={NavLink} id={ComponentIDs.addPlantMenuItem} to="/addPlant" key="addPlant">Add Plant</Nav.Link>
+            ) : ''}
+            {adminUser === 'admin@foo.com' ? (
+              <Nav.Link as={NavLink} id={ComponentIDs.removeUsersMenuItem} to="/removeusers" key="removeUsers">Remove Users</Nav.Link>
             ) : ''}
           </Nav>
           <Nav className="justify-content-end align-content-start">
@@ -79,7 +85,7 @@ const NavBar = () => {
                   <Image className="user-icon" src={userImage} alt="img" />
                 </Navbar.Brand>
                 <NavDropdown id={ComponentIDs.currentUserDropdown} title={currentUser}>
-                  <NavDropdown.Item id={ComponentIDs.currentUserDropdownSignOut} as={NavLink} to="/settings">
+                  <NavDropdown.Item id={ComponentIDs.currentUserDropdownSettings} as={NavLink} to="/settings">
                     <Gear />
                     {' '}
                     Settings

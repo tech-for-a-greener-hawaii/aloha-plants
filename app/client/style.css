@@ -48,7 +48,7 @@ body {
 }
 
 .landing-lightGreen-background {
-  background-color: darkgreen;
+  background-color: #D3D3D3;
   color: var(--bowfolio-navbar-text);
   padding-top: 20px;
 }
@@ -83,6 +83,66 @@ body {
 #project-card {
   background-color: #366550;
   color:white;
+}
+
+.btn-primary {
+
+  background-image: linear-gradient(var(--secondary-color), var(--secondary-color));
+
+  border-color: var(--secondary-color) !important;
+
+  color: #fff !important;
+}
+
+.btn-secondary {
+
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+
+  border-color: var(--primary-color) !important;
+
+  color: #fff !important;
+}
+
+.btn-primary:active{
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+
+  border-color: var(--primary-color) !important;
+
+  color: #fff !important;
+}
+.btn-primary:hover{
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+
+  border-color: var(--primary-color) !important;
+
+  color: #fff !important;
+}
+.btn-primary:focus{
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+
+  border-color: var(--primary-color) !important;
+
+  color: #fff !important;
+}
+
+.btn-secondary:active{
+  background-image: linear-gradient(var(--secondary-color), var(--secondary-color));
+
+  border-color: var(--secondary-color) !important;
+
+  color: #fff !important;
+}
+.btn-secondary:hover{
+  background-image: linear-gradient(var(--secondary-color), var(--secondary-color));
+
+  color: #fff !important;
+}
+.btn-secondary:focus{
+  background-image: linear-gradient(var(--secondary-color), var(--secondary-color));
+
+  border-color: var(--secondary-color) !important;
+
+  color: #fff !important;
 }
 
 .project-interest-spacing {

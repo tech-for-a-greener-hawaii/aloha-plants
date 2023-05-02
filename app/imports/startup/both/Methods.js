@@ -53,6 +53,14 @@ Meteor.methods({
   },
 });
 
+const removeProfile = 'Profiles.remove';
+
+Meteor.methods({
+  'Profiles.remove'({ profile }) {
+    ProfilesProjects.collection.remove({ profile });
+  },
+});
+
 const updateProfileMethod = 'Profiles.update';
 
 /**
@@ -87,4 +95,4 @@ Meteor.methods({
   },
 });
 
-export { updateProfileMethod, addProjectMethod, addProfileMethod, addProfilesProjectMethod, removeProfilesProjectMethod };
+export { updateProfileMethod, addProjectMethod, addProfileMethod, addProfilesProjectMethod, removeProfilesProjectMethod, removeProfile };
