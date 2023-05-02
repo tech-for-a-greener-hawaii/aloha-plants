@@ -46,8 +46,8 @@ const AddPlant = () => {
   return (
     <Container className="py-3">
       <Row id={PageIDs.addPlantPage} className="justify-content-center">
-        <Col xs={5}>
-          <Col className="text-center"><h2>Add Plants</h2></Col>
+        <Col xs={10}>
+          <Col className="text-center pb-3"><h2>Add Plant</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
