@@ -3,4 +3,5 @@ module.exports = {
   hostname: 'localhost',
   retryTestPages: true,
   pageRequestTimeout: 50000,
+  quarantineMode: true,
 }
