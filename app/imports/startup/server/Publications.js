@@ -5,6 +5,7 @@ import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { Projects } from '../../api/projects/Projects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
+import { PlantsInterests } from '../../api/plants/PlantsInterests';
 import { Plants } from '../../api/plants/Plants';
 import { Forums } from '../../api/forums/Forums';
 import { Comments } from '../../api/forums/Comments';
@@ -36,7 +37,7 @@ Meteor.publish(Projects.userPublicationName, () => Projects.collection.find());
 Meteor.publish(Plants.userPublicationName, () => Plants.collection.find());
 //
 // /** Define a publication to publish this collection. */
-// Meteor.publish(PlantsInterests.userPublicationName, () => PlantsInterests.collection.find());
+Meteor.publish(PlantsInterests.userPublicationName, () => PlantsInterests.collection.find());
 
 /** Define a publication to publish all forums. */
 Meteor.publish(Forums.userPublicationName, () => Forums.collection.find());
@@ -46,6 +47,7 @@ Meteor.publish(Comments.userPublicationName, () => Comments.collection.find());
 
 /** Define a publication to publish this collection. */
 Meteor.publish(ProjectsInterests.userPublicationName, () => ProjectsInterests.collection.find());
+
 Meteor.publish(PlantsInterests.userPublicationName, () => PlantsInterests.collection.find());
 
 // alanning:roles publication

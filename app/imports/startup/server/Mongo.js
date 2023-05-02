@@ -96,7 +96,7 @@ if (Plants.collection.find().count() === 0) {
     // console.log(Meteor.settings.defaultPlants)
     Meteor.settings.defaultPlants.forEach(plant => addPlant(plant));
     console.log('were the interests added:');
-    console.log(PlantsInterests.collection.find().count())
+    console.log(PlantsInterests.collection.find().count());
     console.log(PlantsInterests.collection.findOne());
   }
 }
