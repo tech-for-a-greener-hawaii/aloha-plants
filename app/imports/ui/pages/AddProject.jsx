@@ -67,7 +67,7 @@ const AddProject = () => {
     <Container style={pageStyle}>
       <Row id={PageIDs.addProjectPage} className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center"><h2>Add Project</h2></Col>
+          <Col className="text-center py-2"><h2>Add Project</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
