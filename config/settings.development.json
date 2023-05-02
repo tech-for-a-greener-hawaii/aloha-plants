@@ -409,8 +409,354 @@
       "interests": [
         "Gardening"
       ]
+    },
+    {
+      "name": "Māmaki",
+      "scientificName": "Pipturus albidus",
+      "indigenousStatus": "Indigenous",
+      "description": "Māmaki is a small tree or shrub that can grow up to 5 meters tall. It has soft, pubescent leaves that are heart-shaped, with a saw-toothed edge. The leaves are a bright green color and have a distinct, fragrant aroma when crushed. Māmaki is often found growing in wet, forested areas and is an important plant for many native Hawaiian species.",
+      "growingConditions": "Māmaki prefers well-drained soils in areas with high humidity and rainfall. It grows best in partial shade and requires regular watering.",
+      "propagation": "Seeds, cuttings",
+      "range": "Māmaki is found on all the main Hawaiian Islands except Niʻihau and Kahoʻolawe, and is also found in other Pacific Islands such as Samoa and Fiji.",
+      "culturalUses": "Māmaki is a traditional Hawaiian plant that is used for a variety of purposes. The leaves are often used to make a medicinal tea that is believed to have a calming effect on the body. The tea is also used to treat various ailments such as high blood pressure, stomach pains, and diabetes. In addition, the leaves are used to make clothing, baskets, and other household items.",
+      "pests": "Māmaki can be susceptible to mealybugs, spider mites, and scale insects. Infected plants should be treated with insecticidal soap or horticultural oil.",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/2/28/Pipturus_albidus_-_Hawaii_Forest_%26_Trail.jpg",
+      "interests": [
+        "Conservation",
+        "Native plants",
+        "Food security"
+      ]
+    },
+    {
+      "name": "Awapuhi kuahiwi",
+      "scientificName": "Zingiber zerumbet",
+      "indigenousStatus": "Indigenous",
+      "description": "Awapuhi kuahiwi, also known as Shampoo Ginger, is a common plant in Hawaii. It is a herbaceous perennial plant that can grow up to 6 feet tall. The plant has a clumping growth habit, and the leaves are long and lance-shaped, up to 2 feet long. The flowers are cone-shaped, pink or red in color, and emerge from a green bract. The inflorescence is fragrant, and the plant is often used as a natural shampoo.",
+      "growingConditions": "Awapuhi kuahiwi grows well in partial shade to full sun, and prefers well-draining soil. It can be propagated by division or from rhizomes, and can also be grown from seed.",
+      "propagation": "Division, rhizomes, seed",
+      "range": "Awapuhi kuahiwi is indigenous to Hawaii, and can also be found in other tropical regions, such as Southeast Asia.",
+      "culturalUses": "The rhizomes of Awapuhi kuahiwi have been traditionally used in Hawaii for medicinal purposes, including for soothing stomach aches and relieving headaches. The plant is also used as a natural shampoo and conditioner.",
+      "pests": "Awapuhi kuahiwi is relatively pest-free.",
+      "picture": "https://live.staticflickr.com/7372/9359693051_120d57d15c_b.jpg",
+      "interests": [
+        "Native plants",
+        "Herbal medicine"
+      ]
+    },
+    {
+      "name": "Kou",
+      "scientificName": "Cordia subcordata",
+      "indigenousStatus": "Indigenous",
+      "description": "Kou is a small to medium-sized tree that can grow up to 40 feet tall. It has a broad, spreading crown and smooth, grayish bark. The leaves are oval-shaped and glossy, up to 8 inches long, and have a distinctive scent when crushed. The flowers are small and white, and are followed by small, orange or red fruit.",
+      "growingConditions": "Kou grows well in full sun to partial shade, and prefers well-drained soil. It can be propagated by seed, cuttings, or air layering.",
+      "propagation": "Seed, cuttings, air layering",
+      "range": "Kou is indigenous to Hawaii, and can also be found in other Pacific islands.",
+      "culturalUses": "Kou wood was traditionally used in Hawaii for making bowls, calabashes, and other utensils. The wood is hard and durable, and has a beautiful grain. The bark and leaves were also used in traditional medicine.",
+      "pests": "Kou is relatively pest-free.",
+      "picture": "https://live.staticflickr.com/65535/49821191861_0c68f41d47_b.jpg",
+      "interests": [
+        "Conservation",
+        "Farming",
+        "Community"
+      ]
+    },
+    {
+      "name": "Maiapilo",
+      "scientificName": "Capparis sandwichiana",
+      "indigenousStatus": "Endemic to HI",
+      "description": "Maiapilo is a shrub or small tree that can grow up to 20 feet tall. It has dark green leaves that are glossy and leathery with a smooth texture. The flowers are fragrant, white, and have long stamens that protrude out of the center of the flower. The fruit is a round berry that is green when unripe and turns yellow when ripe. The berry is edible and has a sweet and tangy taste.",
+      "growingConditions": "Maiapilo grows in dry and rocky areas in lowland to montane forests. It prefers well-drained soil and full sun to partial shade. It is drought tolerant and can survive with little water once established.",
+      "propagation": "Seed",
+      "range": "Maiapilo is endemic to the Hawaiian Islands and can be found on all the main islands except for Kahoʻolawe and Niʻihau.",
+      "culturalUses": "Maiapilo has a number of cultural uses. The fruit is eaten fresh or used to make jelly or jam. The bark and leaves were used to make medicine for treating stomach ailments, and the wood was used for making tools and weapons.",
+      "pests": "Maiapilo is relatively pest-free, but may be susceptible to fungal diseases in wet conditions.",
+      "picture": "https://www.ctahr.hawaii.edu/forestry/trees/CommonTreesHI/Capparis_sandwichiana_01-LG.jpg",
+      "interests": [
+        "Conservation"
+      ]
+    },
+    {
+      "name": "Akiohala",
+      "scientificName": "Hibiscus furcellatus",
+      "indigenousStatus": "Indegenous",
+      "description": "A medium sized hibiscus about eight feet tall with rough leaves that are slight to moderately lobed. New stems, flower buds, and leaf surface are densely pubescent. They have awesome flowers that emerge on tall stems which stand up above the rest of the plant. Each flower is large and has light purple/pink petals with a dark purple center and staminal column. Once pollinated, the calyx will turn brown and be filled with many small, shiny brown seeds.",
+      "growingConditions": "Maiapilo grows in dry and rocky areas in lowland to montane forests. It prefers well-drained soil and full sun to partial shade. It is drought tolerant and can survive with little water once established.",
+      "propagation": "Seed",
+      "range": "Kauai, Oahu, Maui, Hawaii",
+       "culturalUses": "Flowers can be used medicinally as a laxative and also for a dye, while the bark can be stripped and woven into cordage.",
+      "pests": "...",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_24_6d318cabce7a223042d8af02bdd27ae0.jpg",
+      "interests": [
+        "Farming",
+        "Gardening"
+      ]
+    },
+    {
+      "name": "Nohu",
+      "scientificName": "Tribulus cistoides",
+      "indigenousStatus": "Indegenous",
+      "description": "Low-growing ground cover with bright yellow flowers that average in 2 inches in diameter.  Once pollinated flowers develop in to sun shaped seed capsules that are covered with very hard and sharp spines.",
+      "growingConditions": "Coastal",
+      "propagation": "Seed",
+      "range": "This native Hawaiian plant is uncommonly found along sandy and rocky coast lines of most islands, including the north western Hawaiian islands.",
+      "culturalUses": "...",
+      "pests": "...",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_142_56d1dc6c688ec36b243937911ef1e669.jpg",
+      "interests": [
+        "Farming",
+        "Gardening"
+      ]
+    },
+    {
+      "name": "Ala He'e",
+      "scientificName": "Peperomia spp.",
+      "indigenousStatus": "Native",
+      "description": "Ala He'e is a native plant that can grow as an epiphyte or a terrestrial plant. It has succulent stems and leaves that can be green or red in color. The leaves are thick and leathery with a glossy sheen. The flowers are small and grow in spikes that can be green or white in color. The plant is a popular choice for terrariums and as a houseplant due to its small size and ease of care.",
+      "growingConditions": "Ala He'e can be grown in bright, indirect light or low light conditions. It prefers well-draining soil and should be watered when the soil is dry to the touch. The plant can tolerate some neglect and can go without water for several weeks. It is sensitive to cold temperatures and should be kept in temperatures above 60 degrees Fahrenheit.",
+      "propagation": "The plant can be propagated by stem cuttings or by dividing the root ball.",
+      "range": "Ala He'e is native to Hawaii and can be found growing in the understory of mesic and wet forests on all the main islands except Ni'ihau and Kaho'olawe.",
+      "culturalUses": "There are no known cultural uses for Ala He'e.",
+      "pests": "Ala He'e is generally pest-resistant but can be susceptible to mealybugs and spider mites. These pests can be controlled by washing the leaves with a solution of water and mild soap.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_13_1db6d97e5cdf167d38dfe749ca11df11.jpg",
+      "interests": [
+        "Community",
+        "Gardening"
+      ]
+    },
+    {
+      "name": "Koa",
+      "scientificName": "Acacia koa",
+      "indigenousStatus": "Indigenous",
+      "description": "Koa is a large tree that can grow up to 100 ft. tall and is one of the most iconic and valuable trees in Hawaii. The bark is light gray and has a characteristic wavy pattern. The leaves are bright green, with long, narrow leaflets, and the tree produces small, pale yellow flowers that are fragrant and attract bees. Koa trees produce hard, durable wood that has been highly valued for centuries by Hawaiians for making canoes, weapons, and furniture.",
+      "growingConditions": "Koa grows best in well-drained, fertile soil and full sun, but it can also tolerate some shade. It is found in dry to wet forests at elevations ranging from sea level to around 6,000 ft.",
+      "propagation": "Seed and cuttings",
+      "range": "Koa is found on all of the main Hawaiian islands except Ni'ihau and Kaho'olawe. It is also found on other Pacific islands, including Fiji and Samoa.",
+      "culturalUses": "Koa wood is highly prized by Hawaiians for its beauty and durability, and has been used for centuries to make canoes, weapons, furniture, and other items. In ancient times, only chiefs and high-ranking individuals were allowed to possess koa wood items. Today, koa is still highly valued and is used to make a variety of crafts, from ukuleles to bowls and furniture.",
+      "pests": "Koa is susceptible to a number of pests, including the koa moth, the koa bug, and the koa looper. These pests can damage the leaves, bark, and wood of the tree, and can sometimes cause defoliation or death of the tree. To prevent pest infestations, it is important to maintain healthy growing conditions for the tree, such as adequate water and fertilizer, and to prune and remove any infected branches or foliage.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_105_da3dad2e63d6b2b024fc3cbe670554f7.jpg",
+      "interests": [
+        "Community",
+        "Farming",
+        "Conservation"
+      ]
+    },
+
+    {
+      "name": "Ulei",
+      "scientificName": "Osteomeles anthyllidifolia",
+      "indigenousStatus": "Endemic",
+      "description": "Ulei is a small tree or shrub that can grow up to 10 feet tall. It has leathery leaves that are small and oval-shaped. The flowers are small and white, and they form clusters at the tips of the branches. The fruit is a small, dry, hard capsule that contains one or two seeds. Ulei is an important plant for native birds and insects, as it provides both food and habitat.",
+      "growingConditions": "Ulei prefers well-drained soils and can grow in full sun or partial shade. It is tolerant of drought and salt spray, making it a good choice for coastal areas. Ulei can be propagated from seed or cuttings, and it can be pruned to maintain its shape.",
+      "propagation": "seed or cuttings",
+      "range": "Ulei is endemic to the Hawaiian Islands, and it can be found on all the main islands except Ni'ihau and Kaho'olawe. It is typically found in dry to mesic forests and shrublands, but it can also be found in wetter forests at higher elevations.",
+      "culturalUses": "Ulei has several traditional uses in Hawaiian culture. The bark and leaves were used to make a tea that was believed to have medicinal properties, and the wood was used to make tools and weapons. The plant was also used in hula ceremonies and other cultural practices.",
+      "pests": "Ulei is relatively pest-free, but it can be susceptible to root rot if grown in poorly-drained soils.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/ulei1.jpg",
+      "interests": [
+        "Conservation"
+      ]
+    },
+    {
+      "name": "Haole Koa",
+      "scientificName": "Leucaena leucocephala",
+      "indigenousStatus": "Invasive",
+      "description": "Haole Koa is a fast-growing, nitrogen-fixing tree that can grow up to 50 ft tall. The tree has compound leaves with small leaflets that fold up at night. Haole Koa produces showy clusters of white flowers, followed by pods containing seeds. The tree is highly adaptable and can grow in a wide range of habitats, from wet to dry environments. However, it is considered an invasive species in Hawai'i as it can outcompete native plants and alter ecosystems.",
+      "growingConditions": "Haole Koa is tolerant of a range of soil types and can grow in full sun to partial shade. It prefers well-drained soils, but can also tolerate periodically flooded soils. The tree is drought-tolerant once established and can withstand strong winds and salt spray.",
+      "propagation": "Seeds, cuttings",
+      "range": "Haole Koa is native to Central and South America, but has been introduced to many parts of the world, including Hawai'i.",
+      "culturalUses": "The wood of haole koa is used for furniture, cabinetry, and musical instruments. The tree is also used as a shade tree, windbreak, and erosion control plant.",
+      "pests": "Haole Koa can be susceptible to a number of pests, including spider mites, thrips, and whiteflies. It can also be affected by various diseases, including root rot and cankers.",
+      "picture": "https://en.wikipedia.org/wiki/Leucaena_leucocephala#/media/File:Leucaena_leucocephala.jpg",
+      "interests": ["Conservation"]
+    },
+    {
+      "name": "Hala",
+      "scientificName": "Pandanus tectorius",
+      "indigenousStatus": "Indigenous",
+      "description": "Hala is a small to medium-sized tree that can grow up to 30 ft tall. It has long, spiky leaves that grow in clusters at the end of its branches. The tree produces an unusual, round fruit with a spiky exterior that is often used in Polynesian cultural practices. The leaves of the hala tree are used in weaving mats, baskets, hats, and other items.",
+      "growingConditions": "Hala grows best in sandy or loamy soils that are well-drained. It prefers full sun to partial shade and can tolerate salt spray and strong winds. The tree is drought-tolerant and can survive periodic flooding.",
+      "propagation": "Seeds, suckers",
+      "range": "Hala is native to the Pacific Islands, including Hawai'i. It can be found in lowland coastal areas, especially near the water's edge.",
+      "culturalUses": "The fruit of the hala tree is used in Polynesian cultural practices, such as hula and kapa-making. The leaves are used in weaving mats, baskets, hats, and other items. The tree is also used for medicinal purposes, including treating headaches and fever.",
+      "pests": "Hala can be susceptible to a number of pests, including mealybugs, spider mites, and scale insects. It can also be affected by various diseases, including leaf spot and root rot.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/Hala-1.jpg",
+      "interests": [
+        "Community",
+        "Conservation"
+      ]
+    },
+    {
+      "name": "Kolea",
+      "scientificName": "Myrsine lessertiana",
+      "indigenousStatus": "Indigenous",
+      "description": "Kolea is a small shrub that can grow up to 10 feet tall. It has glossy, dark green leaves and produces small, round fruit that turns red when mature. The plant is important in Hawaiian culture and is often used in lei making.",
+      "growingConditions": "Kolea grows best in well-drained soils that are rich in organic matter. It prefers full sun to partial shade and can tolerate salt spray and strong winds. The plant is drought-tolerant and can survive periodic flooding.",
+      "propagation": "Seeds, cuttings",
+      "range": "Kolea is native to Hawaii and can be found in dry and mesic forests, as well as in coastal areas.",
+      "culturalUses": "Kolea is important in Hawaiian culture and is often used in lei making. The plant is also used for medicinal purposes, including treating coughs and colds.",
+      "pests": "Kolea can be susceptible to a number of pests, including scale insects and mealybugs. It can also be affected by various diseases, including leaf spot and root rot.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_107_224a4496db909cfbda22bccfd5a5480a1.jpg",
+      "interests": [
+        "Community",
+        "Conservation",
+        "Canoe Plants"
+      ]
+    },
+    {
+      "name": "Kukui",
+      "scientificName": "Aleurites moluccanus",
+      "indigenousStatus": "Canoe Plant",
+      "description": "Kukui is a large tree that can grow up to 80 feet tall. It has large, bright green leaves and produces clusters of small, white flowers that are followed by nuts. The nuts are edible and are used to make kukui nut leis and oil.",
+      "growingConditions": "Kukui grows best in well-drained soils that are rich in organic matter. It prefers full sun to partial shade and can tolerate salt spray and strong winds. The tree is drought-tolerant and can survive periodic flooding.",
+      "propagation": "Seeds",
+      "range": "Kukui is native to the Pacific Islands, including Hawaii. It can be found in lowland forests and coastal areas.",
+      "culturalUses": "Kukui is an important tree in Hawaiian culture and is the state tree of Hawaii. The nuts are used to make kukui nut leis and oil, which is used in traditional Hawaiian medicine. The tree is also used for woodworking and as a source of fuel.",
+      "pests": "Kukui can be susceptible to a number of pests, including mealybugs and scale insects. It can also be affected by various diseases, including leaf spot and root rot.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_108_9492fa9aca8ced53fbdd27cb68acc0e1.jpg",
+      "interests": [
+        "Community",
+        "Conservation",
+        "Canoe Plants"
+      ]
+    },
+    {
+      "name": "Amau",
+      "scientificName": "Sadleria cyatheoides",
+      "indigenousStatus": "Indigenous",
+      "description": "Amau is a large, evergreen fern that can grow up to 15 feet tall. It has fronds that are up to 6 feet long and 1 foot wide, with a bright green color. Amau typically grows in moist, shaded areas, such as along streams or in valleys. It is an important part of the Hawaiian forest ecosystem, providing habitat for birds and other animals.",
+      "growingConditions": "Amau grows best in moist, well-drained soil in shaded areas. It can tolerate some sun, but too much direct sunlight can damage the fronds. Amau requires regular watering and benefits from occasional fertilization.",
+      "propagation": "Spores",
+      "range": "Amau is native to Hawai'i and can be found on most of the main islands. It is most common in wet, shaded areas on the windward side of the islands.",
+      "culturalUses": "Amau was traditionally used by Hawaiians to make hula skirts, capes, and other items. It is also used in contemporary Hawaiian crafts, such as lei-making and weaving. The fern is believed to have medicinal properties and was used to treat a variety of ailments, including headaches and skin conditions.",
+      "pests": "Amau can be susceptible to a number of pests, including scale insects and mealybugs. It can also be affected by various diseases, including fungal leaf spot and rust.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_148_c07f8eccb27a1cc40711a7eef56632c9.png.jpeg",
+      "interests": [
+        "Community",
+        "Conservation",
+        "Plant Identification"
+      ]
+    },
+    {
+      "name": "Akoko",
+      "scientificName": "Chamaesyce celastroides",
+      "indigenousStatus": "Indigenous",
+      "description": "Akoko is a low-growing shrub that typically grows up to 3 feet tall. It has small, oval-shaped leaves and produces tiny, inconspicuous flowers. Akoko can be found in a variety of habitats, including dry forests, rocky areas, and coastal cliffs. It is an important plant for erosion control and habitat restoration.",
+      "growingConditions": "Akoko grows best in well-drained soil in full sun to partial shade. It can tolerate a range of soil types, including sandy and rocky soils. Akoko is drought-tolerant but benefits from occasional watering during periods of prolonged dryness.",
+      "propagation": "Cuttings, seeds",
+      "range": "Akoko is native to Hawai'i and can be found on all of the main islands. It is most common in dry, rocky areas and coastal cliffs.",
+      "culturalUses": "Akoko was traditionally used by Hawaiians to treat a variety of ailments, including headaches, stomachaches, and toothaches. The plant was also used to make fishing nets and ropes.",
+      "pests": "Akoko can be susceptible to a number of pests, including spider mites and whiteflies. It can also be affected by various diseases, including leaf spot and powdery mildew.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_18_a1abf9c74e03c8d31abf45bd3c20c366.jpg",
+      "interests": [
+        "Community",
+        "Conservation",
+        "Plant Identification",
+        "Gardening"
+      ]
+    },
+    {
+      "name": "Olena",
+      "scientificName": "Curcuma longa",
+      "indigenousStatus": "Introduced",
+      "description": "Olena is a perennial herb that grows up to 3 feet tall. It has long, narrow leaves and a rhizomatous root system. The plant produces a bright orange-yellow rhizome that is used as a spice and natural dye. Olena is also known for its medicinal properties and has been used in traditional medicine for centuries.",
+      "growingConditions": "Olena grows best in tropical and subtropical regions with plenty of rainfall. It prefers well-drained soils and partial shade. The plant can be grown from rhizomes or seed, but rhizome propagation is more common.",
+      "propagation": "Rhizomes, seed",
+      "range": "Olena is native to Southeast Asia and has been introduced to Hawai'i and other parts of the world.",
+      "culturalUses": "Olena is used in traditional Hawaiian medicine to treat a variety of ailments, including inflammation, arthritis, and digestive issues. It is also used as a natural dye for clothing and other textiles. The spice derived from the rhizome is a common ingredient in Hawaiian cuisine and is also used in traditional ceremonies.",
+      "pests": "Olena is relatively pest-resistant but can be affected by root rot and other fungal diseases.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_94_94b9c2eb3ec67e7cfca001161572171c.jpg",
+      "interests": [
+        "Community",
+        "Conservation",
+        "Plant Identification"
+      ]
+    },
+    {
+      "name": "Uala",
+      "scientificName": "Ipomoea batatas",
+      "indigenousStatus": "Introduced",
+      "description": "Uala, also known as sweet potato, is a vine-like plant that produces edible tubers. It has heart-shaped leaves and can grow up to 10 feet in length. The tubers come in a variety of colors, including orange, purple, and white, and are a staple food in many parts of the world.",
+      "growingConditions": "Uala prefers well-drained soils that are rich in organic matter. It can be grown in full sun or partial shade and is relatively drought-tolerant. The plant can be propagated from slips or vine cuttings.",
+      "propagation": "Slips, vine cuttings",
+      "range": "Uala is thought to have originated in South America but has been cultivated in Hawai'i and other parts of the world for centuries.",
+      "culturalUses": "Uala is a staple food in many parts of the world and is used in a variety of dishes, from soups and stews to desserts. It is also used in traditional Hawaiian medicine to treat a variety of ailments. The leaves and stems of the plant are sometimes used in cooking as well.",
+      "pests": "Uala can be susceptible to a number of pests and diseases, including sweet potato weevils and fungal infections.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_67_e3d3102e676afc170d732ca16271025c.jpg",
+      "interests": [
+        "Farming",
+        "Community",
+        "Plant Identification"
+      ]
+    },
+    {
+      "name": "Coconut",
+      "scientificName": "Cocos nucifera",
+      "indigenousStatus": "Non-Indigenous",
+      "description": "Coconut is a large, palm-like tree that can grow up to 100 feet tall. It has long, feathery leaves that can reach up to 18 feet in length, and produces large, round fruit that contain a sweet, nutty flesh and refreshing water. Coconut trees are widely cultivated in tropical regions around the world, and are often associated with beaches and island paradises.",
+      "growingConditions": "Coconut trees grow best in warm, tropical climates with lots of sunlight and moderate rainfall. They prefer sandy, well-draining soils, and are salt-tolerant. The trees can grow in a variety of soils, but require good drainage to prevent root rot.",
+      "propagation": "Seeds",
+      "range": "Coconut is not indigenous to Hawai'i, but was introduced to the islands by Polynesian voyagers. The trees can now be found throughout the tropics, including Hawai'i.",
+      "culturalUses": "Coconut is a highly versatile plant that has been used for food, medicine, and other purposes for centuries. In Hawai'i, coconut meat and milk are used in a variety of traditional dishes, including haupia, a coconut milk pudding. The leaves and fibers of the coconut tree are used to make baskets, mats, and thatching for roofs. Coconut oil, which is extracted from the meat of the fruit, is used for cooking, as a skin and hair conditioner, and in a variety of cosmetic products.",
+      "pests": "Coconut trees can be susceptible to a number of pests and diseases, including lethal yellowing, which can kill the tree within a few years. The coconut rhinoceros beetle, a serious pest that can cause significant damage to coconut trees, was introduced to Hawai'i in 2013.",
+      "picture": "https://en.wikipedia.org/wiki/Coconut#/media/File:Cocos_nucifera_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-187.jpg",
+      "interests": [
+        "Community",
+        "Conservation",
+        "Farming",
+        "Plant Identification"
+      ]
+    },
+    {
+      "name": "Uhiuhi",
+      "scientificName": "Caesalpinia kavaiensis",
+      "indigenousStatus": "Indigenous",
+      "description": "Uhiuhi is a small to medium-sized tree that can grow up to 30 ft tall. It has glossy, dark green leaves and produces bright yellow flowers in the summer. The tree's wood is prized for its strength and durability, and is used in the construction of canoes, tools, and other items.",
+      "growingConditions": "Uhiuhi grows best in well-drained soils that are rich in organic matter. It prefers full sun to partial shade and can tolerate salt spray and strong winds. The tree is drought-tolerant and can survive periodic flooding.",
+      "propagation": "Seeds, cuttings",
+      "range": "Uhiuhi is native to the Hawaiian Islands and can be found in dry to mesic forests on all of the main islands.",
+      "culturalUses": "The wood of the uhiuhi tree is used in the construction of canoes, tools, and other items. The tree also has medicinal properties and is used to treat a variety of ailments.",
+      "pests": "Uhiuhi can be susceptible to a number of pests, including scale insects, mealybugs, and spider mites. It can also be affected by various diseases, including leaf spot and root rot.",
+      "picture": "http://hawaiiannativeplants.com/wp-content/uploads/2013/10/tn_111_0ebb96b2ba633c3e2231cc410906384f.jpg",
+      "interests": [
+        "Community",
+        "Conservation"
+      ]
+    },
+    {
+      "name": "Keawe",
+      "scientificName": "Prosopis pallida",
+      "indigenousStatus": "Invasive",
+      "description": "Keawe is a thorny shrub or small tree that can grow up to 30 ft tall. It has small, yellow flowers and produces flat seed pods. The tree is known for its long, sharp thorns and its dense, spreading branches. Keawe is a nitrogen-fixing plant and is often used for reforestation and erosion control.",
+      "growingConditions": "Keawe can grow in a variety of soils, from sandy to clay. It prefers full sun and can tolerate drought and salt spray.",
+      "propagation": "Seeds, cuttings",
+      "range": "Keawe is native to South America but has been introduced to many tropical and subtropical regions around the world, including Hawai'i.",
+      "culturalUses": "Keawe has a number of uses in traditional Hawaiian culture, including as a source of wood for carving and as a material for making tools and weapons. The tree is also used for medicinal purposes, including treating infections and wounds.",
+      "pests": "Keawe can be susceptible to a number of pests, including scale insects, mealybugs, and spider mites. It can also be affected by various diseases, including leaf spot and root rot.",
+      "picture": "https://en.wikipedia.org/wiki/Prosopis_pallida#/media/File:Starr_050924-4469_Prosopis_pallida.jpg",
+      "interests": [
+        "Community",
+        "Conservation"
+      ]
+    },
+    {
+      "name": "Hapu'u",
+      "scientificName": "Cibotium glaucum",
+      "indigenousStatus": "Indigenous",
+      "description": "Hapu'u is a tree fern native to Hawaii. It can grow up to 20 feet tall and has large fronds that can be over 10 feet long. The trunk of the hapu'u fern is covered in brown scales, giving it a unique appearance. The fronds of the fern are often used in hula, and the trunk is sometimes used for building structures.",
+      "growingConditions": "Hapu'u ferns prefer moist, well-drained soil and partial shade. They are often found growing in shady areas of the forest, near streams or other sources of water.",
+      "propagation": "Spores",
+      "range": "Hapu'u ferns are found in Hawaii, particularly on the islands of Hawaii, Maui, and Kauai.",
+      "culturalUses": "The fronds of the hapu'u fern are used in hula, particularly in dances that represent the forest or nature. The trunk of the fern is sometimes used for building structures.",
+      "pests": "Hapu'u ferns are relatively pest-free.",
+      "picture": "http://hawaiiannativeplants.com/tn_153_654908665613dde2b3b35d75af3ffae0/",
+      "interests": [
+        "Community",
+        "Conservation",
+        "Canoe Plants",
+        "Plant Identification"
+      ]
     }
-  ],
+      ],
 
   "defaultForums": [
     {

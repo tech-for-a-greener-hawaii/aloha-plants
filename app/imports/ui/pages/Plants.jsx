@@ -61,9 +61,9 @@ const MakeCard = ({ plant }) => (
 
         </Card.Text>
       </Card.Body>
-      <Card.Body>
-         {interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}
-      </Card.Body>
+      {/*<Card.Body>*/}
+      {/*   {interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}*/}
+      {/*</Card.Body>*/}
     </Card>
   </Col>
 );
