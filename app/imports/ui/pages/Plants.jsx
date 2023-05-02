@@ -16,6 +16,7 @@ import SearchBar from '../components/SearchBar';
 function getPlantData(name) {
   const data = Plants.collection.findOne({ name });
   const interests = _.pluck(PlantsInterests.collection.find({ plantName: name }).fetch(), 'interest');
+  console.log(name);
   console.log('what is going on I am printing find().count() on the line below');
   console.log(PlantsInterests.collection.find().count());
   const profiles = _.pluck(ProfilesPlants.collection.find({ name: name }).fetch(), 'profile');
@@ -61,7 +62,7 @@ const MakeCard = ({ plant }) => (
         </Card.Text>
       </Card.Body>
       <Card.Body>
-        {/* {interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)} */}
+         {interests.map((interest, index) => <Badge key={index} bg="info">{interest}</Badge>)}
       </Card.Body>
     </Card>
   </Col>
@@ -89,9 +90,10 @@ const PlantsPage = () => {
   const { ready } = useTracker(() => {
     // Ensure that minimongo is populated with all collections prior to running render().
     const sub = Meteor.subscribe(Plants.userPublicationName);
+    const sub1 = Meteor.subscribe(PlantsInterests.userPublicationName);
     console.log(sub.ready());
     return {
-      ready: sub.ready(),
+      ready: sub.ready() && sub1.ready(),
     };
   }, []);
   const plants = _.pluck(Plants.collection.find().fetch(), 'name');

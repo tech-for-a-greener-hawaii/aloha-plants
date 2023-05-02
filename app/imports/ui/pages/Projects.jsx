@@ -12,11 +12,15 @@ import { pageStyle } from './pageStyles';
 import { PageIDs } from '../utilities/ids';
 import SearchBar from '../components/SearchBar';
 import ProjectCard from '../components/ProjectCard';
+import { PlantsInterests } from '../../api/plants/PlantsInterests';
 
 /* Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getProjectData(name) {
   const data = Projects.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
+  console.log(name);
+  console.log('what is going on I am printing find().count() on the line below');
+  console.log(ProjectsInterests.collection.find().count());
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
   return _.extend({}, data, { interests, participants: profiles });
 }

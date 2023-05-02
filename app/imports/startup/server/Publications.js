@@ -46,7 +46,7 @@ Meteor.publish(Comments.userPublicationName, () => Comments.collection.find());
 
 /** Define a publication to publish this collection. */
 Meteor.publish(ProjectsInterests.userPublicationName, () => ProjectsInterests.collection.find());
-// Meteor.publish(PlantsInterests.userPublicationName, () => ProjectsInterests.collection.find());
+Meteor.publish(PlantsInterests.userPublicationName, () => PlantsInterests.collection.find());
 
 // alanning:roles publication
 // Recommended code to publish roles for each user.
