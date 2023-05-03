@@ -10,6 +10,7 @@ import { forumsPage } from './forums.page';
 import { addPlantPage } from './addplant.page';
 import { plantsPage } from './plants.page';
 import { removeUsersPage } from './removeusers.page';
+import { settingsPage } from './settings.pages';
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'admin@foo.com', password: 'foo', firstName: 'Philip', lastName: 'Johnson' };
@@ -75,7 +76,7 @@ test('Test that forums page displays', async (testController) => {
   await forumsPage.isDisplayed(testController);
 });
 
-test('Test that addplant page displays', async (testController) => {
+test('Test that Add Plant page displays', async (testController) => {
   await navBar.ensureLogout(testController);
   await navBar.gotoSignInPage(testController);
   await signInPage.signin(testController, credentials.username, credentials.password);
@@ -89,4 +90,38 @@ test('Test that removeUser page displays', async (testController) => {
   await signInPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoRemoveUserPage(testController);
   await removeUsersPage.isDisplayed(testController);
+});
+
+test('Test that Add Forums Page Works', async (testController) => {
+  await navBar.ensureLogout(testController);
+  await navBar.gotoSignInPage(testController);
+  await signInPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoForumsPage(testController);
+  await forumsPage.isDisplayed(testController);
+  await forumsPage.gotoAddForum(testController);
+});
+
+test('Test that edit projects page displays', async (testController) => {
+  await navBar.ensureLogout(testController);
+  await navBar.gotoSignInPage(testController);
+  await signInPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoProjectsPage(testController);
+  await projectsPage.isDisplayed(testController);
+
+});
+
+test('Test that the Not Authorized page displays', async (testController) => {
+  await navBar.ensureLogout(testController);
+  await navBar.gotoSignInPage(testController);
+  await signInPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoProjectsPage(testController);
+  await projectsPage.isDisplayed(testController);
+});
+
+test('Test that settings page displays', async (testController) => {
+  await navBar.ensureLogout(testController);
+  await navBar.gotoSignInPage(testController);
+  await signInPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoSettingsPage(testController);
+  await settingsPage.isDisplayed(testController);
 });

@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe';
-import { PageIDs } from '../imports/ui/utilities/ids';
+import { ComponentIDs, PageIDs } from '../imports/ui/utilities/ids';
 
 class ProjectsPage {
   constructor() {
@@ -16,6 +16,10 @@ class ProjectsPage {
   async hasDefaultProjects(testController) {
     const cardCount = Selector('.card').count;
     await testController.expect(cardCount).gte(4);
+  }
+
+  async gotoEditProjects(testController) {
+    await testController.click(`#${ComponentIDs.editProjectLink}`);
   }
 }
 

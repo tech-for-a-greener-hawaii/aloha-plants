@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe';
-import { PageIDs } from '../imports/ui/utilities/ids';
+import { ComponentIDs, PageIDs } from '../imports/ui/utilities/ids';
 
 class ForumsPage {
   constructor() {
@@ -10,6 +10,10 @@ class ForumsPage {
   /** Checks that this page is currently displayed. */
   async isDisplayed(testController) {
     await testController.expect(this.pageSelector.exists).ok();
+  }
+
+  async gotoAddForum(testController) {
+    await testController.click(`#${ComponentIDs.addForumLink}`);
   }
 }
 

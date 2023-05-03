@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { Forums } from '../../api/forums/Forums';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { pageStyle } from './pageStyles';
-import { PageIDs } from '../utilities/ids';
+import { PageIDs, ComponentIDs } from '../utilities/ids';
 import AddComment from '../components/AddComment';
 import { Comments } from '../../api/forums/Comments';
 import ListComments from '../components/ListComments';
@@ -71,7 +71,7 @@ const ForumsPage = () => {
         <h1 className="text-center py-4"><strong>Forums</strong></h1>
         <Container id={PageIDs.forumsPage} style={pageStyle}>
           {forumData.map((forum, index) => <Row className="justify-content-center py-2"><MakeForumCard key={index} forum={forum} comments={commentData.filter(comment => (comment.forumID === forum._id))} /></Row>)}
-          <Row className="text-center justify-content-center">
+          <Row id={ComponentIDs.addForumLink} className="text-center justify-content-center">
             <Link to="/addforum/">Add Forum</Link>
           </Row>
         </Container>

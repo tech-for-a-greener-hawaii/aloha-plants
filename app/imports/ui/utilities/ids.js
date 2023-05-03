@@ -35,6 +35,8 @@ export const ComponentIDs = {
   forumsMenuItem: 'forumsMenuItem',
   currentUserDropdownSettings: 'currentUserDropdownSettings',
   removeUsersMenuItem: 'removeUsersMenuItem',
+  addForumLink: 'addForumLink',
+  editProjectLink: 'editProjectLink',
 };
 
 export const PageIDs = {

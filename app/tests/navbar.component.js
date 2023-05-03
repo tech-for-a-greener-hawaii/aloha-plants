@@ -120,6 +120,18 @@ class NavBar {
     }
     await testController.click(`#${ComponentIDs.removeUsersMenuItem}`);
   }
+
+  async gotoSettingsPage(testController) {
+    const visible = await Selector(`#${ComponentIDs.basicNavbarNav}`).visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
+    const loggedInUser = await Selector(`#${ComponentIDs.currentUserDropdown}`).exists;
+    if (loggedInUser) {
+      await testController.click(`#${ComponentIDs.currentUserDropdown}`);
+      await testController.click(`#${ComponentIDs.currentUserDropdownSettings}`);
+    }
+  }
 }
 
 export const navBar = new NavBar();

@@ -7,6 +7,7 @@ import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
 import { addProfilesProjectMethod, removeProfilesProjectMethod } from '../../startup/both/Methods';
 import DeleteProject from './DeleteProject';
+import { ComponentIDs } from '../utilities/ids';
 
 const ProjectCard = ({ project, email, role }) => {
   // Checks if user has already signed up for the project
@@ -77,7 +78,7 @@ const ProjectCard = ({ project, email, role }) => {
                 <Row className="py-2">
                   <Col />
                   <Col>
-                    <Link className="text-center" color="white" to={`/edit/${project._id}`}>Edit</Link>
+                    <Link id={ComponentIDs.editProjectLink} className="text-center" color="white" to={`/edit/${project._id}`}>Edit</Link>
                   </Col>
                   <Col className="text-center">
                     <DeleteProject project={project} />
